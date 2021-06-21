@@ -291,7 +291,7 @@ async def blockpm(block):
     else:
         await block.client(BlockRequest(block.chat_id))
         aname = await block.client.get_entity(block.chat_id)
-        await block.edit(f"`Anda Telah Diblokir Oleh {DEFAULTUSER}`")
+        await block.edit(f"`Lu Jamet, Maaf Gua blok ya ngentot!!`")
         name0 = str(aname.first_name)
         uid = block.chat_id
 
@@ -404,7 +404,7 @@ async def permitpm(event):
 
 CMD_HELP.update(
     {
-        "pmpermit": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.setuju | .ok`"
+        "pesan": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.setuju | .ok`"
         "\n↳ : Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.tolak | .nopm`"
         "\n↳ : Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm."
@@ -415,8 +415,11 @@ CMD_HELP.update(
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.notifoff`"
         "\n↳ : Mematikan notifikasi pesan yang belum diterima."
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.notifon`"
-        "\n↳ : Menghidupkan notifikasi pesan yang belum diterima."
-        "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.set pm_msg` <balas ke pesan>"
+        "\n↳ : Menghidupkan notifikasi pesan yang belum diterima."})
+
+CMD_HELP.update(
+    {
+        "pmprmit": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.set pm_msg` <balas ke pesan>"
         "\n↳ : Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima"
         "\n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: >`.get pm_msg`"
         "\n↳ : Mendapatkan Custom pesan PM mu"
