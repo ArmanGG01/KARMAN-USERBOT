@@ -590,7 +590,7 @@ with bot:
                             Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
                                    f"{IG_ALIVE}")],
                         [custom.Button.inline(
-                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close")],
+                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", data="{}_exit({})".format(prefix, modulo_page)],
                     ]
                 )
 
@@ -649,7 +649,7 @@ with bot:
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(b"close\((.+?)\)")
+                data=re.compile(rb"helpme_exit\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
@@ -660,7 +660,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline(
-                            "Back to menu", "open")],
+                            "Back to menu", data="{}open({})".format(prefix, modulo_page)],
                     ]
                 )
 
