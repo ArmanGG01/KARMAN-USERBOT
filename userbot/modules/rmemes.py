@@ -3031,7 +3031,7 @@ CMD_HELP.update({
 \nUsage: Lihat Sendiri."
 })
 
-CMD_HELP.update
+CMD_HELP.update({
     "memes11":
     "`.isro`\
 \nUsage: Untuk Memanggil Alien 👽\
