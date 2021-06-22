@@ -3028,8 +3028,12 @@ CMD_HELP.update({
 \n\n`.kill`\
 \nUsage: Untuk Membunuh Musuh Secara Online:v\
 \n\n`.os`\
-\nUsage: Lihat Sendiri.\
-\n\n`.isro`\
+\nUsage: Lihat Sendiri."
+})
+
+CMD_HELP.update
+    "memes11":
+    "`.isro`\
 \nUsage: Untuk Memanggil Alien 👽\
 \n\n`.gangstar`\
 \nUsage: Anda Menjadi Gangstar.\
