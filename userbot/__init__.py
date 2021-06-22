@@ -590,7 +590,7 @@ with bot:
                             Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
                                    f"{IG_ALIVE}")],
                         [custom.Button.inline(
-                             "𝗘𝗫𝗜𝗧", data="{}_exit({})".format(prefix, modulo_page)],
+                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close")],
                     ]
                 )
 
@@ -646,23 +646,10 @@ with bot:
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            await event.edit("Menu di tutup!\nUntuk Melihat Menu, Silahkan Ketik `.rhelp`", buttons=Button.clear())
 
-        @tgbot.on(
-            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
-                data=re.compile(rb"helpme_exit\((.+?)\)")
-            )
-        )
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:  # @Ram-ubot
-                # https://t.me/TelethonChat/115200
-                await event.edit(
-                    file=ramlogo,
-                    link_preview=True,
-                    buttons=[
-                        [custom.Button.inline(
-                             "Back to menu", data="{}_next({})".format(prefix, modulo_page)],
-                    ]
-                )
 
     except BaseException:
         LOGS.info(
