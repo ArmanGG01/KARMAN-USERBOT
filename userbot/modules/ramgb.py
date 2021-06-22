@@ -27,13 +27,13 @@ async def stext(event):
     draw = ImageDraw.Draw(image)
     fontsize = 220
     font = ImageFont.truetype(
-        "userbot/RobotoMono-Regular.ttf",
+        "userbot/utils/styles/RobotoMono-Regular.ttf",
         size=fontsize)
 
     while draw.multiline_textsize(sticktext, font=font) > (512, 512):
         fontsize -= 3
         font = ImageFont.truetype(
-            "userbot/RobotoMono-Regular.ttf",
+            "userbot/utils/styles/RobotoMono-Regular.ttf",
             size=fontsize)
 
     width, height = draw.multiline_textsize(sticktext, font=font)
