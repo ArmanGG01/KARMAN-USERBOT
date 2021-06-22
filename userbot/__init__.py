@@ -658,11 +658,9 @@ with bot:
                 await event.edit(
                     file=ramlogo,
                     link_preview=True,
-                    text="Menu Di tutup!!"
                     buttons=[
-                        [
-                           [custom.Button.inline(
-                               "Back to menu", "open")],
+                        [custom.Button.inline(
+                            "Back to menu", "open")],
                     ]
                 )
 
