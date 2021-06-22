@@ -60,7 +60,7 @@
 ## Credit
 TERIMAKASIH UNTUK
 
-*   [VICKY](https://github.com/vckyou) - ⚡Geez-Userbot⚡
-*   [KOALA](https://github.com/manusiarakitan) - KAMPANG BOT
+*   [VICKY](https://t.me/vckyouubitch) - ⚡Geez-Userbot⚡
+*   [KOALA](https://t.me/manusiarakitan) - KAMPANG BOT
 *   [TEAMULTROID](https://github.com/TeamUltroid) - ULTROID
 *    DAN MASIH BANYAK LAGI TOT
