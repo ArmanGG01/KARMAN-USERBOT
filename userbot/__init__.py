@@ -590,7 +590,7 @@ with bot:
                             Button.url(f"{EMOJI_HELP} INSTAGRAM {EMOJI_HELP} ",
                                    f"{IG_ALIVE}")],
                         [custom.Button.inline(
-                            f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", data="{}_exit({})".format(prefix, modulo_page)],
+                             "𝗘𝗫𝗜𝗧", data="{}_exit({})".format(prefix, modulo_page)],
                     ]
                 )
 
@@ -660,7 +660,7 @@ with bot:
                     link_preview=True,
                     buttons=[
                         [custom.Button.inline(
-                            "Back to menu", data="{}open({})".format(prefix, modulo_page)],
+                             "Back to menu", data="{}_next({})".format(prefix, modulo_page)],
                     ]
                 )
 
