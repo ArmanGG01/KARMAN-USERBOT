@@ -384,21 +384,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.oy(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**hy...**")
-    sleep(3)
-    await typew.edit("**Nama Aku Karinaa**")
-    sleep(1)
-    await typew.edit("**Banyak Yang panggil Aku Queen Karina**")
-    sleep(1)
-    await typew.edit("**Karna aku cantik banget gengss.**")
-    sleep(1)
-    await typew.edit("**Bcanda Bcanda awkwkkw**")
-    sleep(2)
-    await typew.edit("**Aku Ga sombong Woi**")
-    sleep(1)
-    await typew.edit("**Aku Cuma mau bilang**")
-    sleep(2)
-    await typew.edit("**GJM!!!!**")
+    await typew.edit(f"`{ALIVE_NAME} Telah meninggalkan Group....`")
 
 
 @register(outgoing=True, pattern='^.gi(?: |$)(.*)')
