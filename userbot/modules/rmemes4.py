@@ -381,9 +381,11 @@ async def typewriter(typew):
                      f"𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME}")
 
 
-@register(outgoing=True, pattern='^.oy(?: |$)(.*)')
+@register(outgoing=True, pattern='^.kickme(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
+    await typew.edit(f"`{ALIVE_NAME}, Saat Nya Pergi...`")
+    sleep(3)
     await typew.edit(f"`{ALIVE_NAME} Telah meninggalkan Group....`")
 
 
