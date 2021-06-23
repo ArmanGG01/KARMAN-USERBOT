@@ -1,16 +1,16 @@
 from time import sleep
-from userbot import CMD_HELP
+from userbot import CMD_HELP, ALIVE_NAME
 from userbot.events import register
 
 
 @register(outgoing=True, pattern=r'^\.santet(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Lord Telah Mengaktifkan Perintah Santet Online ツ`")
+    await typew.edit(f"`{ALIVE_NAME} Berusaha Menyantet Jamet Ini`")
     sleep(2)
-    await typew.edit("`Mencari Nama Orang Ini...`")
+    await typew.edit("`Mencari Nama Jamet Ini...`")
     sleep(1)
-    await typew.edit("`Santet Online Segera Dilakukan`")
+    await typew.edit("`Santet Online Segera Dilakukan,Mampus Lu!!`")
     sleep(1)
     await typew.edit("0%")
     number = 1
