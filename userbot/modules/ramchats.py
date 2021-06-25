@@ -124,6 +124,8 @@ async def kickme(leave):
                      "╬═╬☻/ \n"
                      "╬═╬/▌ \n"
                      "╬═╬/ \\ \n")
+    sleep(2)
+    await leave.edit(f"`{ALIVE_NAME}, Meninggalkan Group ini, Good bye evrybody`")
     await leave.client.kick_participant(leave.chat_id, 'me')
 
 
