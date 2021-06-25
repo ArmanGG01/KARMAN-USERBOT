@@ -38,7 +38,7 @@ async def get_user_from_event(event):
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
-            return await event.edit("Failed \n **Error**\n", str(err))
+            return await event.edit("Sepertinya Ada Kesalahan \n **Kesalahan**\n", str(err))
     return user_obj, extra
 
 
@@ -101,14 +101,14 @@ async def gspide(rk):
                 await rk.client.edit_permissions(i, user, view_messages=False)
                 await rk.client.edit_permissions(i, user, send_messages=True)
                 a += 1
-                await rkp.edit(f"`{ALIVE_NAME} :` **Melakukan Aksi\nGlobal Kick {a} chats.....**")
+                await rkp.edit(f"`{ALIVE_NAME} :` **Melakukan Aksi\nGlobal Kick dalam {a} obrolan.....**")
 
             except BaseException:
                 b += 1
     else:
         await rkp.edit(f"`{ALIVE_NAME}:` **Balas ke pengguna !! **")
 
-    return await rkp.edit(f"`{ALIVE_NAME}:` **Melakukan Aksi Global Kick [{user.first_name}](tg://user?id={user.id}) in {a} chat(s) **")
+    return await rkp.edit(f"`{ALIVE_NAME}:` **Melakukan Aksi Global Kick Pada [{user.first_name}](tg://user?id={user.id}) Dalam {a} obrolan(s) **")
 
 CMD_HELP.update({
     "gkick": "\
