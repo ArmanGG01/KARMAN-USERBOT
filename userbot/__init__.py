@@ -592,7 +592,7 @@ with bot:
                         [custom.Button.inline(
                             f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close"),
                             custom.Button.inline(
-                               f"{EMOJI_HELP} 𝗢𝗣𝗘𝗡 𝗕𝗔𝗖𝗞 {EMOJI_HELP}", f"{BOT_USERNAME}")],
+                               f"{EMOJI_HELP} 𝗢𝗣𝗘𝗡 𝗕𝗔𝗖𝗞 {EMOJI_HELP}", rb"helpme_next")],
                     ]
                 )
 
