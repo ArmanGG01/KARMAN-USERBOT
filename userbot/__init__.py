@@ -591,9 +591,7 @@ with bot:
                                    f"{IG_ALIVE}")],
                         [custom.Button.inline(
                             f"{EMOJI_HELP} 𝗘𝗫𝗜𝗧 {EMOJI_HELP}", b"close"),
-                            custom.Button.inline(
-                               f"{EMOJI_HELP} 𝗢𝗣𝗘𝗡 𝗕𝗔𝗖𝗞 {EMOJI_HELP}", data="{}open({})".format(prefix, modulo_page)],
-                    ]
+                       ]
                 )
 
 
