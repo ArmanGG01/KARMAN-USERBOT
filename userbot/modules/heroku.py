@@ -200,7 +200,7 @@ async def dyno_usage(dyno):
                 f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME} \n"
                 f"**•JOIN•** : [MY GROUP]({GROUP_LINK}) \n"
             )
-            await asyncio.sleep(20)
+            await asyncio.sleep(5)
             await event.delete()
             return True
 
