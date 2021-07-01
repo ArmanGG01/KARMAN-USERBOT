@@ -17,7 +17,8 @@ from userbot import (
     BOTLOG_CHATID,
     CMD_HELP,
     ALIVE_NAME,
-    REPO_NAME)
+    REPO_NAME,
+    GROUP_LINK)
 from userbot.events import register
 
 heroku_api = "https://api.heroku.com"
@@ -197,7 +198,7 @@ async def dyno_usage(dyno):
                 f"┣[•  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {percentage}%. \n"
                 "╰✠╼━━━━━━❖━━━━━━━✠╯\n"
                 f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME} \n"
-                f"**•JOIN•** : [My Group]({GROUP_LINK}) \n"
+                f"**•JOIN•** : [MY GROUP]({GROUP_LINK}) \n"
             )
             await asyncio.sleep(20)
             await event.delete()
