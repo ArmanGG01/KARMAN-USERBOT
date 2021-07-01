@@ -73,6 +73,22 @@ async def redis(pong):
     await pong.edit(f"**KONTOOLLLL!!**\n**KEKUATAN KONTOL** : `%sms`\n**DURASI KONTOL** : `{uptime}🕛`" % (duration))
 
 
+@register(outgoing=True, pattern="^Ping$")
+async def redis(pong):
+    """ For .ping command, ping the userbot from any chat.  """
+    uptime = await get_readable_time((time.time() - StartTime))
+    start = datetime.now()
+    await pong.edit("PONG!!")
+    await asyncio.sleep(2)
+    await pong.edit(f"{REPO_NAME}")
+    await asyncio.sleep(3)
+    end = datetime.now()
+    duration = (end - start).microseconds / 1000
+    await pong.edit(f"{REPO_NAME}!!"\n
+                    f"OWNER : {ALIVE_NAME}\n `%sms`\n"
+                    f"`{uptime}` % (duration))
+
+
 @register(outgoing=True, pattern="^Speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
