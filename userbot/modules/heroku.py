@@ -132,10 +132,10 @@ async def dyno_usage(dyno):
     """
         Get your account Dyno Usage
     """
-    await dyno.edit("Mendapatkan Informasi Kekuatan!!")
-    await asyncio.sleep(2)
-    await dyno.edit("✨")
+    await dyno.edit("`Memeriksa Dyno Heroku anda...`")
     await asyncio.sleep(3)
+    await dyno.edit("✨")
+    await asyncio.sleep(2)
     useragent = (
         'Mozilla/5.0 (Linux; Android 10; SM-G975F) '
         'AppleWebKit/537.36 (KHTML, like Gecko) '
