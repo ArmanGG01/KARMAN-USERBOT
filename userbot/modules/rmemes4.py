@@ -1,6 +1,6 @@
 # RAM-UBOT
 from time import sleep
-from userbot import ALIVE_NAME, CMD_HELP, IG_ALIVE, REPO_NAME, bot
+from userbot import ALIVE_NAME, CMD_HELP, IG_ALIVE, REPO_NAME, GROUP_LINK, bot
 from userbot.events import register
 from telethon import events
 import asyncio
@@ -378,7 +378,8 @@ async def typewriter(typew):
                      "┣[• ▸ `999999` ᴊᴀᴍ - `999999` ᴍᴇɴɪᴛ.\n"
                      "┣[• ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : 1000%.\n"
                      "╰✠╼━━━━━━❖━━━━━━━✠╯\n"
-                     f"𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME}")
+                     f"𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME}\n"
+                     f"**•JOIN•** : [MY GROUP]({GROUP_LINK})")
 
 
 @register(outgoing=True, pattern='^.kickme(?: |$)(.*)')
