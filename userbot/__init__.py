@@ -224,7 +224,7 @@ EMOJI_HELP = os.environ.get("EMOJI_HELP") or "💫"
 
 # Default .alive Group
 GROUP_LINK = os.environ.get(
-    "GROUP_LINK") or "t.me/teman_random"
+    "GROUP_LINK") or "t.me/ootspambot"
 
 # Default .repo Bot
 OWNER_BOT = os.environ.get(
