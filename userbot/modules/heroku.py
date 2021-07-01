@@ -196,7 +196,7 @@ async def dyno_usage(dyno):
                 f"┣[•  ▸ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ. \n"
                 f"┣[•  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {percentage}%. \n"
                 "╰✠╼━━━━━━❖━━━━━━━✠╯\n"
-                f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME} \n"
+                f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ALIVE_NAME} \n**•JOIN•** : [MY GROUP]({GROUP_LINK}) \n"
             )
             await asyncio.sleep(20)
             await event.delete()
