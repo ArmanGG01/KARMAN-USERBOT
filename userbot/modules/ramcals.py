@@ -67,7 +67,7 @@ async def _(e):
 async def _(e):
     await e.edit("`Memulai Invite member group...`")
     users = []
-    z = 6
+    z = 0
     async for x in e.client.iter_participants(e.chat_id):
         if not x.bot:
             users.append(x.id)
@@ -78,7 +78,7 @@ async def _(e):
             z += 6
         except BaseException:
             pass
-    await e.edit(f"`Invited {z} users`")
+    await e.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
