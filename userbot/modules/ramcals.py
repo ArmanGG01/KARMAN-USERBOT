@@ -22,7 +22,7 @@ NO_ADMIN = "`Maaf Kamu Bukan admin :)`"
 
 async def get_call(event):
     rambot = await event.client(getchat(event.chat_id))
-    rama = await event.client(getvc(geez.full_chat.call))
+    rama = await event.client(getvc(rambot.full_chat.call))
     return ram.call
 
 
@@ -64,8 +64,8 @@ async def _(e):
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
-async def _(e):
-    await e.edit("`Memulai Invite member group...`")
+async def _(event):
+    await event.edit("`Memulai Invite member group...`")
     users = []
     z = 0
     async for x in e.client.iter_participants(e.chat_id):
@@ -74,11 +74,11 @@ async def _(e):
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await e.client(invitetovc(call=await get_call(e), users=p))
+            await event.client(invitetovc(call=await get_call(e), users=p))
             z += 6
         except BaseException:
             pass
-    await e.edit(f"`Menginvite {z} Member`")
+    await event.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
