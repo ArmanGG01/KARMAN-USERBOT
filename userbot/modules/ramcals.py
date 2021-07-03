@@ -64,30 +64,30 @@ async def _(e):
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
-async def _(event):
-    await event.edit("`Memulai Invite member group...`")
+async def _(rambot):
+    await rambot.edit("`Memulai Invite member group...`")
     users = []
     z = 0
-    async for x in event.client.iter_participants(event.chat_id):
+    async for x in rambot.client.iter_participants(rambot.chat_id):
         if not x.bot:
             users.append(x.id)
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await event.client(invitetovc(call=await get_call(event), users=p))
+            await rambot.client(invitetovc(call=await get_call(rambot), users=p))
             z += 6
         except BaseException:
             pass
-    await event.edit(f"`Menginvite {z} Member`")
+    await rambot.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
     {
         "ramcalls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
-         \n↳ : Start Group Call in a group.\
+         \n↳ : Memulai Obrolan Suara dalam Group.\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
-         \n↳ : `Stop Group Call in a group.`\
+         \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
-         \n↳ : Invite all members of group in Group Call. (You must be joined)."
+         \n↳ : Invite semua member yang berada di group. (Kadang bisa kadang kaga)."
     }
 )
