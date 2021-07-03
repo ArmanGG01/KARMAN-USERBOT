@@ -23,7 +23,7 @@ NO_ADMIN = "`Maaf Kamu Bukan admin :)`"
 async def get_call(event):
     rambot = await event.client(getchat(event.chat_id))
     rama = await event.client(getvc(rambot.full_chat.call))
-    return ram.call
+    return rama.call
 
 
 def user_list(l, n):
@@ -83,7 +83,7 @@ async def _(event):
 
 CMD_HELP.update(
     {
-        "calls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
+        "ramcalls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
          \n↳ : Start Group Call in a group.\
          \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
          \n↳ : `Stop Group Call in a group.`\
