@@ -17,13 +17,13 @@ from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
 
-NO_ADMIN = "`Sorry you are not admin :)`"
+NO_ADMIN = "`Maaf Kamu Bukan admin :)`"
 
 
 async def get_call(event):
-    geez = await event.client(getchat(event.chat_id))
-    vcky = await event.client(getvc(geez.full_chat.call))
-    return vcky.call
+    rambot = await event.client(getchat(event.chat_id))
+    rama = await event.client(getvc(geez.full_chat.call))
+    return ram.call
 
 
 def user_list(l, n):
@@ -67,7 +67,7 @@ async def _(e):
 async def _(e):
     await e.edit("`Memulai Invite member group...`")
     users = []
-    z = 0
+    z = 6
     async for x in e.client.iter_participants(e.chat_id):
         if not x.bot:
             users.append(x.id)
