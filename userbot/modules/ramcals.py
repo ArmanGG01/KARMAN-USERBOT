@@ -1,5 +1,5 @@
 # Thanks Full To Team Ultroid
-# Ported By Vcky @VckyouuBitch
+# Ported By Vcky @VckyouuBitch + @MaafGausahSokap
 # Copyright (c) 2021 Geez - Projects
 # Geez - Projects https://github.com/Vckyou/Geez-UserBot
 # RAM - UBOT https://github.com/ramadhani892/RAM-UBOT
@@ -17,7 +17,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
 
-NO_ADMIN = "`Maaf Kamu Bukan admin :)`"
+NO_ADMIN = "`LU BUKAN ADMIN NGENTOT!!`"
 
 
 async def get_call(event):
@@ -32,35 +32,35 @@ def user_list(l, n):
 
 
 @register(outgoing=True, pattern=r"^\.startvc$", groups_only=True)
-async def _(e):
-    chat = await e.get_chat()
+async def _(rambot):
+    chat = await rambot.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await e.edit(NO_ADMIN)
+        return await rambot.edit(NO_ADMIN)
     new_rights = ChatAdminRights(invite_users=True)
     try:
-        await e.client(startvc(e.chat_id))
-        await e.edit("`Obrolan Suara Dimulai...`")
+        await rambot.client(startvc(rambot.chat_id))
+        await rambot.edit("`OBROLAN SUARA DIMULAI, YANG ONCAM LO NGENTOT...`")
     except Exception as ex:
-        await e.edit(f"`{str(ex)}`")
+        await rambot.edit(f"`{str(ex)}`")
 
 
 @register(outgoing=True, pattern=r"^\.stopvc$", groups_only=True)
-async def _(e):
-    chat = await e.get_chat()
+async def _(rambot):
+    chat = await rambot.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        return await e.edit(NO_ADMIN)
+        return await rambot.edit(NO_ADMIN)
     new_rights = ChatAdminRights(invite_users=True)
     try:
-        await e.client(stopvc(await get_call(e)))
-        await e.edit("`Obrolan Suara Di Hentikan...`")
+        await rambot.client(stopvc(await get_call(rambot)))
+        await rambot.edit("`OBROLAN SUARA DIHENTIKAN, TYPING AJAYA NGENTOT...`")
     except Exception as ex:
-        await e.edit(f"`{str(ex)}`")
+        await rambot.edit(f"`{str(ex)}`")
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
