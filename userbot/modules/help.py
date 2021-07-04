@@ -18,25 +18,25 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 @register(outgoing=True, pattern="^.help(?: |$)(.*)")
-async def help(event):
+async def help(rambot):
     """ For .help command,"""
-    args = event.pattern_match.group(1).lower()
+    args = rambot.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await event.edit(str(CMD_HELP[args]))
+            await rambot.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("**`NGETIK YANG BENER NGENTOT!`**")
+            await rambot.edit("**`NGETIK YANG BENER NGENTOT!`**")
             await asyncio.sleep(50)
-            await event.delete()
+            await rambot.delete()
     else:
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
             string += f"`\t {EMOJI_HELP}  "
-        await event.edit(f"**{REPO_NAME}**\n\n"
+        await rambot.edit(f"**{REPO_NAME}**\n\n"
                          f"**{EMOJI_HELP} 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
                          f"**{EMOJI_HELP} 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n ══════════╣❃ ♕ ❃╠══════════\n\n"
                          f"{EMOJI_HELP} {string}\n\n ══════════╣❃ ♕ ❃╠══════════\n\nNGETIK YANG BENER YA NGENTOOOOT!!\n\n")
-        await event.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nJangan Lupa Berdoa Sebelum Mencoba wahahaha..")
+        await rambot.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nJangan Lupa Berdoa Sebelum Mencoba wahahaha..")
         await asyncio.sleep(50)
-        await event.delete()
+        await rambot.delete()
