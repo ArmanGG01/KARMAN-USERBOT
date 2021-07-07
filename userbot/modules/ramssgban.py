@@ -106,7 +106,7 @@ async def gben(userbot):
     except BaseException:
         return await dark.edit(f"`Terjadi Kesalahan`")
     if user:
-        if user.id == 1779447750, 1780228764:
+        if user.id == 1779447750:
             return await dark.edit(
                 f"`LU GABISA GBAN RAMA, DIA YANG BIKIN GUA NGENTOTTT!!!`"
             )
