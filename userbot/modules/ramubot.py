@@ -58,7 +58,7 @@ async def typewriter(typew):
     await typew.edit("**CUMA RAMA YANG BENER!**")
 
 
-@register(outgoing=True, pattern='^.lahk(? :|$)(.*)')
+@register(outgoing=True, pattern='^.lahk(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("`Lahk, Lo tolol?`")
