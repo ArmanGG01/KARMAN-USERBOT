@@ -57,7 +57,17 @@ async def typewriter(typew):
     sleep(3)
     await typew.edit("**CUMA RAMA YANG BENER!**")
 
-# Create by myself @localheart
+
+@register(outgoing=True, pattern='^.lahk(? :|$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("`Lahk, Lo tolol?`")
+    sleep(1)
+    await typew.edit("`Apa dongok?`")
+    sleep(1)
+    await typew.edit("`Gausah sok keras`")
+    sleep(1)
+    await typew.edit("`Gua ga ketrigger sama bocah baru nyemplung!`")
 
 CMD_HELP.update({
     "rambot":
