@@ -6,10 +6,10 @@ from userbot import CMD_HELP, bot
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Mohon Berikan Sebuah Pesan`")
+        return await event.edit("`Pesannya Mana ngentot?`")
     tt = event.text
     msg = tt[6:]
-    kk = await event.edit("`Sedang Mengirim Pesan Secara Global... 📢`")
+    kk = await event.edit("`Sabar Lg gua kirim tot, Limit jangan salain gua...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -27,7 +27,7 @@ async def gcast(event):
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Berikan beberapa teks untuk Siaran Global`")
+        return await event.edit("`Pesan nya Mana Ngentot?`")
     tt = event.text
     msg = tt[7:]
     kk = await event.edit("`Sedang Mengirim pesan secara global...`")
