@@ -230,6 +230,9 @@ GROUP_LINK = os.environ.get(
 OWNER_BOT = os.environ.get(
     "OWNER_BOT") or "t.me/MaafGausahSokap"
 
+# Default CMD_BOT
+CMD_BOT = os.environ.get("CMD_BOT") or "."
+
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
