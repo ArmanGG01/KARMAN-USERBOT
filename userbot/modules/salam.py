@@ -12,7 +12,7 @@ async def typewriter(typew):
     await typew.edit("𝐀𝐬𝐬𝐚𝐥𝐚𝐦𝐮'𝐚𝐥𝐚𝐢𝐤𝐮𝐦...")
 
 
-@register(outgoing=True, pattern="{CMD_BOT}atg(?: |$)(.*)')
+@register(outgoing=True, pattern={CMD_BOT}atg(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("𝐀𝐒𝐓𝐀𝐆𝐇𝐅𝐈𝐑𝐔𝐋𝐋𝐀𝐇.... 𝐆𝐎𝐁𝐋𝐎𝐊𝐊𝐊𝐊𝐊!!!!")
