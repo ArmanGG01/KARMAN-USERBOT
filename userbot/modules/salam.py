@@ -1,5 +1,5 @@
 from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, CMD_BOT
 from userbot.events import register
 
 # ================= CONSTANT =================
@@ -12,7 +12,7 @@ async def typewriter(typew):
     await typew.edit("𝐀𝐬𝐬𝐚𝐥𝐚𝐦𝐮'𝐚𝐥𝐚𝐢𝐤𝐮𝐦...")
 
 
-@register(outgoing=True, pattern='^.atg(?: |$)(.*)')
+@register(outgoing=True, pattern=f"{CMD_BOT}atg(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("𝐀𝐒𝐓𝐀𝐆𝐇𝐅𝐈𝐑𝐔𝐋𝐋𝐀𝐇.... 𝐆𝐎𝐁𝐋𝐎𝐊𝐊𝐊𝐊𝐊!!!!")
