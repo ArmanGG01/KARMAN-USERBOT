@@ -16,7 +16,7 @@ from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, StartTime, REPO_NAME
 from userbot.events import register
 
-absen = [
+gesss = [
     "**Eh ada Landak keren**",
     "**Hadir ganteng** 😍",
     "**Hi, Landak kemana sj?** 🤗",
@@ -59,7 +59,7 @@ async def get_readable_time(seconds: int) -> str:
 
 @register(incoming=True, from_users=1779447750, pattern=r"^.gesss$")
 async def _(landak):
-    await landak.reply(random.choice(absen))
+    await landak.reply(random.choice(gesss))
 
 
 @register(outgoing=True, pattern="^.ping$")
