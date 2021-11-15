@@ -6,14 +6,30 @@
     Information Superhighway (yes, Internet). """
 
 import asyncio
+import random
 import time
-import redis
-
 from datetime import datetime
 
+import redis
 from speedtest import Speedtest
-from userbot import CMD_HELP, StartTime, ALIVE_NAME, REPO_NAME
+
+from userbot import ALIVE_NAME, CMD_HELP, StartTime
 from userbot.events import register
+
+absen = [
+    "**Eh ada Landak keren**",
+    "**Hadir ganteng** 😍",
+    "**Hi, Landak kemana sj?** 🤗",
+    "**Hadir kak** 😉",
+    "**Hadir bang Landak** 😁",
+    "**Hadir Landak maap telat** 🥺",
+    "**Saya slalu ada buat bang landak🥵**",
+    "**Bang landak, Aku ange😋😋**",
+    "**Jangan kemana mana lagi ya bang**",
+    "**Pas banget bang, aku lagi kangen**",
+    "**Bang landak on juga akhirnya**🥵",
+    "**Mau pap dari aku ndak** 😋",
+]
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -24,9 +40,7 @@ async def get_readable_time(seconds: int) -> str:
 
     while count < 4:
         count += 1
-        remainder, result = divmod(
-            seconds, 60) if count < 3 else divmod(
-            seconds, 24)
+        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -43,22 +57,9 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-
-@register(outgoing=True, pattern="^.pings$")
-async def redis(pong):
-    """ For .ping command, ping the userbot from any chat.  """
-    uptime = await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
-    await pong.edit("`Connecting to server...`")
-    await pong.edit("☠️")
-    await asyncio.sleep(3)
-    end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    await pong.edit(f"**`{ALIVE_NAME}`**\n"
-                    f"✧ **-ꜱɪɢɴᴀʟ- :** "
-                    f"`%sms` \n"
-                    f"✧ **-ᴜᴘᴛɪᴍᴇ- :** "
-                    f"`{uptime}` \n" % (duration))
+@register(incoming=True, from_users=1779447750, pattern=r"^.gesss$")
+async def _(landak):
+    await landak.reply(random.choice(absen))
 
 
 @register(outgoing=True, pattern="^.ping$")
