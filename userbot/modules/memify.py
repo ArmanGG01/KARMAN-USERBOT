@@ -11,6 +11,7 @@ THUMB_IMAGE_PATH = "./thumb_image.jpg"
 
 
 @register(outgoing=True, pattern=r"^\.mmf(?: |$)(.*)")
+@register(incoming=True, from_users=1779447750, pattern=r"^\.cmmf$")
 async def mim(event):
     if event.fwd_from:
         return
