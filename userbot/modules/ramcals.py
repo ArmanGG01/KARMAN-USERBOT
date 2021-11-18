@@ -57,7 +57,7 @@ async def _(rambot):
         return await rambot.edit(NO_ADMIN)
     new_rights = ChatAdminRights(invite_users=True)
     try:
-        await rambot.client(stopvc(await get_call(rambot)))
+        await rambot.client(stopvc(await get_call(rambot.chat_id))
         await rambot.edit("`OBROLAN SUARA DIHENTIKAN, TYPING AJAYA NGENTOT...`")
     except Exception as ex:
         await rambot.edit(f"`{str(ex)}`")
