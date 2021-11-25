@@ -579,111 +579,164 @@ with bot:
                 [result], switch_pm="👥 USERBOT PORTAL", switch_pm_param="start"
             )
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(rb"reopen")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"nepo")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            current_page_number = int(lockpage)
+            buttons = paginate_help(current_page_number, plugins, "helpme")
+            await event.edit(
+                file=geezlogo,
+                buttons=buttons,
+                link_preview=False,
+            )
+
+        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        async def inline_handler(event):
+            builder = event.builder
+            result = None
+            query = event.text
+            if event.query.user_id == uid and query.startswith(
+                    "@Geez-Project"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                text = f"**✨ MENU INLINE RAM-UBOT ✨**\n\n⭐ **Owner** [LANDAK](t.me/maafgausahsokap)\n✨ **Jumlah** `{len(plugins)}` Modules"
-                await event.edit(
-                    text,
-                    file=ramlogo,
+                result = builder.photo(
+                    file=geezlogo,
+                    link_preview=False,
+                    text=f"⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n⚡**Owner : {DEFAULTUSER}**\n\n⚡ **Bot Ver :** `5.0`\n⚡ **𝗠odules :** `{len(plugins)}`\n\n⚡ **Dev : VCKYOUUU **".format(
+                        len(dugmeler),
+                    ),
                     buttons=buttons,
+                )
+            elif query.startswith("tb_btn"):
+                result = builder.article(
+                    "Bantuan Dari ⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
+                    text="Daftar Plugins",
+                    buttons=[],
+                    link_preview=True)
+            else:
+                result = builder.article(
+                    " ⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡ ",
+                    text="""**⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡",
+                                "https://github.com/vckyou/Geez-Userbot"),
+                            custom.Button.url(
+                                "OWNER",
+                                "t.me/Vckyouubitch")]],
                     link_preview=False,
                 )
-            else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+            await event.answer([result] if result else None)
 
         @tgbot.on(
-            events.callbackquery.CallbackQuery(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_next\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid: 
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number + 1, dugmeler, "helpme")
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number + 1, dugmeler, "helpme")
+                # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-        async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                openlagi = custom.Button.inline("• OPEN BACK •", data="reopen")
-                await event.edit(
-                    "⭐ **Help Mode Button Ditutup!** ⭐", buttons=openlagi
-                )
-            else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
-            events.callbackquery.CallbackQuery(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"helpme_close\((.+?)\)")
+            )
+        )
+        async def on_plug_in_callback_query_handler(event):
+            if event.query.user_id == uid:  # @Geez-Project
+                # https://t.me/TelethonChat/115200
+                await event.edit(
+                    file=geezlogo,
+                    link_preview=True,
+                    buttons=[
+                        [
+                            Button.url("📢 Channel Support",
+                                       "t.me/GeezProject"),
+                            Button.url("🚨 Group support",
+                                       "t.me/GeezSupportGroup")],
+                        [Button.inline("Open Menu", data="nepo")],
+                        [custom.Button.inline(
+                            "Close", b"close")],
+                    ]
+                )
+
+        @tgbot.on(events.CallbackQuery(data=b"close"))
+        async def close(event):
+            buttons = [
+                (custom.Button.inline("Open Menu", data="nepo"),),
+            ]
+            await event.edit("Menu Ditutup!", buttons=Button.clear())
+
+        @ tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
                 data=re.compile(rb"helpme_prev\((.+?)\)")
             )
         )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                current_page_number = int(event.data_match.group(1).decode("UTF-8"))
-                buttons = paginate_help(current_page_number - 1, dugmeler, "helpme")
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                current_page_number = int(
+                    event.data_match.group(1).decode("UTF-8"))
+                buttons = paginate_help(
+                    current_page_number - 1, dugmeler, "helpme"  # pylint:disable=E0602
+                )
+                # https://t.me/TelethonChat/115200
                 await event.edit(buttons=buttons)
             else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"ub_modul_(.*)")))
+        @tgbot.on(
+            events.callbackquery.CallbackQuery(  # pylint:disable=E0602
+                data=re.compile(rb"ub_modul_(.*)")
+            )
+        )
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
+            if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
                 cmdhel = str(CMD_HELP[modul_name])
-                if len(cmdhel) > 150:
+                if len(cmdhel) > 180:
                     help_string = (
-                        str(CMD_HELP[modul_name]).replace("`", "")[:150]
-                        + "..."
-                        + "\n\nBaca Teks Berikutnya Ketik .help "
+                        str(CMD_HELP[modul_name]).replace(
+                            '`', '')[:180] + "..."
+                        + "\n\nBaca Text Berikutnya Ketik .help "
                         + modul_name
                         + " "
                     )
                 else:
-                    help_string = str(CMD_HELP[modul_name]).replace("`", "")
+                    help_string = str(CMD_HELP[modul_name]).replace('`', '')
 
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} Tidak ada dokumen yang telah ditulis untuk modul.".format(
+                    else "{} No document has been written for module.".format(
                         modul_name
                     )
                 )
             else:
-                reply_pop_up_alert = (
-                    f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME}"
-                )
+                reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."
 
             await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     except BaseException:
         LOGS.info(
-            "Help Mode Inline Bot Mu Tidak aktif. Tidak di aktifkan juga tidak apa-apa. "
-            "Untuk Mengaktifkannya Buat bot di @BotFather Lalu Tambahkan var BOT_TOKEN dan BOT_USERNAME. "
-            "Pergi Ke @BotFather lalu settings bot » Pilih mode inline » Turn On. "
-        )
+            "Mode Inline Bot Mu Nonaktif. "
+            "Untuk Mengaktifkannya, Silahkan Pergi Ke @BotFather Lalu, Settings Bot > Pilih Mode Inline > Turn On. ")
     try:
         bot.loop.run_until_complete(check_botlog_chatid())
     except BaseException:
         LOGS.info(
-            "var BOTLOG_CHATID kamu belum di isi. "
-            "Buatlah grup telegram dan masukan bot @MissRose_bot lalu ketik /id "
-            "Masukan id grup nya di var BOTLOG_CHATID"
-        )
-        sys.exit(1)
+            "BOTLOG_CHATID Environment Variable Isn't a "
+            "Valid Entity. Please Check Your Environment variables/config.env File.")
+        quit(1)
