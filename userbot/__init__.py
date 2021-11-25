@@ -615,8 +615,8 @@ with bot:
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
         async def on_plug_in_callback_query_handler(event):
-            if event.query.user_id == uid:
-                openlagi = custom.Button.inline("• Re-Open Menu •", data="reopen")
+            if event.query.user_id == uid and query.startswith("@Ram_ubot")
+                openlagi = custom.Button.inline("• OPEN BACK •", data="reopen")
                 await event.edit(
                     "⭐ **Help Mode Button Ditutup!** ⭐", buttons=openlagi
                 )
