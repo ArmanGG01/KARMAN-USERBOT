@@ -548,7 +548,6 @@ with bot:
                     title="Repository",
                     description="Repository ✨RAM-UBOT✨",
                     url="https://t.me/geezeupportgroup",
-                    thumb=InputWebDocument(HELP_LOGO, 0, "image/jpeg", []),
                     text="**⭐RAM-UBOT⭐**\n➖➖➖➖➖➖➖➖➖➖\n✨ **Owner :** [LANDAK](https://t.me/maafgausahsokap)\n✨ **Support :** @geezsupportgroup\n✨ **Repository :** [⭐RAM-UBOT⭐](https://github.com/ramadhani892/RAM-UBOT)\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
