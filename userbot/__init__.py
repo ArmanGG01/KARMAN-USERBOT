@@ -586,9 +586,9 @@ with bot:
         )
         async def on_plug_in_callback_query_handler(event):
             current_page_number = int(lockpage)
-            buttons = paginate_help(current_page_number, plugins, "helpme")
+            buttons = paginate_help(current_page_number, dugmeler, "helpme")
             await event.edit(
-                file=geezlogo,
+                file=ramlogo,
                 buttons=buttons,
                 link_preview=False,
             )
@@ -601,7 +601,7 @@ with bot:
             if event.query.user_id == uid and query.startswith("@Ram_ubot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=geezlogo,
+                    file=ramlogo,
                     link_preview=False,
                     text=f"⚡𝗚𝗲𝗲𝘇-𝙐𝙎𝙀𝙍𝘽𝙊𝙏⚡\n\n⚡**Owner : {DEFAULTUSER}**\n\n⚡ **Bot Ver :** `5.0`\n⚡ **𝗠odules :** `{len(plugins)}`\n\n⚡ **Dev : VCKYOUUU **".format(
                         len(dugmeler),
