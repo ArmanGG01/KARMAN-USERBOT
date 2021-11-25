@@ -564,7 +564,6 @@ with bot:
                     title="⭐ RAM-UBOT ⭐",
                     description="RAM-UBOT | Telethon",
                     url="https://t.me/geezsupportgroup",
-                    thumb=InputWebDocument(HELP_LOGO, 0, "image/jpeg", []),
                     text=f"**RAM-UBOT**\n➖➖➖➖➖➖➖➖➖➖\n✨ **OWNER:** [LANDAK](t.me/maafgausahsokap)\n✨ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:** @userbotchannel\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
