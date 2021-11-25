@@ -583,7 +583,7 @@ with bot:
         async def on_plug_in_callback_query_handler(event):
             if event.query.user_id == uid and query.startswith("@Ram_ubot"):
                 current_page_number = int(looters)
-                buttons = paginate_help(current_page_number, dugmeler, "helpme")
+                buttons = paginate_help(0, dugmeler, "helpme")
                 text = f"**✨ MENU INLINE RAM-UBOT ✨**\n\n⭐ **Owner** [LANDAK](t.me/maafgausahsokap)\n✨ **Jumlah** `{len(plugins)}` Modules"
                 await event.edit(
                     text,
