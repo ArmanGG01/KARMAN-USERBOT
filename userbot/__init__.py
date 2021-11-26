@@ -603,7 +603,7 @@ with bot:
             if event.query.user_id == uid and query.startswith("@Ram_ubot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
-                    file=geezlogo,
+                    file=ramlogo,
                     link_preview=False,
                     text=f"⭐RAM-UBOT⭐\n\n✨**Owner : [LANDAK](t.me/maafgausahsokap)**\n\n✨ **Bot Ver :** `8.0`\n✨ **𝗠odules :** `{len(dugmeler)}`",
                     buttons=buttons,
