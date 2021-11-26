@@ -662,7 +662,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("📢 Channel Support",
-                                       "t.me/GeezProject"),
+                                       "t.me/userbotchannel"),
                             Button.url("🚨 Group support",
                                        "t.me/GeezSupportGroup")],
                         [Button.inline("Open Menu", data="nepo")],
@@ -673,8 +673,8 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons = [
-                (custom.Button.inline("Open Menu", data="nepo"),),
+            buttons =[
+                [custom.Button.inline("Open Menu", data="nepo")],
             ]
             await event.edit("Menu Ditutup!", buttons=buttons.clear())
 
