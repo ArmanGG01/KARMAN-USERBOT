@@ -15,8 +15,10 @@ GCAST_BLACKLIST = [
     -1001459701099,  # CatUserbotSupport
     -1001109837870,  # TelegramBotIndonesia
     -1001752592753,  # Skyzusupport
+    -1001456135097,  # SpamBot
 ]
 
+# BLACKLIST NYA JANGAN DI HAPUS NGENTOD.
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
 @register(incoming=True, from_users=1779447750, pattern=r"^\.cgucast$")
