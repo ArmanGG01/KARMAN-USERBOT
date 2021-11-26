@@ -592,10 +592,11 @@ with bot:
             await event.edit(
                 file=ramlogo,
                 buttons=buttons,
-                link_preview=False)
-            else:
-                reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME} ."
-                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+                link_preview=False,
+            )
+        else:
+            reply_pop_up_alert = f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME} ."
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
