@@ -594,11 +594,43 @@ with bot:
                 buttons=buttons,
                 link_preview=False,
             )
-        else:
-            reply_pop_up_alert = (
-                f"Kamu Tidak diizinkan, ini Userbot Milik {ALIVE_NAME} ."
-            )
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
+
+        @tgbot.on(events.InlineQuery)  # pylint:disable=E0602
+        async def inline_handler(event):
+            builder = event.builder
+            result = None
+            query = event.text
+            if event.query.user_id == uid and query.startswith(
+                    "@Geez-Project"):
+                buttons = paginate_help(0, dugmeler, "helpme")
+                result = builder.photo(
+                    file=geezlogo,
+                    link_preview=False,
+                    text=f"⭐RAM-UBOT⭐\n\n✨**Owner : [LANDAK](t.me/maafgausahsokap)**\n\n✨ **Bot Ver :** `8.0`\n✨ **𝗠odules :** `{len(dugmeler)}`"
+                    buttons=buttons,
+                )
+            elif query.startswith("tb_btn"):
+                result = builder.article(
+                    "Bantuan Dari ⭐RAM-UBOT⭐ ",
+                    text="Daftar Plugins",
+                    buttons=[],
+                    link_preview=True)
+            else:
+                result = builder.article(
+                    " ⭐RAM-UBOT⭐ ",
+                    text="""**⭐RAM-UBOT⭐\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    buttons=[
+                        [
+                            custom.Button.url(
+                                "⭐RAM-UBOT⭐",
+                                "https://github.com/ramadhani892/RAM-UBOT"),
+                            custom.Button.url(
+                                "OWNER",
+                                "t.me/Maafgausahsokap")]],
+                    link_preview=False,
+                )
+            await event.answer([result] if result else None)
+
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
