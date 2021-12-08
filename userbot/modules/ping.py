@@ -17,19 +17,19 @@ from userbot import ALIVE_NAME, CMD_HELP, StartTime, REPO_NAME
 from userbot.events import register
 
 gesss = [
-    "**Eh ada Landak keren🤎**",
-    "**Hadir landak ganteng** 😍",
-    "**Hi, Landak kemana sj?** 🤗",
-    "**Hadir kak** 😉",
-    "**Hadir bang Landak** 😁",
-    "**Hadir Landak maap telat** 🥺",
-    "**Saya slalu ada buat bang landak🥵**",
-    "**Bang landak, Aku ange😋😋**",
-    "**Jangan kemana mana lagi ya bang🥰**",
-    "**Pas banget bang, aku lagi kangen🥺**",
-    "**Bang landak on juga akhirnya**😍",
-    "**Mau pap dari aku ndak** 😋",
-    "**Salam hormat buat bang landak** 🤗",
+    "Eh ada Landak keren🤎",
+    "Hadir landak ganteng 😍",
+    "Hi, Landak kemana sj? 🤗",
+    "Hadir kak 😉",
+    "Hadir bang Landak 😁",
+    "Hadir Landak maap telat 🥺",
+    "Saya slalu ada buat bang landak🥵",
+    "Bang landak, Aku ange😋😋",
+    "Jangan kemana mana lagi ya bang🥰",
+    "Pas banget bang, aku lagi kangen🥺",
+    "Bang landak on juga akhirnya😍",
+    "Mau pap dari aku ndak 😋",
+    "Salam hormat buat bang landak 🤗",
 ]
 
 
