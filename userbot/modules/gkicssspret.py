@@ -9,7 +9,7 @@ from telethon.tl.types import (
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 
 from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME, CMD_HELP, DEVS
 
 
 async def get_user_from_event(event):
@@ -89,8 +89,8 @@ async def gspide(rk):
     except BaseException:
         return await rkp.edit(f"`{ALIVE_NAME}`, **Kesalahan! Pengguna tidak dikenal.**")
     if user:
-        if user.id == 1779447750:
-            return await rkp.edit(f"`ETT NGENTOT, LU GABISA GKICK DIA TOLOL,RAMA PEMBUAT GUA..!!` ")
+        if user.id in DEVS:
+            return await rkp.edit(f"`ETT NGENTOT, LU GABISA GKICK DIA TOLOL,DIA DEVELOPER GUA..!!` ")
         try:
             await rk.client(BlockRequest(user))
             await rk.client(UnblockRequest(user))
