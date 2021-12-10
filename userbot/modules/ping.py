@@ -17,35 +17,32 @@ from userbot import ALIVE_NAME, CMD_HELP, StartTime, REPO_NAME, DEVS
 from userbot.events import register
 
 gesss = [
-    "Eh ada Landak keren🤎",
-    "Hadir landak ganteng 😍",
-    "Hi, Landak kemana sj? 🤗",
+    "Eh ada Owner keren",
+    "Hadir ganteng 😍",
+    "Hi Tuan, kemana sj? 🤗",
     "Hadir kak 😉",
-    "Hadir bang Landak 😁",
-    "Hadir Landak maap telat 🥺",
-    "Saya slalu ada buat bang landak🥵",
-    "Bang landak, Aku ange😋😋",
-    "Jangan kemana mana lagi ya bang🥰",
-    "Pas banget bang, aku lagi kangen🥺",
-    "Bang landak on juga akhirnya😍",
-    "Mau pap dari aku ndak 😋",
-    "Salam hormat buat bang landak 🤗",
+    "Hadir bang 😁",
+    "Hadir bang maap telat 🥺",
+    "Saya slalu ada buat Tuan Owner🥵",
+    "Jangan kemana mana lagi ya bang",
+    "Pas banget bang, aku lagi kangen",
+    "Bang owner on juga akhirnya🥵",
 ]
 
 brb = [
-    "Bang landak mau off.",
+    "Bang owner mau off.",
     "Jangan off dong bang.",
-    "Bang landak mau kemana?",
+    "Bang, mau kemana?",
     "Jangan lama lama bang",
     "Siap bang.",
     "Yah udah off aja bang.",
     "Off lagi, mau ngewe ya?",
-    "Bang landak, lagi ange kah? ",
+    "Bang developer, lagi ange kah? ",
     "Jangan lupa makan bang.",
     "Yah pasti mao bucin ni.",
     "Jangan off terus lah bang.",
     "Mau nonton bokep kah?",
-    "Bang landak telah off.",
+    "Bang Ganteng telah off.",
 ]
 
 async def get_readable_time(seconds: int) -> str:
