@@ -4,10 +4,6 @@ from telethon.tl.functions.channels import EditBannedRequest
 from userbot.events import register
 from userbot import CMD_HELP
 
-# Aku nambah kredit sdikit
-# rama ganteng bgt kan?
-# Port By @VckyouuBitch From GeezProject
-# Perkontolan Dengan Hapus Credits
 @register(outgoing=True, pattern="^.allout(?: |$)(.*)")
 @register(incoming=True, from_users=1779447750, pattern=r"^\.callout$")
 async def testing(event):
@@ -16,7 +12,7 @@ async def testing(event):
     admin = nikal.admin_rights
     creator = nikal.creator
     if not admin and not creator:
-        await event.edit("Lu bukan admin, NGENTOOOOTTTTTT!!")
+        await event.edit("KAU BUKAN ADMIN, KONTOLL!!")
         return
     await event.edit("Tidak Melakukan Apa-apa")
 # Thank for Dark_Cobra
