@@ -31,9 +31,9 @@ async def gcast(event):
     elif event.is_reply:
         msg = await event.get_reply_message()
     else:
-        await event.edit("**Pesannya Mana ngentot??**")
+        await event.edit("** PESAN NYA MANA KONTOL??**")
         return
-    kk = await event.edit("`Lagi Gua kirim tot, Limit jangan salahin Gua anjing!!!!!`")
+    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM!!!!!`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -48,7 +48,7 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{er}` **Grup**"
+        f"**BERHASIL MENGIRIM PESAN KE** `{done}` **Grup, GAGAL MENGIRIM PESAN KE ** `{er}` **Grup**"
     )
 
 
@@ -57,10 +57,10 @@ async def gcast(event):
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
-        return await event.edit("`Pesan nya Mana Ngentot?`")
+        return await event.edit("`PESAN NYA MANA KONTOLLL?`")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`Lagi gua kirim tot, Limit jangan salahin gua ya bangsat!!!...`")
+    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM!!!...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
