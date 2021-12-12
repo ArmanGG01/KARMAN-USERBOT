@@ -1,7 +1,8 @@
 # Using Python Slim-Buster
-FROM xluxz/ramubotspam:buster
+FROM xluxz/geezproject:buster
 # KARMAN-USERBOT
 # GLEDEK-USERBOT
+#
 #YA UDH IYA PEPEK
 
 RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /root/userbot
