@@ -1,7 +1,7 @@
 {
   "name": "KARMAN-USERBOT",
   "description": "[KARMAN-USERBOT] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/be5a4a2cb6aac37ca7945.jpg",
+  "logo": "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -24,7 +24,7 @@
     },
     "ALIVE_LOGO": {
       "description": "BUAT ALIVE LOGO MU SENDIRI.",
-      "value": "https://telegra.ph/file/1795eb362801125520bff.jpg",
+      "value": "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg",
       "required": true
      },
      "STRING_SESSION": {
