@@ -1,5 +1,5 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
-# RAM-UBOT MINTA
+# KARMAN-USERBOT MINTA
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License
 """ Userbot module containing commands related to the \
@@ -71,12 +71,12 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
-async def _(landak):
+async def _(KARMAN):
     await landak.reply(random.choice(gesss))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^brb$")
-async def _(landak):
+async def _(KARMAN):
     await landak.reply(random.choice(brb))
 
 
