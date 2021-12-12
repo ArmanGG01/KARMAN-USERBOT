@@ -11,7 +11,7 @@ RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/ArmanGG01/KARMAN-USERBOT/KARMAN-USERBOT/requirements.txt
+RUN pip3 install -r https://raw.githubusercontent.com/ramadhani892/RAM-UBOT/RAM-UBOT/requirements.txt
 
 EXPOSE 80 443
 
