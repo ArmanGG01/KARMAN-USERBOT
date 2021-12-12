@@ -1,5 +1,5 @@
 # Using Python Slim-Buster
-FROM xluxz/Jakana:buster
+FROM xluxz/ramubotspam:buster
 # KARMAN-USERBOT
 # GLEDEK-USERBOT
 #YA UDH IYA PEPEK
