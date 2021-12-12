@@ -1,9 +1,7 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-# Credits @keselekpermen69 / @Ultroid / @RAM-UBOT
-# Ported @MaafGausahSokap / JANGAN DI APUS BABI
-"""Userbot initialization."""
+
 
 import os
 import time
@@ -86,7 +84,7 @@ BOTLOG = sb(os.environ.get("BOTLOG", "True"))
 LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 
 # Bleep Blop, this is a bot ;)
-PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "False"))
+PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
 
 # Send .chatid in any group with all your administration bots (added)
 G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
@@ -108,9 +106,9 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/ramadhani892/RAM-UBOT")
+    "https://github.com/ArmanGG01/KARMAN-USERBOT")
 UPSTREAM_REPO_BRANCH = os.environ.get(
-    "UPSTREAM_REPO_BRANCH", "RAM-UBOT")
+    "UPSTREAM_REPO_BRANCH", "KARMAN-USERBOT")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
