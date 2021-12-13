@@ -18,7 +18,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 
 @register(outgoing=True, pattern="^.help(?: |$)(.*)")
-async def help(rambot):
+async def help(KARMANBOT):
     """ For .help command,"""
     args = rambot.pattern_match.group(1).lower()
     if args:
