@@ -1,8 +1,8 @@
-# Ported By @VckyouuBitch 
-# Forked By @MaafGausahSokap
-# Copyright © Team RAM - UBOT
+# Ported By @hfrns23
+# Forked By @PakkPoll
+# Copyright © Team 𝙆𝘼𝙍𝙈𝘼𝙉 - 𝙐𝙎𝙀𝙍𝘽𝙊𝙏
 # Hush Hush Sana ajg gausah kesini
-# Si ngentot, Kalo ngefork Jangan hapus kredit babi!!
+# Si ngentot, ⚠️ 𝙹𝙰𝙽𝙶𝙰𝙽 𝙳𝙸 𝙷𝙰𝙿𝚄𝚂 ⚠️
 
 from telethon.tl import functions
 from telethon.tl.functions.messages import GetFullChatRequest
