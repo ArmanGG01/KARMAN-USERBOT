@@ -72,12 +72,12 @@ async def get_readable_time(seconds: int) -> str:
 
 @register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
 async def _(KARMAN):
-    await landak.reply(random.choice(gesss))
+    await Karman.reply(random.choice(gesss))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^brb$")
 async def _(KARMAN):
-    await landak.reply(random.choice(brb))
+    await Karman.reply(random.choice(brb))
 
 
 @register(outgoing=True, pattern="^.ping$")
@@ -86,11 +86,11 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("Assalamualaikum..")
+    await pong.edit("ASSALAMUALAIKUM KONTOLLL..")
     await asyncio.sleep(1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**KONTOOLLLL!!**\n**KEKUATAN KONTOL** : `%sms`\n**DURASI KONTOL** : `{uptime}🕛`" % (duration))
+    await pong.edit(f"**KONTOOLLLL!!**\n**KEBANYAKAN PEJU** : `%sms`\n**DURASI KONTOL DAN PEPEK** : `{uptime}🕛`" % (duration))
 
 
 @register(outgoing=True, pattern="^Ping$")
@@ -113,7 +113,7 @@ async def redis(pong):
 @register(outgoing=True, pattern="^Speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...✨`")
+    await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...💀`")
     test = Speedtest()
 
     test.get_best_server()
