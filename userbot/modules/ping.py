@@ -16,7 +16,7 @@ from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, StartTime, REPO_NAME, DEVS
 from userbot.events import register
 
-gesss = [
+guy = [
     "Eh ada Owner keren",
     "Hadir ganteng 😍",
     "Hi Tuan, kemana sj? 🤗",
@@ -156,7 +156,7 @@ async def pingme(pong):
     start = datetime.now()
     await pong.edit("PONG")
     await asyncio.sleep(1)
-    await pong.edit("✨")
+    await pong.edit("🐷")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 9000
