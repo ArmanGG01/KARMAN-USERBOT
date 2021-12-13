@@ -26,7 +26,7 @@ async def get_user_from_event(event):
         if user.isnumeric():
             user = int(user)
         if not user:
-            await event.edit(f"`{ALIVE_NAME}`: **Kasih Gua nama pengguna,atau id nya tot!!**")
+            await event.edit(f"`{ALIVE_NAME}`: **𝙺𝙰𝚂𝙸𝙷 𝙶𝚄𝙰 𝙽𝙰𝙼𝙰 𝙿𝙴𝙽𝙶𝙶𝚄𝙽𝙰 𝙽𝚈𝙰 𝙺𝙾𝙽𝚃𝙾𝙻𝙻!!**")
             return
         if event.message.entities is not None:
             probable_user_mention_entity = event.message.entities[0]
@@ -67,7 +67,7 @@ async def gspide(rk):
     if not sender.id == me.id:
         rkp = await lazy.reply("`Proses global kick jamet tolol!!!`")
     else:
-        rkp = await lazy.edit("`Proses Global Kick si ngentot...!`")
+        rkp = await lazy.edit("`Proses Global KICK SI KONTOLL...!`")
     me = await rk.client.get_me()
     await rkp.edit(f"`{ALIVE_NAME}:` **Melakukan Aksi Global Kick..**")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
