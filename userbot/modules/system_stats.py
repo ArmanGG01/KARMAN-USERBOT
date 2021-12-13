@@ -269,7 +269,7 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"**╭✠╼━━━━━━❖━━━━━━━✠╮**\n"
-        f"       **♕ ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️  ♕** \n"
+        f"  **♕ ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️  ♕** \n"
         f"**╰✠╼━━━━━━❖━━━━━━━✠╯**\n"
         f"❃ **Tuan**             ➥ `{DEFAULTUSER}` \n"
         f"❃ **Username**    ➥ `@{user.username}` \n"
@@ -310,7 +310,7 @@ async def amireallyalive(alive):
     await asyncio.sleep(3)
     output = (
         f"**✠╼━━━━━━❖━━━━━━━✠ ** \n"
-        f"**          ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️** \n"
+        f"**   ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️** \n"
         f"**✠╼━━━━━━❖━━━━━━━✠** \n"
         f"╭✠╼━━━━━━❖━━━━━━━✠╮ \n"
         f"┣|• `🤴 Majikan  :`{DEFAULTUSER} \n"
@@ -319,7 +319,7 @@ async def amireallyalive(alive):
         f"┣|• `🐉 Python   :`Ver {python_version()} \n"
         f"╰✠╼━━━━━━❖━━━━━━━✠╯ \n"
         f"╭✠╼━━━━━━❖━━━━━━━✠╮ \n"
-        f"┣|• `Branch      :`KARMAN-USERBOT \n"
+        f"┣|• `Branch      :`𝙆𝘼𝙍𝙈𝘼𝙉-𝙐𝙎𝙀𝙍𝘽𝙊𝙏 \n"
         f"┣|• `Bot Ver     :`7.0 \n"
         f"┣|• `Modules     :`{len(modules)} Modules \n"
         f"╰✠╼━━━━━━❖━━━━━━━✠╯ \n"
