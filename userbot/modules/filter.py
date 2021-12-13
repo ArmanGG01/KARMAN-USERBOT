@@ -133,7 +133,7 @@ async def filters_active(event):
     filters = get_filters(event.chat_id)
     for filt in filters:
         if transact == "`Tidak Ada Filter Apapun Disini.`":
-            transact = "**,✨ Daftar Filter Yang Aktif Disini:**\n"
+            transact = "**,📌 Daftar Filter Yang Aktif Disini:**\n"
             transact += " ➥ `{}`\n".format(filt.keyword)
         else:
             transact += " ➥ `{}`\n".format(filt.keyword)
@@ -144,7 +144,7 @@ async def filters_active(event):
 CMD_HELP.update({
     "filter":
     "`Fltrs`\
-    \nUsage: Melihat filter RAM UBOT yang aktif di obrolan.\
+    \nUsage: Melihat filter KARMAN USERBOT yang aktif di obrolan.\
     \n\n`Fltr` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
     \nUsage: Membuat filter di obrolan.\
     \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
