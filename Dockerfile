@@ -5,13 +5,13 @@ FROM xluxz/geezproject:buster
 #
 #YA UDH IYA PEPEK
 
-RUN git clone -b RAM-UBOT https://github.com/ArmanGG01/KARMAN-USERBOT /root/userbot
+RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /root/userbot
 RUN mkdir /root/userbot/.bin
 RUN pip install --upgrade pip setuptools
 WORKDIR /root/userbot
 
 #Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/ramadhani892/RAM-UBOT/RAM-UBOT/requirements.txt
+RUN pip3 install -r https://raw.githubusercontent.com/ArmanGG01/KARMAN-USERBOT/KARMAN-USERBOT/requirements.txt
 
 EXPOSE 80 443
 
