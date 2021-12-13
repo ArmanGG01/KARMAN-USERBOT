@@ -232,7 +232,7 @@ EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🐷"
 
 # Default .alive Group
 GROUP_LINK = os.environ.get(
-    "GROUP_LINK") or "t.me/ootspambott"
+    "GROUP_LINK") or "t.me/obrolansuar"
 
 # Default .repo Bot
 OWNER_BOT = os.environ.get(
@@ -241,7 +241,7 @@ OWNER_BOT = os.environ.get(
 
 # Last.fm Module
 BIO_PREFIX = os.environ.get("BIO_PREFIX", None)
-DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "💀KARMAN-USERBOT"
+DEFAULT_BIO = os.environ.get("DEFAULT_BIO") or "💀 KARMAN-USERBOT 💀"
 
 LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
