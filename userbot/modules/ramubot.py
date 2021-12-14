@@ -28,46 +28,46 @@ async def typewriter(typew):
                      "\n**Permisi Aku mau nimbrung Kk..**")
 
 
-@register(outgoing=True, pattern='^.geez(?: |$)(.*)')
+@register(outgoing=True, pattern='^.jakana(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Vicky Peler☑️**")
-    await typew.edit("**Vicky Peler✅**")
+    await typew.edit("**Gledek Kontol☑️**")
+    await typew.edit("**Gledek Kontol✅**")
     sleep(1)
-    await typew.edit("**Toni Gilaa☑️**")
-    await typew.edit("**Toni Gilaa✅**")
+    await typew.edit("**Dorgie Gilaa☑️**")
+    await typew.edit("**Dorgie Gilaa✅**")
     sleep(2)
-    await typew.edit("**Karina Depresi☑️**")
-    await typew.edit("**Karina Depresi✅**")
+    await typew.edit("**Lele Depresi☑️**")
+    await typew.edit("**Lele Depresi✅**")
     sleep(2)
-    await typew.edit("**Yunus Gajelas☑️**")
-    await typew.edit("**Yunus Gajelas✅**")
+    await typew.edit("**Kanu TBC☑️**")
+    await typew.edit("**Kanu TBC✅**")
     sleep(2)
-    await typew.edit("**Adel GJM!☑️**")
-    await typew.edit("**Adel GJM!✅**")
+    await typew.edit("**Ratih GJM!☑️**")
+    await typew.edit("**Ratih GJM!✅**")
     sleep(2)
-    await typew.edit("**Jia GJB!☑️**")
-    await typew.edit("**Jia GJB!✅**")
+    await typew.edit("**Cimin Tytyd Op!☑️**")
+    await typew.edit("**Cimin Tytyd Op!✅**")
     sleep(2)
-    await typew.edit("**Imeh,MengRibet☑️**")
-    await typew.edit("**Imeh,MengRibet✅**")
+    await typew.edit("**Arman,Ganteng☑️**")
+    await typew.edit("**Arman,Ganteng✅**")
     sleep(2)
-    await typew.edit("**Jeje,Mengintil☑️**")
-    await typew.edit("**Jeje,Mengintil✅**")
+    await typew.edit("**Cap ,Mengintil☑️**")
+    await typew.edit("**Cap,Mengintil✅**")
     sleep(3)
-    await typew.edit("**CUMA RAMA YANG BENER!**")
+    await typew.edit("**CUMAN ARMAN YANG PALING BETUL!**")
 
 
 @register(outgoing=True, pattern='^.lahk(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("`Lahk, Lo tolol?`")
+    await typew.edit("`Lahk, Lo KONTOL?`")
     sleep(1)
-    await typew.edit("`Apa dongok?`")
+    await typew.edit("`Apa Ga Suka?`")
     sleep(1)
-    await typew.edit("`Gausah sok keras`")
+    await typew.edit("`Yahahaha Kasian Bocah Autis`")
     sleep(1)
-    await typew.edit("`Gua ga ketrigger sama bocah baru nyemplung!`")
+    await typew.edit("`Ups Sorry Ga sengaja 😂!`")
 
 
 @register(outgoing=True, pattern='^.wah(?: |$)(.*)')
@@ -93,6 +93,6 @@ CMD_HELP.update({
     \nUsage: menampilkan alive bot.\
     \n\n`.sadboy`\
     \nUsage: hiks\
-    \n\n`.punten` ; `.geez`\
+    \n\n`.punten` ; `.jakana`\
     \nUsage: misi."
 })
