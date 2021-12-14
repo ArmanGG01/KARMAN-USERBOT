@@ -1,10 +1,9 @@
 # Thanks Full To Team Ultroid
-# Ported By Vcky @VckyouuBitch + @MaafGausahSokap
-# Copyright (c) 2021 Geez - Projects
-# Geez - Projects https://github.com/Vckyou/Geez-UserBot
-# RAM - UBOT https://github.com/ramadhani892/RAM-UBOT
+# Ported By @PakkPoll
+# Copyright (c) 2021 
+# RAM - UBOT https://github.com/ArmanGG01/KARMAN-USERBOT
 # Ini Belum Ke Fix Ya Bg :')
-# Ambil aja gapapa tp Gaguna kaya hidup lu Woakkakaka
+# Ambil aja gapapa tp Gaguna
 
 
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
