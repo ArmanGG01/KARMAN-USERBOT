@@ -283,7 +283,7 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or "```║UDAH AKTIF KONTOLLLL!!💀KARMAN-USERBOT💀║\n\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\nJika Tidak Bisa Di .ping\nSilahkan Anda\nCek viewlogs\nPada heroku Anda.\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰```"
+    "BOTLOG_MSG") or "```║💀𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💀 UDAH AKTIF KONTOLLLL!!║\n\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\nJika Tidak Bisa Di .ping\nSilahkan Anda\nCek viewlogs\nPada heroku Anda.\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰```"
 
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
@@ -514,9 +514,9 @@ with bot:
             text = (
                 f"**Hey**, __I am using__  **💀 KARMAN-USERBOT 💀** \n\n"
                 f"       __Thanks For Using me__\n\n"
-                f"⚠️ **Group Support :** [JAKANA](t.me/masukksiniJKN)\n"
+                f"🗿 **Group Support :** [JAKANA](t.me/masukksiniJKN)\n"
                 f"⚠️ **Owner Repo :** [ARMAN](t.me/PakkPoll)\n"
-                f"⚠️ **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n"
+                f"📌 **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n"
             )
             await tgbot.send_file(
                 event.chat_id,
@@ -545,7 +545,7 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@Ram_ubot"):
+            if event.query.user_id == uid and query.startswith("@KarmanNewuser_bot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=ramlogo,
@@ -608,7 +608,7 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@karmannnnn_bot"):
+            if event.query.user_id == uid and query.startswith("@KarmanNewuser_bot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=ramlogo,
