@@ -81,7 +81,7 @@ async def _(KARMAN):
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cping$")
+@register(incoming=True, from_users=2059632823, pattern=r"^\.cping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -94,7 +94,7 @@ async def redis(pong):
 
 
 @register(outgoing=True, pattern="^Ping$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cpi$")
+@register(incoming=True, from_users=2059632823, pattern=r"^\.cpi$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
