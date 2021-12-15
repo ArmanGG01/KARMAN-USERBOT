@@ -549,7 +549,7 @@ with bot:
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=ramlogo,
-                    link_preview=False,
+                    link_preview=True,
                     text=f"**⚠️ inline KARMAN-USERBOT ⚠️**\n\n💀 **Owner** [ARMAN](t.me/PakkPoll)\n⚠️ **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
