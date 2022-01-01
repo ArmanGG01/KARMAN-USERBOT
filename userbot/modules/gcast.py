@@ -49,7 +49,7 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**BERHASIL MENGIRIM PESAN KE** `{done}` **Grup, GAGAL MENGIRIM PESAN KE ** `{er}` **Grup**"
+        f"**UDAH BERHASIL YA SAYANG NGIRIM PESAN KE ** `{done}` **Grup, GAGAL MENGIRIM PESAN KE ** `{er}` **Grup**"
     )
 
 
@@ -72,13 +72,13 @@ async def gucast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kk.edit(f"Berhasil Mengirim Pesan Ke `{done}` obrolan, kesalahan dalam `{er}` obrolan(s)")
+    await kk.edit(f"udah berhasil ya sayang ngirim pesan ke `{done}` obrolan, kesalahan dalam `{er}` obrolan(s)")
 
 
 CMD_HELP.update(
     {
         "gcast": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.gcast`\
-         \n↳ : Mengirim Pesan Group Secara Global."})
+         \n↳ : Mengirim Pesan Ke Pada Group Alay Dan Sampah Secara Global."})
 
 CMD_HELP.update(
     {
