@@ -1,4 +1,4 @@
-<a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN-USERBOT.git"><img src="https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
+<a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN-UBOT.git"><img src="https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
 
 <p align="center">
   <a href="https://github.com/ArmanGG01/KARMAN-USERBOT/fork">
