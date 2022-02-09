@@ -71,17 +71,17 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^guy$")
-async def _(KARMAN):
-    await Karman.reply(random.choice(guy))
+async def _(ARMAN):
+    await Arman.reply(random.choice(guy))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^brb$")
-async def _(KARMAN):
-    await Karman.reply(random.choice(brb))
+async def _(ARMAN):
+    await Arman.reply(random.choice(brb))
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=2059632823, pattern=r"^\.cping$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cping$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -94,7 +94,7 @@ async def redis(pong):
 
 
 @register(outgoing=True, pattern="^Ping$")
-@register(incoming=True, from_users=2059632823, pattern=r"^\.cpi$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cpi$")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
