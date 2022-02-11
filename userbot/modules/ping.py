@@ -16,7 +16,7 @@ from speedtest import Speedtest
 from userbot import ALIVE_NAME, CMD_HELP, StartTime, REPO_NAME, DEVS
 from userbot.events import register
 
-guy = [
+gesss = [
     "Eh ada Owner keren",
     "Hadir ganteng 😍",
     "Hi Tuan, kemana sj? 🤗",
@@ -70,9 +70,9 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^guy$")
+@register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
 async def _(ARMAN):
-    await Arman.reply(random.choice(guy))
+    await Arman.reply(random.choice(gesss))
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^brb$")
@@ -86,11 +86,11 @@ async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("ASSALAMUALAIKUM KONTOLLL..")
+    await pong.edit("𝙰𝚂𝚂𝙰𝙻𝙰𝙼𝚄'𝙰𝙻𝙰𝙸𝙺𝚄𝙼 𝙺𝙾𝙽𝚃𝙾𝙻")
     await asyncio.sleep(1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**KONTOOLLLL!!**\n**KEBANYAKAN PEJU** : `%sms`\n**DURASI KONTOL DAN PEPEK** : `{uptime}🕛`" % (duration))
+    await pong.edit(f"**𝙺𝙾𝙽𝚃𝙾𝙻**\n**𝙺𝙴𝙺𝚄𝙰𝚃𝙰𝙽 𝙺𝙾𝙽𝚃𝙾𝙻** : `%sms`\n**𝙳𝚄𝚁𝙰𝚂𝙸 𝙺𝙾𝙽𝚃𝙾𝙻 𝙳𝙰𝙽 𝙿𝙴𝙿𝙴𝙺** : `{uptime}🕛`" % (duration))
 
 
 @register(outgoing=True, pattern="^Ping$")
