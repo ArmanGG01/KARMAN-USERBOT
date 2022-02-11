@@ -1,7 +1,7 @@
 # Thanks Full To Team Ultroid
 # Ported By @PakkPoll
 # Copyright (c) 2021 
-# RAM - UBOT https://github.com/ArmanGG01/KARMAN-USERBOT
+# KARMAN - UBOT https://github.com/ArmanGG01/KARMAN-USERBOT
 # Ini Belum Ke Fix Ya Bg :')
 # Ambil aja gapapa tp Gaguna
 
@@ -16,7 +16,7 @@ from telethon.tl.types import ChatAdminRights
 from userbot import CMD_HELP
 from userbot.events import register
 
-NO_ADMIN = "`LU BUKAN ADMIN NGENTOT!!`"
+NO_ADMIN = "`LU BUKAN ADMIN NGENTOT`"
 
 
 async def get_call(event):
