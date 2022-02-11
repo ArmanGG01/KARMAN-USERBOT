@@ -70,12 +70,12 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.gesss$")
 async def _(ARMAN):
     await Arman.reply(random.choice(gesss))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^brb$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.brb$")
 async def _(ARMAN):
     await Arman.reply(random.choice(brb))
 
