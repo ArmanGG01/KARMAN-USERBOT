@@ -25,7 +25,7 @@ async def typewriter(typew):
                      "`\n┻┳|￣  )`"
                      "`\n┳ﾐ(￣ ／`"
                      "`\n┻┳T￣|`"
-                     "\n**Permisi Aku mau nimbrung Kk..**")
+                     "\n**Permisi Aku mau nimbrung Kk**")
 
 
 @register(outgoing=True, pattern='^.jakana(?: |$)(.*)')
@@ -37,25 +37,25 @@ async def typewriter(typew):
     await typew.edit("**Dorgie Gilaa☑️**")
     await typew.edit("**Dorgie Gilaa✅**")
     sleep(2)
-    await typew.edit("**Lele Depresi☑️**")
-    await typew.edit("**Lele Depresi✅**")
+    await typew.edit("**Petir Memek☑️**")
+    await typew.edit("**Memek Memek✅**")
     sleep(2)
     await typew.edit("**Kanu TBC☑️**")
     await typew.edit("**Kanu TBC✅**")
     sleep(2)
-    await typew.edit("**Ratih GJM!☑️**")
-    await typew.edit("**Ratih GJM!✅**")
+    await typew.edit("**Nep ODGJ☑️**")
+    await typew.edit("**Nep ODGJ✅**")
     sleep(2)
     await typew.edit("**Cimin Tytyd Op!☑️**")
     await typew.edit("**Cimin Tytyd Op!✅**")
     sleep(2)
-    await typew.edit("**Arman,Ganteng☑️**")
-    await typew.edit("**Arman,Ganteng✅**")
+    await typew.edit("**Cap Ngentod☑️**")
+    await typew.edit("**Cap Ngentod✅**")
     sleep(2)
-    await typew.edit("**Cap ,Mengintil☑️**")
-    await typew.edit("**Cap,Mengintil✅**")
+    await typew.edit("**Arman Baik☑️**")
+    await typew.edit("**Arman Baik✅**")
     sleep(3)
-    await typew.edit("**CUMAN ARMAN YANG PALING BETUL!**")
+    await typew.edit("**CUMAN TUAN ARMAN YANG PALING BENER**")
 
 
 @register(outgoing=True, pattern='^.lahk(?: |$)(.*)')
@@ -88,8 +88,8 @@ async def typewriter(typew):
     await typew.edit("`Dah sana cabut, Makasih hiburannya, Udah bikin Gua tawa ngakak`")
 
 CMD_HELP.update({
-    "rambot":
-    "`.rambot`\
+    "karmanubit":
+    "`.karmanubot`\
     \nUsage: menampilkan alive bot.\
     \n\n`.sadboy`\
     \nUsage: hiks\
