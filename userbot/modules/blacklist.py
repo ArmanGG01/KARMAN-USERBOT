@@ -71,8 +71,8 @@ async def on_view_blacklist(listbl):
         await listbl.edit(OUT_STR)
 
 
-@register(outgoing=True, pattern=r"^\.rmbl(?: |$)(.*)")
-async def on_delete_blacklist(rmbl):
+@register(outgoing=True, pattern=r"^\.manbl(?: |$)(.*)")
+async def on_delete_blacklist(manbl):
     text = rmbl.pattern_match.group(1)
     to_unblacklist = list(
         {trigger.strip() for trigger in text.split("\n") if trigger.strip()}
@@ -80,12 +80,12 @@ async def on_delete_blacklist(rmbl):
 
     successful = 0
     for trigger in to_unblacklist:
-        if sql.rm_from_blacklist(rmbl.chat_id, trigger.lower()):
+        if sql.rm_from_blacklist(manbl.chat_id, trigger.lower()):
             successful += 1
     if not successful:
-        await rmbl.edit("`Maaf,` **{}** `Tidak Ada Di Blacklist`".format(text))
+        await manbl.edit("`Maaf,` **{}** `Tidak Ada Di Blacklist`".format(text))
     else:
-        await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
+        await manbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
 
 CMD_HELP.update({"blacklist": ">`.listbl`"
