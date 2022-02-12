@@ -63,21 +63,21 @@ async def _(e):
 
 
 @register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
-async def _(rambot):
-    await rambot.edit("`Memulai Invite member group...`")
+async def _(manbot):
+    await manbot.edit("`Memulai Invite member group...`")
     users = []
     z = 0
-    async for x in rambot.client.iter_participants(rambot.chat_id):
+    async for x in rambot.client.iter_participants(manbot.chat_id):
         if not x.bot:
             users.append(x.id)
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await rambot.client(invitetovc(call=await get_call(rambot), users=p))
+            await manbot.client(invitetovc(call=await get_call(manbot), users=p))
             z += 6
         except BaseException:
             pass
-    await rambot.edit(f"`Menginvite {z} Member`")
+    await manbot.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
