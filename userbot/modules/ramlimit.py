@@ -10,7 +10,7 @@ from userbot.events import register
 
 
 @register(outgoing=True, pattern=r"^\.limit(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.climit$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.climit$")
 async def _(event):
     await event.edit("`Proses Ngecek Limit akun, Gausah panik lah ngentot!...`")
     async with bot.conversation("@SpamBot") as conv:
