@@ -49,7 +49,7 @@ async def gcast(event):
             except BaseException:
                 er += 1
     await kk.edit(
-        f"** 𝚄𝙳𝙰𝙷 𝙱𝙴𝚁𝙷𝙰𝚂𝙸𝙻 𝚈𝙰 𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝙳𝙰𝙽 𝙺𝙴 ** `{done}` **𝙶𝚁𝙾𝚄𝙿, 𝙶𝙰𝙶𝙰𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝚂𝙰𝙽 𝙺𝙴 ** `{er}` **𝙶𝚁𝙾𝚄𝙿**"
+        f"** 𝚄𝙳𝙰𝙷 𝙱𝙴𝚁𝙷𝙰𝚂𝙸𝙻 𝚈𝙰 𝙺𝙾𝙽𝚃𝙾𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝚂𝙰𝙽 𝙺𝙴 ** `{done}` **𝙶𝚁𝙾𝚄𝙿, 𝙶𝙰𝙶𝙰𝙻 𝙼𝙴𝙽𝙶𝙴𝚁𝙸𝙼 𝙿𝙴𝚂𝙰𝙽 𝙺𝙴 ** `{er}` **𝙶𝚁𝙾𝚄𝙿**"
     )
 
 
@@ -61,7 +61,7 @@ async def gucast(event):
         return await event.edit("`PESAN NYA MANA KONTOLLL?`")
     tt = event.text
     msg = tt[7:]
-    kk = await event.edit("`SABAR YA SAYANG INI LAGI DI KIRIM...`")
+    kk = await event.edit("`SABAR YA KONTOL INI LAGI DI KIRIM`")
     er = 0
     done = 0
     async for x in bot.iter_dialogs():
