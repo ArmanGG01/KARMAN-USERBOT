@@ -28,31 +28,31 @@ async def typewriter(typew):
                      "\n**Permisi Aku mau nimbrung Kk**")
 
 
-@register(outgoing=True, pattern='^.jakana(?: |$)(.*)')
+@register(outgoing=True, pattern='^.man(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**Gledek Kontol☑️**")
-    await typew.edit("**Gledek Kontol✅**")
+    await typew.edit("**Saya Jelek❎**")
+    await typew.edit("**Saya Ganteng✅**")
     sleep(1)
-    await typew.edit("**Dorgie Gilaa☑️**")
-    await typew.edit("**Dorgie Gilaa✅**")
+    await typew.edit("**Saya Punya Ayah❎**")
+    await typew.edit("**Saya Tidak Punya Ayah✅**")
     sleep(2)
-    await typew.edit("**Petir Memek☑️**")
-    await typew.edit("**Memek Memek✅**")
+    await typew.edit("**Pilih Perawan❎**")
+    await typew.edit("**Pilih Janda Anak 1✅**")
     sleep(2)
-    await typew.edit("**Kanu TBC☑️**")
-    await typew.edit("**Kanu TBC✅**")
+    await typew.edit("**Aku Alay❎**")
+    await typew.edit("**Kalian Yang Alay✅**")
     sleep(2)
-    await typew.edit("**Nep ODGJ☑️**")
-    await typew.edit("**Nep ODGJ✅**")
+    await typew.edit("**Virtual❎**")
+    await typew.edit("**Real Life✅**")
     sleep(2)
-    await typew.edit("**Cimin Tytyd Op!☑️**")
-    await typew.edit("**Cimin Tytyd Op!✅**")
+    await typew.edit("**Bapa Lo Orang Kaya❎**")
+    await typew.edit("**Bapa Lo Orang Miskin✅**")
     sleep(2)
-    await typew.edit("**Cap Ngentod☑️**")
-    await typew.edit("**Cap Ngentod✅**")
+    await typew.edit("**Hobi Vcs❎**")
+    await typew.edit("**Hobi Ngentod✅**")
     sleep(2)
-    await typew.edit("**Arman Baik☑️**")
+    await typew.edit("**Arman Jahat❎**")
     await typew.edit("**Arman Baik✅**")
     sleep(3)
     await typew.edit("**CUMAN TUAN ARMAN YANG PALING BENER**")
@@ -67,7 +67,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Yahahaha Kasian Bocah Autis`")
     sleep(1)
-    await typew.edit("`Ups Sorry Ga sengaja 😂!`")
+    await typew.edit("`Ups Sorry Ga sengaja 😂`")
 
 
 @register(outgoing=True, pattern='^.wah(?: |$)(.*)')
@@ -88,7 +88,7 @@ async def typewriter(typew):
     await typew.edit("`Dah sana cabut, Makasih hiburannya, Udah bikin Gua tawa ngakak`")
 
 CMD_HELP.update({
-    "karmanubit":
+    "karmanubot":
     "`.karmanubot`\
     \nUsage: menampilkan alive bot.\
     \n\n`.sadboy`\
