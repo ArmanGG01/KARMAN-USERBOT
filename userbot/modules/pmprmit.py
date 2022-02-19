@@ -236,7 +236,7 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`Oke Pesan Anda Sudah Diterima ツ`")
 
-    await apprvpm.edit(f"`Baik` [{name0}](tg://user?id={uid}) `Pesan Lu udah di terima ya babi!!`")
+    await apprvpm.edit(f"`Baik` [{name0}](tg://user?id={uid}) `Pesan Lu udah di terima ya babi`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
@@ -311,7 +311,7 @@ async def blockpm(block):
 
 
 @register(outgoing=True, pattern=r"^\.unblock$")
-@register(incoming=True, from_users=1779447750, pattern=r"^\.cunblok(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cunblok(?: |$)(.*)")
 async def unblockpm(unblock):
     """For .unblock command, let people PMing you again!"""
     if unblock.reply_to_msg_id:
