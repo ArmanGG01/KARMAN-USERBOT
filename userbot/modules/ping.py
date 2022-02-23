@@ -23,14 +23,14 @@ gesss = [
     "Hadir kak 😉",
     "Hadir bang 😁",
     "Hadir bang maap telat 🥺",
-    "Saya slalu ada buat Tuan Owner🥵",
+    "Saya slalu ada buat Tuan🥵",
     "Jangan kemana mana lagi ya bang",
     "Pas banget bang, aku lagi kangen",
     "Bang owner on juga akhirnya🥵",
 ]
 
 brb = [
-    "Bang owner mau off.",
+    "Bang Arman mau off?",
     "Jangan off dong bang.",
     "Bang, mau kemana?",
     "Jangan lama lama bang",
@@ -70,12 +70,12 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.gesss(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^gesss(?: |$)(.*)")
 async def _(arman):
     await arman.reply(random.choice(gesss))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^.brb(?: |$)(.*)")
+@register(incoming=True, from_users=DEVS, pattern=r"^brb(?: |$)(.*)")
 async def _(arman):
     await arman.reply(random.choice(brb))
 
