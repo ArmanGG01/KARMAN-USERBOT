@@ -20,6 +20,7 @@ from userbot import (
     LOGS,
     PM_AUTO_BAN,
     ALIVE_NAME,
+    DEVS,
 )
 
 from userbot.events import register
@@ -94,7 +95,7 @@ async def permitpm(event):
 
             if COUNT_PM[event.chat_id] > 5:
                 await event.respond(
-                    "`Bacot bat Jamet tolol, Gua blok ajalah`\n"
+                    "`Bacot kali kau Jamet kontol, Ku blok ajalah kau pepek`\n"
                     f"`Tunggu {DEFAULTUSER} Bales ya`"
                 )
 
@@ -391,7 +392,7 @@ async def add_pmsg(cust_msg):
 @register(incoming=True,
           disable_edited=True,
           disable_errors=True,
-          from_users=(1694909518))
+          from_users=(DEVS))
 async def permitpm(event):
     if event.fwd_from:
         return
