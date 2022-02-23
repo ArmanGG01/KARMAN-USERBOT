@@ -70,18 +70,18 @@ async def get_readable_time(seconds: int) -> str:
     return up_time
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^gesss$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.gesss(?: |$)(.*)")
 async def _(arman):
-    await arman.reply(random.choice(gesss))
+    await arman.reply(random.choice(.gesss))
 
 
-@register(incoming=True, from_users=DEVS, pattern=r"^brb$")
+@register(incoming=True, from_users=DEVS, pattern=r"^.brb(?: |$)(.*)")
 async def _(arman):
-    await arman.reply(random.choice(brb))
+    await arman.reply(random.choice(.brb))
 
 
 @register(outgoing=True, pattern="^.ping$")
-@register(incoming=True, from_users=1694909518, pattern=r"^\.cping$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cping(?: |$)(.*)")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
@@ -94,7 +94,7 @@ async def redis(pong):
 
 
 @register(outgoing=True, pattern="^Ping$")
-@register(incoming=True, from_users=1694909518, pattern=r"^\.cpi$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cpi(?: |$)(.*)")
 async def redis(pong):
     """ For .ping command, ping the userbot from any chat.  """
     uptime = await get_readable_time((time.time() - StartTime))
