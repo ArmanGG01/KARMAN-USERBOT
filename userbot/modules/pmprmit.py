@@ -29,14 +29,14 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    f"**╭━━━━━━━━━━━━━━━━━╮**\n    🎊🎉SELAMAT DATANG🎊🎉\n"
+    f"**╭━━━━━━━━━━━━━━━━━╮**\n   🎉SELAMAT DATANG🎉\n"
     "**╰━━━━━━━━━━━━━━━━━╯**\n"
     "───────────────────────────\n"
     f"**ANAK KONTOL ANAK KONTOL,KALO NGECHAT TUAN {DEFAULTUSER} ITU SALAM DULU LAH KONTOL,\nHABIS ITU SABAR TUNGGU TUAN KU BALES,\nKALO GA DI BALES - BALES, KAU JANGAN NYEPAM KONTOL, KAYA ANAK YATIM MAU MINTA SEMBAKO KAU PEPEK, APA LAGI KAU NGECHAT NYA CUMA MINTA VCS, BISA KU BLOKIR! KALO NYEPAM JUGA TAR KU BLOKIR! TUNGGU SI KONTOL {DEFAULTUSER} NERIMA PESAN LU**\n"
     "───────────────────────────\n"
     "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
     "┣[• 𝐁𝐎𝐓 𝐌𝐄𝐒𝐒𝐀𝐆𝐄\n"
-    "┣[• 𝐁𝐘 💀𝙆𝘼𝙍𝙈𝘼𝙉-𝙐𝙎𝙀𝙍𝘽𝙊𝙏💀\n"
+    "┣[• 𝐁𝐘 💀𝙆𝘼𝙍𝙈𝘼𝙉💀\n"
     "╰✠╼━━━━━━❖━━━━━━━✠╯")
 # =================================================================
 
