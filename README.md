@@ -14,8 +14,13 @@
 
 <a href="https://t.me/obrolansuar/"><img src="https://img.shields.io/badge/KODE%20PENILAIAN-A+-blue.svg?style=for-the-badge&logo=Factor.">
 
+## DEPLOY TO HEROKU
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=cmFtYWRoYW5pODkyL1JBTS1VQk9UIFJBTS1VQk9U"> <img src="https://img.shields.io/badge/Deploy%20To%20Heroku-indigo?style=flat&logo=heroku" width="300" height="38.60" /></a></p>
+
+
 
 ## Credit
 TERIMAKASIH UNTUK
 
 *   [Gledek]
+*   [Arman](https://t.me/ArmanGG01) - 💀KARMAN-USERBOT💀
