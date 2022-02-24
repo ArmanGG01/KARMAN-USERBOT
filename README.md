@@ -23,4 +23,4 @@
 TERIMAKASIH UNTUK
 
 *   [Gledek]
-*   [Arman](https://t.me/ArmanGG01) - 💀KARMAN-USERBOT💀
+*   [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
