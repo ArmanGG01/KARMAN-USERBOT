@@ -93,6 +93,6 @@ CMD_HELP.update({
     \nUsage: menampilkan alive bot.\
     \n\n`.sadboy`\
     \nUsage: hiks\
-    \n\n`.punten` ; `.jakana`\
+    \n\n`.punten` ; `.man`\
     \nUsage: misi."
 })
