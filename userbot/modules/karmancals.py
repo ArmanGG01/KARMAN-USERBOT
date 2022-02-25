@@ -26,9 +26,9 @@ def vcmention(user):
 
 
 async def get_call(komtol):
-    rambot = await komtol.client(getchat(komtol.chat_id))
-    rama = await komtol.client(getvc(rambot.full_chat.call, limit=1))
-    return rama.call
+    karmanbot = await komtol.client(getchat(komtol.chat_id))
+    arman = await komtol.client(getvc(rambot.full_chat.call, limit=1))
+    return arman.call
 
 
 def user_list(l, n):
@@ -78,7 +78,7 @@ async def _(rambot):
     hmm = list(user_list(users, 6))
     for p in hmm:
         try:
-            await rambot.client(invitetovc(call=await get_call(rambot), users=p))
+            await karmanbot.client(invitetovc(call=await get_call(karmanbot), users=p))
             z += 6
         except BaseException:
             pass
