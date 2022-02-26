@@ -218,7 +218,7 @@ CMD_HELP.update({
 \n\n.k\
 \nUsage:"
 \n\n.tit\
-\nUsage:"
+\nUsage:\
 \n\n.rose\
-\nUsage:"
+\nUsage:\
 })
