@@ -216,9 +216,9 @@ CMD_HELP.update({
 \n\n.m\
 \nUsage:\
 \n\n.k\
-\nUsage:"
+\nUsage:\
 \n\n.tit\
 \nUsage:\
 \n\n.rose\
-\nUsage:\
+\nUsage:"
 })
