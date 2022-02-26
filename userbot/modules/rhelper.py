@@ -25,7 +25,7 @@ async def var(m):
 
 
 CMD_HELP.update({
-    "ramhelper":
+    "karhelper":
     "`.helpmy`\
 \nPenjelasan: Bantuan Untuk KARMAN-USERBOT.\
 \n`.rvars`\
