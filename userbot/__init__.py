@@ -173,7 +173,7 @@ ANTI_SPAMBOT_SHOUT = sb(os.environ.get("ANTI_SPAMBOT_SHOUT", "False"))
 YOUTUBE_API_KEY = os.environ.get("YOUTUBE_API_KEY", None)
 
 # Untuk Perintah .rambot (alive)
-RAM_TEKS_KOSTUM = os.environ.get("RAM_TEKS_KOSTUM") or "ㅤ"
+KAR_TEKS_KOSTUM = os.environ.get("KAR_TEKS_KOSTUM") or "ㅤ"
 
 # Untuk Melihat Repo
 REPO_NAME = os.environ.get("REPO_NAME") or "💀KARMAN-USERBOT💀"
@@ -214,11 +214,11 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg"
 
 # Default .helpme logo
 HELP_LOGO = os.environ.get(
-   "HELP_LOGO") or "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg"
+   "HELP_LOGO") or "https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg"
 
 # Default .alive Instagram
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/arman_nasution123"
