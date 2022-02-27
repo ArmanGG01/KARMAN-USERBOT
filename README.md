@@ -1,15 +1,6 @@
 <h1 align="center"><imgsrc="./resources/extras/geez.gif" width="35px">👑KARMAN-USERBOT👑<imgsrc="./resources/extras/geez.gif" width="35px"></h1>
 
 
-<p align="center">
-  <a href="https://github.com/ArmanGG01/Deploy/fork">
-    <img src="https://img.shields.io/github/forks/ArmanGG01/KARMAN-USERBOT?label=Fork&style=social">
-    
-  </a>
-  <a href="https://github.com/ArmanGG01/KARMAN-USERBOT">
-    <img src="https://img.shields.io/github/stars/ArmanGG/KARMAN-USERBOT?style=social">
-  </a>
-</p>  
 
 </p>
 <p align="center">
@@ -42,5 +33,7 @@ TERIMAKASIH UNTUK👑
 *   [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
 
 
-# Userbot🔥
+
+
+# ARMAN🔥
 * - JANGAN LUPA KLICK STARNYA KONTOL🤗
