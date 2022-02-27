@@ -22,13 +22,6 @@
 <a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy.git"><img src="https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
 
 
-<h2 align="center">
-   Metode Deploy
-</h2>
-
-<p align="center">
-<a href="https://dashboard.heroku.com/new?template=https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-blueviolet?style=for-the-badge&logo=heroku" width="250""/</a>
-
 
 
 #### GROUP SUPPORT KARMAN🖥
@@ -37,13 +30,22 @@
 <a href="https://t.me/obrolansuar"><img src="https://img.shields.io/badge/Join-KARMAN%20Support-purple.svg?style=for-the-badge&logo=Telegram"></a>
 
 
-## Credit
-TERIMAKASIH UNTUK👑
+## TERIMAKASIH UNTUK👑
 
-*   [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
-
-
+*  🖥 [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
+*  🖥 [Gledek](https://t.me/Gledeknihboss) - 🙈Gledek🙈
 
 
-# ARMAN🔥
+
+
+
+
+
+
+# BACA INI KONTOL🔥
+* - KALO UDAH DI FROK DALEMAN NYA NANGAN DI GANTIK MEK NANTI EROR!
+* - KALO LU CLONE BARU LU BOLEH GANTI YA KONTOL 
 * - JANGAN LUPA KLICK STARNYA KONTOL🤗
+
+
+
