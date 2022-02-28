@@ -23,6 +23,7 @@
 
 <h3 align="center">Klik Tombol di Bawah ini untuk Deploy di Heroku</h3><p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy to Heroku" target="_blank"/></a></p>
 
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
 
 #### GROUP SUPPORT KARMAN🖥
 
