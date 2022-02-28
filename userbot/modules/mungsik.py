@@ -19,7 +19,7 @@ from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HELP
 from userbot import call_py
-from userbot.utils import bash, edit_delete, edit_or_reply, register
+from userbot.utils import run_cmd, edit_delete, edit_or_reply, register
 from userbot.utils.chattitle import CHAT_TITLE
 from userbot.utils.queues.queues import (
     QUEUE,
