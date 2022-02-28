@@ -1,4 +1,4 @@
-//
+#//
 def vcmention(user):
     full_name = get_display_name(user)
     if not isinstance(user, types.User):
@@ -477,4 +477,4 @@ async def leftvc(_, chat_id: int):
 async def kickedvc(_, chat_id: int):
     if chat_id in QUEUE:
         clear_queue(chat_id)
-\\
+#\\
