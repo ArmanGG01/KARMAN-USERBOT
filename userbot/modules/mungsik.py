@@ -1,3 +1,38 @@
+# Credits: @mrismanaziz
+# Thanks To @tofik_dn || https://github.com/tofikdn
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# t.me/SharingUserbot & t.me/Lunatic0de
+# gw
+
+from pytgcalls import StreamType
+from pytgcalls.types import Update
+from pytgcalls.types.input_stream import AudioPiped, AudioVideoPiped
+from pytgcalls.types.input_stream.quality import (
+    HighQualityAudio,
+    HighQualityVideo,
+    LowQualityVideo,
+    MediumQualityVideo,
+)
+from telethon.tl import types
+from telethon.utils import get_display_name
+from youtubesearchpython import VideosSearch
+
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP
+from userbot import PLAY_PIC as fotoplay
+from userbot import QUEUE_PIC as ngantri
+from userbot import call_py
+from userbot.utils import bash, edit_delete, edit_or_reply, man_cmd
+from userbot.utils.chattitle import CHAT_TITLE
+from userbot.utils.queues.queues import (
+    QUEUE,
+    add_to_queue,
+    clear_queue,
+    get_queue,
+    pop_an_item,
+)
+from userbot.utils.thumbnail import gen_thumb
+
 
 def vcmention(user):
     full_name = get_display_name(user)
@@ -75,7 +110,7 @@ async def skip_current_song(chat_id: int):
     return [songname, link, type]
 
 
-@man_cmd(pattern="play(?:\s|$)([\s\S]*)")
+@register(pattern="play(?:\s|$)([\s\S]*)")
 async def vc_play(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -177,7 +212,7 @@ async def vc_play(event):
                 await botman.edit(f"`{ep}`")
 
 
-@man_cmd(pattern="vplay(?:\s|$)([\s\S]*)")
+@register(pattern="vplay(?:\s|$)([\s\S]*)")
 async def vc_vplay(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -338,7 +373,7 @@ async def vc_vplay(event):
                     await xnxx.edit(f"`{ep}`")
 
 
-@man_cmd(pattern="end$")
+@register(pattern="end$")
 async def vc_end(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -352,7 +387,7 @@ async def vc_end(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@man_cmd(pattern="skip(?:\s|$)([\s\S]*)")
+@register(pattern="skip(?:\s|$)([\s\S]*)")
 async def vc_skip(event):
     chat_id = event.chat_id
     if len(event.text.split()) < 2:
@@ -381,7 +416,7 @@ async def vc_skip(event):
             await event.edit(DELQUE)
 
 
-@man_cmd(pattern="pause$")
+@register(pattern="pause$")
 async def vc_pause(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -394,7 +429,7 @@ async def vc_pause(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@man_cmd(pattern="resume$")
+@register(pattern="resume$")
 async def vc_resume(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -407,7 +442,7 @@ async def vc_resume(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@man_cmd(pattern=r"volume(?: |$)(.*)")
+@register(pattern=r"volume(?: |$)(.*)")
 async def vc_volume(event):
     query = event.pattern_match.group(1)
     me = await event.client.get_me()
@@ -430,7 +465,7 @@ async def vc_volume(event):
         await edit_delete(event, "**Tidak Sedang Memutar Streaming**")
 
 
-@man_cmd(pattern="playlist$")
+@register(pattern="playlist$")
 async def vc_playlist(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
@@ -478,3 +513,26 @@ async def kickedvc(_, chat_id: int):
     if chat_id in QUEUE:
         clear_queue(chat_id)
 
+
+CMD_HELP.update(
+    {
+        "vcplugin": f"**Plugin : **`vcplugin`\
+        \n\n  •  **Syntax :** `{cmd}play` <Judul Lagu/Link YT>\
+        \n  •  **Function : **Untuk Memutar Lagu di voice chat group dengan akun kamu\
+        \n\n  •  **Syntax :** `{cmd}vplay` <Judul Video/Link YT>\
+        \n  •  **Function : **Untuk Memutar Video di voice chat group dengan akun kamu\
+        \n\n  •  **Syntax :** `{cmd}end`\
+        \n  •  **Function : **Untuk Memberhentikan video/lagu yang sedang putar di voice chat group\
+        \n\n  •  **Syntax :** `{cmd}skip`\
+        \n  •  **Function : **Untuk Melewati video/lagu yang sedang di putar\
+        \n\n  •  **Syntax :** `{cmd}pause`\
+        \n  •  **Function : **Untuk memberhentikan video/lagu yang sedang diputar\
+        \n\n  •  **Syntax :** `{cmd}resume`\
+        \n  •  **Function : **Untuk melanjutkan pemutaran video/lagu yang sedang diputar\
+        \n\n  •  **Syntax :** `{cmd}volume` 1-200\
+        \n  •  **Function : **Untuk mengubah volume (Membutuhkan Hak admin)\
+        \n\n  •  **Syntax :** `{cmd}playlist`\
+        \n  •  **Function : **Untuk menampilkan daftar putar Lagu/Video\
+    "
+    }
+)
