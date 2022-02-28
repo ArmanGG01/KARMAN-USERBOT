@@ -19,7 +19,7 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/ArmanGG01/KARMAN-USERBOT?&style=plastic&logo=github)](https://GitHub.com/ArmanGG01/KARMAN-USERBOT/graphs/contributors/)
 
 
-<a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy.git"><img src="https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
+<a href="https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
 
 <h3 align="center">Klik Tombol di Bawah ini untuk Deploy di Heroku</h3><p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy to Heroku" target="_blank"/></a></p>
 
