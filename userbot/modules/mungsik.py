@@ -17,7 +17,6 @@ from telethon.tl import types
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 
-from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot import call_py
 from userbot.utils import bash, edit_delete, edit_or_reply, register
@@ -36,7 +35,7 @@ fotoplay = ""
 
 ngantri = ""
 
-
+cmd = "."
 
 def vcmention(user):
     full_name = get_display_name(user)
