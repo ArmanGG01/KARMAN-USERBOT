@@ -1,5 +1,5 @@
-
-//def vcmention(user):
+\\
+def vcmention(user):
     full_name = get_display_name(user)
     if not isinstance(user, types.User):
         return full_name
