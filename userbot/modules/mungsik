@@ -373,7 +373,7 @@ async def vc_vplay(event):
                     await xnxx.edit(f"`{ep}`")
 
 
-@register(pattern="end$")
+@register(pattern=".end$")
 async def vc_end(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
