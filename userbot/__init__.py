@@ -9,6 +9,8 @@ import re
 import redis
 import io
 import random
+import sys
+import logging
 
 from datetime import datetime
 
@@ -23,6 +25,7 @@ from pymongo import MongoClient
 from redis import StrictRedis
 from dotenv import load_dotenv
 from pytgcalls import PyTgCalls
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from requests import get
 from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
