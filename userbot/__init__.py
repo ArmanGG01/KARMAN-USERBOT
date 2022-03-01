@@ -24,6 +24,7 @@ from pySmartDL import SmartDL
 from pymongo import MongoClient
 from redis import StrictRedis
 from dotenv import load_dotenv
+from telethon.errors import UserIsBlockedError
 from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from pytgcalls import PyTgCalls
 from requests import get
