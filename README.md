@@ -21,7 +21,7 @@
 
 <a href="https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
 
-<h3 align="center">𝙺𝙻𝙸𝙺 𝚃𝙾𝙼𝙱𝙾𝙻 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 𝙸𝙽𝙸 𝚄𝙽𝚃𝚄𝙺 𝙳𝙴𝙿𝙻𝙾𝚈 𝙳𝙸 𝙷𝙴𝚁𝙾𝙺𝚄 & 𝙱𝙾𝚃 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼</h3><p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy to Heroku" target="_blank"/></a></p>
+<h3 align="center">𝙺𝙻𝙸𝙺 𝚃𝙾𝙼𝙱𝙾𝙻 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 𝙸𝙽𝙸 𝚄𝙽𝚃𝚄𝙺 𝙳𝙴𝙿𝙻𝙾𝚈 𝙳𝙸 𝙷𝙴𝚁𝙾𝙺𝚄 & 𝙱𝙾𝚃 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼</h3><p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/KARMAN U-BOT"><img src="https://www.herokucdn.com/deploy/button.png" alt="Deploy to Heroku" target="_blank"/></a></p>
 
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
 
