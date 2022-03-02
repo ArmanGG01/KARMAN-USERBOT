@@ -11,6 +11,8 @@ cping = [
     "**Hadir kak🥵** `𓆩99.65𓆪` ",
     "**Hadir om arman😘** `𓆩76.89𓆪` ",
     "**Hadir arman❤** `𓆩72.69𓆪` ",
+    "**Aku hadir sayang arman🥵** `𓆩50.80𓆪` ",
+    "**Tuan arman aku sange ni🤤** `𓆩30.01𓆪` ",
 ]
 
 
