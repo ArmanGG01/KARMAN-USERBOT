@@ -29,6 +29,25 @@ async def typewriter(typew):
     await typew.edit("**Amin..**")
 
 
+@register(outgoing=True, pattren="^.kursi(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pettern_match.group(2)
+    sleep(1)
+    await typew.edit("NI GUA BACAIIN AYAT KURSI BIAR SETAN DAN JIN KALIAN ILANG")
+    sleep(2)
+    await typew.edit("Alloohu laa ilaaha illaa huwal hayyul qoyyuum")
+    sleep(1)
+    await typew.edit("laa ta’khudzuhuu sinatuw walaa naum")
+    sleep(2)
+    await typew.edit("Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih" )
+    sleep(2)
+    await typew.edit(
+        "ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim"
+    )
+    sleep(2)
+    await type.edit("Aamiin")
+
+
 # Create by myself @PakkPoll
 
 CMD_HELP.update(
