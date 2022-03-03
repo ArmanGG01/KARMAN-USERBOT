@@ -123,24 +123,38 @@ async def redis(pong):
     await asyncio.sleep(1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**𝙺𝙾𝙽𝚃𝙾𝙻**\n**𝙺𝙴𝙺𝚄𝙰𝚃𝙰𝙽 𝙺𝙾𝙽𝚃𝙾𝙻** : `%sms`\n**𝙳𝚄𝚁𝙰𝚂𝙸 𝙺𝙾𝙽𝚃𝙾𝙻 𝙳𝙰𝙽 𝙿𝙴𝙿𝙴𝙺** : `{uptime}🕛`" % (duration))
+    await pong.edit(f"**✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠**\n**➥𝙺𝙾𝙽𝚃𝙾𝙻**\n**➥𝙺𝙴𝙺𝚄𝙰𝚃𝙰𝙽 𝙺𝙾𝙽𝚃𝙾𝙻** : `%sms`\n**➥𝙳𝚄𝚁𝙰𝚂𝙸 𝙺𝙾𝙽𝚃𝙾𝙻 𝙳𝙰𝙽 𝙿𝙴𝙿𝙴𝙺** : `{uptime}🕛`" % (duration)\n**✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠)
 
 
 @register(outgoing=True, pattern="^Ping$")
-@register(incoming=True, from_users=1694909518, pattern=r"^\.cpi$")
 async def redis(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """For .ping command, ping the userbot from any chat."""
     uptime = await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    await pong.edit("PONG!!")
+    await pong.edit("**Mengecek Kontol...**")
+    await pong.edit("**0% ▒▒▒▒▒▒▒▒▒▒**")
+    await pong.edit("**20% ██▒▒▒▒▒▒▒▒**")
+    await pong.edit("**40% ████▒▒▒▒▒▒**")
+    await pong.edit("**60% ██████▒▒▒▒**")
+    await pong.edit("**80% ████████▒▒**")
+    await pong.edit("**100% ██████████**")
     await asyncio.sleep(2)
-    await pong.edit(f"{REPO_NAME}")
-    await asyncio.sleep(3)
+    await pong.edit("☄️")
+    await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"{REPO_NAME}!!\n"
-                    f"OWNER : {ALIVE_NAME}\n `%sms`\n"
-                    f"`{uptime}` \n" % (duration))
+    await pong.edit(
+        f"**💀𝗞𝗔𝗥𝗠𝗔𝗡-𝗨𝗦𝗘𝗥𝗕𝗢𝗧💀**\n"
+        f"** ➠  Sɪɢɴᴀʟ   :** "
+        f"`%sms` \n"
+        f"** ➠  Bᴏᴛᴠᴇʀ  :** "
+        f"`{BOT_VER}` \n"
+        f"** ➠  Uᴘᴛɪᴍᴇ  :** "
+        f"`{uptime}` \n"
+        f"** ➠  Oᴡɴᴇʀ   :** `{ALIVE_NAME}` \n" % (duration)
+    )
+
+                  
 
 
 @register(outgoing=True, pattern="^Speed$")
