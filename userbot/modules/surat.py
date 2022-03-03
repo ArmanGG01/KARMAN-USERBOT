@@ -48,7 +48,7 @@ async def typewriter(typew):
     await type.edit("**Aamiin**")
 
 
-# Create by myself @localheart
+# Create by myself @PakkPoll
 
 CMD_HELP.update(
     {
