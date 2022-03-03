@@ -139,7 +139,7 @@ async def redis(pong):
     await pong.edit("**80% ████████▒▒**")
     await pong.edit("**100% ██████████**")
     await asyncio.sleep(2)
-    await pong.edit("☄️")
+    await pong.edit("🌠")
     await asyncio.sleep(2)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
@@ -160,7 +160,7 @@ async def redis(pong):
 @register(outgoing=True, pattern="^Speed$")
 async def speedtst(spd):
     """ For .speed command, use SpeedTest to check server speeds. """
-    await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...💀`")
+    await spd.edit("`Menjalankan Tes Kecepatan Jaringan, Mohon Tunggu...🕛`")
     test = Speedtest()
 
     test.get_best_server()
@@ -197,17 +197,26 @@ def speed_convert(size):
     return f"{round(size, 2)} {units[zero]}"
 
 
-@register(outgoing=True, pattern="^Pong$")
+@register(outgoing=True, pattern="^.pong$")
 async def pingme(pong):
-    """ For .ping command, ping the userbot from any chat.  """
+    """For .ping command, ping the userbot from any chat."""
     start = datetime.now()
-    await pong.edit("PONG")
-    await asyncio.sleep(1)
-    await pong.edit("🐷")
-    await asyncio.sleep(2)
+    await pong.edit("`Pong...........🦇`")
+    await pong.edit("`Pong..........🦇.`")
+    await pong.edit("`Pong.........🦇..`")
+    await pong.edit("`Pong........🦇...`")
+    await pong.edit("`Pong.......🦇....`")
+    await pong.edit("`Pong......🦇.....`")
+    await pong.edit("`Pong.....🦇......`")
+    await pong.edit("`Pong....🦇.......`")
+    await pong.edit("`Pong...🦇........`")
+    await pong.edit("`Pong..🦇.........`")
+    await pong.edit("`Pong.🦇..........`")
+    await pong.edit("`Pong🦇...........`")
     end = datetime.now()
     duration = (end - start).microseconds / 9000
-    await pong.edit(f"**Oᴡɴᴇʀ : {ALIVE_NAME}**\n`%sms`" % (duration))
+    await pong.edit(f"**Oᴡɴᴇʀ : {ALIVE_NAME}**\n📚 `%sms`" % (duration))
+
 
 
 CMD_HELP.update({
@@ -215,5 +224,5 @@ CMD_HELP.update({
          \n↳ : Untuk Menunjukkan Ping Bot Anda.\
          \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `Speed`\
          \n↳ : Untuk Menunjukkan Kecepatan Jaringan Anda.\
-         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `Pong`\
-         \n↳ : Sama Seperti Perintah Ping."})
+         \n\n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.pong`\
+         \n↳ : Sama Seperti Perintah .ping."})
