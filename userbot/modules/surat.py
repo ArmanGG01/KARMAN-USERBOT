@@ -29,11 +29,32 @@ async def typewriter(typew):
     await typew.edit("**Amin..**")
 
 
+@register(outgoing=True, pattren="^.kursi(?: |$)(.*)")
+async def typewriter(typew):
+    typew.pettern_match.group(1)
+    sleep(1)
+    await typew.edit("**NI GUA BACAIIN AYAT KURSI BIAR SETAN DAN JIN KALIAN ILANG**")
+    sleep(1)
+    await typew.edit("**Alloohu laa ilaaha illaa huwal hayyul qoyyuum**")
+    sleep(1)
+    await typew.edit("**laa ta’khudzuhuu sinatuw walaa naum**")
+    sleep(1)
+    await typew.edit("**Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih**" )
+    sleep(1)
+    await typew.edit(
+        "**ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim**"
+    )
+    sleep(1)
+    await type.edit("**Aamiin**")
+
+
 # Create by myself @localheart
 
 CMD_HELP.update(
     {
         "surat": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alfatihah`\
     \n↳ : Surat Alfatihah."
+        "surat": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kursi`\
+    \n↳ : Surat ayat kursi."
     }
 )
