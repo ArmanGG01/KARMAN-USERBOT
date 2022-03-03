@@ -54,7 +54,8 @@ CMD_HELP.update(
     {
         "surat": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.alfatihah`\
     \n↳ : Surat Alfatihah."
-        "surat": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.kursi`\
-    \n↳ : Surat ayat kursi."
+    "\nUsage: Ayat Kursi
+    "\n\n>`.kursi`"
+    "\n\n\n**SEMOGA KONTOL MU MANGKIN PANJANG**\n"
     }
 )
