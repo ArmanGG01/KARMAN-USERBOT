@@ -45,7 +45,7 @@ async def typewriter(typew):
         "**ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim**"
     )
     sleep(2)
-    await typew.edit("**Aamiin*"")
+    await typew.edit("**Aamiin**")
 
 
 # Create by myself @PakkPoll
