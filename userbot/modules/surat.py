@@ -30,7 +30,6 @@ async def typewriter(typew):
 
 
 @register(outgoing=True, pattren="^.kursi(?: |$)(.*)")
-async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
     await typew.edit("**NI GUA BACAIIN AYAT KURSI BIAR SETAN DAN JIN KALIAN ILANG**")
