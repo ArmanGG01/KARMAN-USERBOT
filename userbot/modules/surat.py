@@ -39,7 +39,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("laa ta’khudzuhuu sinatuw walaa naum")
     sleep(1)
-    await typew.edit("Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih" )
+    await typew.edit("Lahuu maa fissamaawaati wa maa fil ardli man dzal ladzii yasyfa’u ‘indahuu illaa biidznih")
     sleep(1)
     await typew.edit(
         "ya’lamu maa baina aidiihim wamaa kholfahum wa laa yuhiithuuna bisyai’im min ‘ilmihii illaa bimaa syaa’ wasi’a kursiyyuhus samaawaati wal ardlo walaa ya’uuduhuu hifdhuhumaa wahuwal ‘aliyyul ‘adhiim"
