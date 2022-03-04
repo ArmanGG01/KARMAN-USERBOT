@@ -517,7 +517,7 @@ with bot:
         user = bot.get_me()
         uid = user.id
         logo = ALIVE_LOGO
-        ramlogo = HELP_LOGO
+        manlogo = HELP_LOGO
         tgbotusername = BOT_USERNAME
 
         @tgbot.on(events.NewMessage(pattern="/start"))
@@ -569,11 +569,11 @@ with bot:
                 result = builder.article(
                     title="Repository",
                     description="Repository ⚠️KARMAN-USERBOT⚠️",
-                    url="https://t.me/masukksiniJKN",
-                    text="**💀KARMAN-USERBOT💀**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @obrolansuar\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n➖➖➖➖➖➖➖➖➖➖ ",
+                    url="https://t.me/obrolansuar",
+                    text="**💀KARMAN-USERBOT💀**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @obrolansuar\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠ ",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/masukksiniJKN"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
                             ),
@@ -586,7 +586,7 @@ with bot:
                     title="💀KARMAN-USERBOT💀",
                     description="KARMAN-USERBOT | Telethon",
                     url="https://t.me/obrolansuar",
-                    text=f"**KARMAN-USERBOT**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **OWNER:** [ARMAN](t.me/PakkPoll)\n⚠️ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:**DeplyoBot01\n➖➖➖➖➖➖➖➖➖➖",
+                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n⚠️ **OWNER:** [ARMAN](t.me/PakkPoll)\n⚠️ **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@DeplyoBot01\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
