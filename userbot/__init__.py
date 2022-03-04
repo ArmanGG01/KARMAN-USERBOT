@@ -284,7 +284,7 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or "```║💀𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💀 UDAH AKTIF KONTOL║\n\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\nJika Tidak Bisa Di .ping\nSilahkan Anda\nCek viewlogs\nPada heroku Anda.\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰```"
+    "BOTLOG_MSG") or "```║💀𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💀║𝚄𝙳𝙰𝙷 𝙰𝙺𝚃𝙸𝙵 𝚈𝙰 𝙺𝙾𝙽𝚃𝙾𝙻\n\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\nJi𝚔𝚊 𝚃𝚒𝚍𝚊𝚔 𝙱𝚒𝚜𝚊 𝙳𝚒 .ping\n𝙼𝚊𝚗𝚐𝚔𝚊𝚗𝚢𝚊 𝙼𝚊𝚗𝚍𝚒 𝚆𝚊𝚓𝚒𝚋 𝙳𝚞𝚕𝚞\n𝙲𝚊𝚗𝚍𝚊 𝚆𝚊𝚕𝚕𝚎 😝 𝙲𝚎𝚔 𝙰𝚓𝚊 𝚅𝚒𝚎𝚠𝚕𝚘𝚐𝚜\n𝙿𝚊𝚍𝚊 𝚑𝚎𝚛𝚘𝚔𝚞 𝙰𝚗𝚍𝚊.\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠```"
 
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
@@ -526,7 +526,7 @@ with bot:
             text = (
                 f"**Hey**, __I am using__  **💀 KARMAN-USERBOT 💀** \n\n"
                 f"       __Thanks For Using me__\n\n"
-                f"🗿 **Group Support :** [JAKANA](t.me/masukksiniJKN)\n"
+                f"🗿 **Group Support :** [OS](t.me/obrolansuar)\n"
                 f"⚠️ **Owner Repo :** [ARMAN](t.me/PakkPoll)\n"
                 f"📌 **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n"
             )
@@ -543,7 +543,7 @@ with bot:
                     ],
                     [
                         custom.Button.url(
-                            text="GROUP", url="https://t.me/masukksiniJKN"
+                            text="GROUP", url="https://t.me/obrolansuar"
                         ),
                         custom.Button.url(
                             text="CHANNEL", url="https://t.me/DeployBot01"
@@ -570,7 +570,7 @@ with bot:
                     title="Repository",
                     description="Repository ⚠️KARMAN-USERBOT⚠️",
                     url="https://t.me/masukksiniJKN",
-                    text="**💀KARMAN-USERBOT💀**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @masukksiniJKN\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n➖➖➖➖➖➖➖➖➖➖ ",
+                    text="**💀KARMAN-USERBOT💀**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @obrolansuar\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n➖➖➖➖➖➖➖➖➖➖ ",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/masukksiniJKN"),
@@ -585,11 +585,11 @@ with bot:
                 result = builder.article(
                     title="💀KARMAN-USERBOT💀",
                     description="KARMAN-USERBOT | Telethon",
-                    url="https://t.me/masukksiniJKN",
+                    url="https://t.me/obrolansuar",
                     text=f"**KARMAN-USERBOT**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **OWNER:** [ARMAN](t.me/PakkPoll)\n⚠️ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:**DeplyoBot01\n➖➖➖➖➖➖➖➖➖➖",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/masukksiniJKN"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
                             ),
@@ -625,7 +625,7 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=False,
-                    text=f"💀KARMAN-USERBOT💀\n\n⚠️**Owner : [ARMAN](t.me/PakkPoll)**\n\n⚠️ **Bot Ver :** `8.0`\n⚠️ **𝗠odules :** `{len(dugmeler)}`",
+                    text=f"💀KARMAN-USERBOT💀\n\n⚠️**Owner : [ARMAN](t.me/PakkPoll)**\n\n⚠️ **Bot Ver :** `9.0`\n⚠️ **𝗠odules :** `{len(dugmeler)}`",
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
@@ -637,7 +637,7 @@ with bot:
             else:
                 result = builder.article(
                     " 💀KARMAN-USERBOT💀 ",
-                    text="""**💀KARMAN-USERBOT💀\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    text="""**💀KARMAN-USERBOT💀\n\n Anda Bisa Membuat Karman Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
@@ -684,7 +684,7 @@ with bot:
                             Button.url("📢 Channel Support",
                                        "t.me/DeployBot01"),
                             Button.url("📌 Group support",
-                                       "t.me/masukksiniJKN")],
+                                       "t.me/obrolansuar")],
                         [Button.inline("Open Menu", data="nepo")],
                         [custom.Button.inline(
                             "Close", b"close")],
