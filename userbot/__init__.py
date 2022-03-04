@@ -517,7 +517,7 @@ with bot:
         user = bot.get_me()
         uid = user.id
         logo = ALIVE_LOGO
-        manlogo = HELP_LOGO
+        ramlogo = HELP_LOGO
         tgbotusername = BOT_USERNAME
 
         @tgbot.on(events.NewMessage(pattern="/start"))
