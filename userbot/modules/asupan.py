@@ -19,7 +19,7 @@ async def _(event):
         asupannya = [
             asupan
             async for asupan in event.client.iter_messages(
-                "@AsupanCilikUserbot", filter=InputMessagesFilterVideo
+                "@balabalabotbokep", filter=InputMessagesFilterVideo
             )
         ]
         aing = await event.client.get_me()
@@ -38,7 +38,7 @@ async def _(event):
         desahnya = [
             desah
             async for desah in event.client.iter_messages(
-                "@DESAHANFCE", filter=InputMessagesFilterVoice
+                "@desahancewesangesange", filter=InputMessagesFilterVoice
             )
         ]
         aing = await event.client.get_me()
@@ -68,7 +68,26 @@ async def _(event):
         )
         await event.delete()
     except Exception:
-        await event.edit("Gada Yang Mau Sama Kamu Karena Kamu ga Gud Luking🤪.")
+        await event.edit("Gada Yang Mau Sama Kamu Karena Kau Jelek🤪.")
+
+@register(outgoing=True, pattern=r"^\.cayang$")
+async def _(event):
+    try:
+        gantengnya = [
+            ganteng
+            async for ayang in event.client.iter_messages(
+                "@Cowogantenghalu", filter=InputMessagesFilterPhotos
+            )
+        ]
+        aing = await event.client.get_me()
+        await event.client.send_file(
+            event.chat_id,
+            file=random.choice(ayangnya),
+            caption=f"Nih Pacar Aku 😘 [{DEFAULTUSER}](tg://user?id={aing.id})",
+        )
+        await event.delete()
+    except Exception:
+        await event.edit("Gada Yang Mau Sama Kamu Karena Kau Jelek🤪.")
 
 
 CMD_HELP.update(
@@ -80,6 +99,8 @@ CMD_HELP.update(
         \n  •  **Function : **Untuk Mengirim suara desah buat lu yang sange.\
         \n\n  •  **Syntax :** `.ayang`\
         \n  •  **Function : **Untuk Mencari ayang buat cowok yang jomblo.\
+        \n\n  •  **Syntax :** `.cayang`\
+        \n  •  **Function : **Untuk Mencari ayang buat cewek yang jomblo.\
     "
     }
 )
