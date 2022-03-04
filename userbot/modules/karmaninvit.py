@@ -37,13 +37,13 @@ async def get_chatinfo(event):
         try:
             chat_info = await event.client(GetFullChannelRequest(chat))
         except ChannelInvalidError:
-            await event.reply("`Id channel/group Tidak valid bangsat bener.`")
+            await event.reply("`Id channel/group Tidak valid kontol kali.`")
             return None
         except ChannelPrivateError:
-            await event.reply("`Ini Grup private ni bang, Atau kayanya gua ke banned dah bangsat adminnya.`")
+            await event.reply("`Ini Grup private ni bang, Atau kayanya gua ke banned dah memek adminnya.`")
             return None
         except ChannelPublicGroupNaError:
-            await event.reply("`Channel Atau grup eror ni babi`")
+            await event.reply("`Channel Atau grup eror ni kontol`")
             return None
         except (TypeError, ValueError):
             await event.reply("`id Group/channel udh gabisa nih.`")
@@ -57,9 +57,9 @@ async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
     if not sender.id == me.id:
-        man = await event.reply("`proses menambahkan beberapa binatang...`")
+        man = await event.reply("`proses menambahkan beberapa kontol...`")
     else:
-        man = await event.edit("`Awas Limit tot!!...`")
+        man = await event.edit("`Awas Limit kau pepek!...`")
     manubotteam = await get_chatinfo(event)
     chat = await event.get_chat()
     if event.is_private:
@@ -68,18 +68,18 @@ async def get_users(event):
     f = 0
     error = 'None'
 
-    await man.edit("**Status Berjalan**\n\n`Menambahkan Binatang.......`")
+    await man.edit("**Status Berjalan**\n\n`Menambahkan Kontol Dan Pepek.......`")
     async for user in event.client.iter_participants(manubotteam.full_chat.id):
         try:
             if error.startswith("Too"):
                 return await ram.edit(f"**Tugas Selesai bersama dengan Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people")
             await event.client(functions.channels.InviteToChannelRequest(channel=chat, users=[user.id]))
             s = s + 1
-            await man.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Binatang \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")
+            await man.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Kontol \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")
         except Exception as e:
             error = str(e)
             f = f + 1
-    return await man.edit(f"**Tugas Selesai** \n\n• Sukses menambahkan `{s}` Binatang sange \n• Binatang yang ngelawan `{f}` Binatang.")
+    return await man.edit(f"**Tugas Selesai** \n\n• Sukses menambahkan `{s}` Pepek sange \n• Kontol yang ngelawan `{f}` Kontool.")
 
 
 CMD_HELP.update({
