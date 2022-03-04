@@ -1,4 +1,6 @@
-<h1 align="center"><imgsrc="./resources/extras/geez.gif" width="35px">👑KARMAN-USERBOT👑<imgsrc="./resources/extras/geez.gif" width="35px"></h1>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<h1 align="center"><imgsrc="./resources/extras/geez.gif" width="35px">𝙹𝙰𝙽𝙶𝙰𝙽 𝙰𝚂𝙰𝙻 𝙺𝙴𝚃𝙸𝙺 𝙺𝙾𝙽𝚃𝙾𝙻, 𝚂𝙾𝙰𝙻𝙽𝚈𝙰 𝙱𝙾𝚃 𝙸𝙽𝙸 𝙱𝙴𝙳𝙰 𝙳𝙰𝚁𝙸 𝙱𝙾𝚃 𝚈𝙰𝙽𝙶 𝙻𝙰𝙸𝙽<imgsrc="./resources/extras/geez.gif" width="35px"></h1>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 
 
@@ -12,7 +14,9 @@
 </p>
 
 
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 <a href="https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 
 ![VIEWS](https://komarev.com/ghpvc/?username=PakkPoll)
