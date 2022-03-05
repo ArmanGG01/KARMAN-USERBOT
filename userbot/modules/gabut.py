@@ -145,7 +145,7 @@ async def typewriter(typew):
 async def typewriter(typew):
     typew.pattern_match.group(1)
     sleep(1)
-    await typew.edit("**EH GUA MAU NANYAK?*")
+    await typew.edit("**EH GUA MAU NANYAK?**")
     sleep(1)
     await typew.edit("**JEMBOT KALIAN KERITING GA?**")
     sleep(1)
