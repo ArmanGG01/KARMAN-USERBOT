@@ -284,7 +284,7 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or f"```💢 KARMAN - USERBOT UDAH AKTIF  💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Bot Of : {ALIVE_NAME}\n❍▹ BotVer : {BOT_VER}\n❍▹``` Branch : @KARMAN-USERBOT\n\n╼┅━━━━━╍━━━━━┅╾\n\n```JANGAN KAU KELUAR DARI GRUP```\n@obrolansuar\n ```BIAR KAU TAU INFO, PEPEK```"
+    "BOTLOG_MSG") or f"```💢 KARMAN - USERBOT UDAH AKTIF  💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Bot Of : {ALIVE_NAME}\n❍▹ BotVer : {BOT_VER}\n❍▹``` Owner : ** [𝙰𝚁𝙼𝙰𝙽](https://t.me/PakkPoll)\n\n╼┅━━━━━╍━━━━━┅╾\n\n```JANGAN KAU KELUAR DARI GRUP```\n@obrolansuar\n ```BIAR KAU TAU INFO, PEPEK```"
 
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
@@ -500,7 +500,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "< ̤< ̤", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    f"💀 𝗖𝗟𝗢𝗦𝗘 💀", data="{}_close({})".format(prefix, modulo_page)
+                    f"❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "> ̤> ̤", data="{}_next({})".format(prefix, modulo_page)
@@ -537,7 +537,7 @@ with bot:
                 buttons=[
                     [
                         custom.Button.url(
-                            text="⚠️ REPO KARMAN-USERBOT ⚠️",
+                            text="👑 REPO KARMAN-USERBOT 👑",
                             url="https://github.com/ArmanGG01/KARMAN-USERBOT",
                         )
                     ],
@@ -562,15 +562,15 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=True,
-                    text=f"**⚠️ inline KARMAN-USERBOT ⚠️**\n\n💀 **Owner** [ARMAN](t.me/PakkPoll)\n⚠️ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**👑 inline KARMAN-USERBOT 👑**\n\n💀 **Owner** [ARMAN](t.me/PakkPoll)\n👑 **Jumlah** `{len(dugmeler)}` Modules",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository ⚠️KARMAN-USERBOT⚠️",
+                    description="Repository 👑KARMAN-USERBOT👑",
                     url="https://t.me/obrolansuar",
-                    text="**💀KARMAN-USERBOT💀**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @obrolansuar\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠ ",
+                    text="**💀KARMAN-USERBOT💀**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **Owner :** [ARMAN](https://t.me/PakkPoll)\n👑 **Support :** @obrolansuar\n👑 **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠ ",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
@@ -586,7 +586,7 @@ with bot:
                     title="💀KARMAN-USERBOT💀",
                     description="KARMAN-USERBOT | Telethon",
                     url="https://t.me/obrolansuar",
-                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n⚠️ **OWNER:** [ARMAN](t.me/PakkPoll)\n⚠️ **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@DeplyoBot01\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
+                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **OWNER:** [ARMAN](t.me/PakkPoll)\n👑 **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@DeplyoBot01\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
@@ -625,7 +625,7 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=False,
-                    text=f"💀KARMAN-USERBOT💀\n\n⚠️**Owner : [ARMAN](t.me/PakkPoll)**\n\n⚠️ **Bot Ver :** `9.0`\n⚠️ **𝗠odules :** `{len(dugmeler)}`",
+                    text=f"💀KARMAN-USERBOT💀\n\n👑**Owner : [ARMAN](t.me/PakkPoll)**\n\n👑 **Bot Ver :** `9.0`\n👑 **𝗠odules :** `{len(dugmeler)}`",
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
