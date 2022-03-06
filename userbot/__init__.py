@@ -284,8 +284,8 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or  
-f"```💢 KARMAN - USERBOT UDAH AKTIF  💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Bot Of : {ALIVE_NAME}\n❍▹ BotVer : {BOT_VER}\n❍▹``` Branch : @KARMAN-USERBOT\n\n╼┅━━━━━╍━━━━━┅╾\n\n```JANGAN KAU KELUAR DARI GRUP```\n@obrolansuar\n ```BIAR KAU TAU INFO, PEPEK```"
+    "BOTLOG_MSG") or f"```💢 KARMAN - USERBOT UDAH AKTIF  💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Bot Of : {ALIVE_NAME}\n❍▹ BotVer : {BOT_VER}\n❍▹``` Branch : @KARMAN-USERBOT\n\n╼┅━━━━━╍━━━━━┅╾\n\n```JANGAN KAU KELUAR DARI GRUP```\n@obrolansuar\n ```BIAR KAU TAU INFO, PEPEK```"
+
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
