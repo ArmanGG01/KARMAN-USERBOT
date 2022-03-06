@@ -15,7 +15,7 @@
 
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
-<a href="https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://telegra.ph/file/84827e6fa4ce1593abdb8.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
+<a href="https://github.com/ArmanGG01/KARMAN-USERBOT"><img src="https://telegra.ph/file/c97811e33743ce755ada5.jpg" width="320" height="211" alt="  KARMAN-USERBOT" /></a>
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
 
 
