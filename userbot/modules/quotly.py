@@ -10,14 +10,14 @@ import os
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.utils import edit_delete, edit_or_reply, karman_cmd
+from userbot.utils import edit_delete, edit_or_reply, ram_cmd
 from userbot.utils.misc import create_quotly
 from telethon.tl.functions.users import GetFullUserRequest
 
 from .karmancarbon import all_col
 
 
-@karman_cmd(pattern="\.q ?(.*)")
+@rman_cmd(pattern="\.q ?(.*)")
 async def quott_(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
