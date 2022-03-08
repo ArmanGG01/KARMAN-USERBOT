@@ -32,6 +32,7 @@ from telethon.sync import TelegramClient, custom, events
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
+from userbot import CMD_HANDLER 
 
 redis_db = None
 
