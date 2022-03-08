@@ -10,7 +10,6 @@ from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from telethon.tl.functions.messages import ReportSpamRequest
 from telethon.tl.types import User
 
-from userbot import CMD_HANDLER as cmd
 from userbot import (
     ALIVE_LOGO,
     ALIVE_NAME,
