@@ -27,7 +27,7 @@ def vcmention(user):
 
 async def get_call(komtol):
     karmanbot = await komtol.client(getchat(komtol.chat_id))
-    arman = await komtol.client(getvc(rambot.full_chat.call, limit=1))
+    arman = await komtol.client(getvc(karbot.full_chat.call, limit=1))
     return arman.call
 
 
@@ -82,7 +82,7 @@ async def _(karmanbot):
             z += 6
         except BaseException:
             pass
-    await rambot.edit(f"`Menginvite {z} Member`")
+    await karmanbot.edit(f"`Menginvite {z} Member`")
 
 
 CMD_HELP.update(
