@@ -39,7 +39,7 @@
 ## TERIMAKASIH UNTUK👑
 
 *  🖥 [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
-*  🖥 [Gledek](https://t.me/Gledeknihboss) - 🙈Gledek🙈
+*  🖥 [Gledek](https://t.me/Gledeknihboss) - 🙈NABI-UBOT🙈
 
 
 
@@ -49,7 +49,7 @@
 
 
 # BACA INI KONTOL🔥
-* - KALO UDAH DI FROK DALEMAN NYA NANGAN DI GANTIK MEK NANTI EROR!
+* - KALO UDAH DI FROK DALEMAN NYA JANGAN DI GANTI MEMEK NANTI EROR!
 * - KALO LU CLONE BARU LU BOLEH GANTI YA KONTOL 
 * - JANGAN LUPA KLICK STARNYA KONTOL🤗
 
