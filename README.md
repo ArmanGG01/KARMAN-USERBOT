@@ -39,7 +39,6 @@
 ## TERIMAKASIH UNTUK👑
 
 *  🖥 [Arman](https://t.me/PakkPoll) - 💀KARMAN-USERBOT💀
-*  🖥 [Gledek](https://t.me/Gledeknihboss) - 🙈NABI-UBOT🙈
 *  🖥 [Ramadhani](https://t.me/merdhni) - 💫Ram-Ubot💫
 * 📌 DAN MASI BANYAK YANG LAINNYA YG GAK BISA KU SEBUT SATU YA KONTOL 📌
 
