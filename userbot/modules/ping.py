@@ -127,7 +127,7 @@ async def redis(pong):
     await asyncio.sleep(1)
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await pong.edit(f"**🛠 **\n**➥ 𝙺𝙾𝙽𝚃𝙾𝙻**\n**➥ 𝙺𝙴𝙺𝚄𝙰𝚃𝙰𝙽 𝙺𝙾𝙽𝚃𝙾𝙻** : `%sms`\n**➥ 𝙳𝚄𝚁𝙰𝚂𝙸 𝙺𝙾𝙽𝚃𝙾𝙻 𝙳𝙰𝙽 𝙿𝙴𝙿𝙴𝙺** : `{uptime}🕛`" % (duration))
+    await pong.edit(f"**🛠 Ping!!**\n**➥ 𝙺𝙾𝙽𝚃𝙾𝙻**\n**➥ 𝙺𝙴𝙺𝚄𝙰𝚃𝙰𝙽 𝙺𝙾𝙽𝚃𝙾𝙻** : `%sms`\n**➥ 𝙳𝚄𝚁𝙰𝚂𝙸 𝙺𝙾𝙽𝚃𝙾𝙻 𝙳𝙰𝙽 𝙿𝙴𝙿𝙴𝙺** : `{uptime}🕛`" % (duration))
 
 
 @register(outgoing=True, pattern="^Ping$")
