@@ -224,7 +224,7 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     await alive.edit("`Perkenalan diri...`")
     await asyncio.sleep(1)
-    await alive.edit("🌟")
+    await alive.edit("👑")
     await asyncio.sleep(3)
     output = (
         f"**     ۩  ⬚⃝⃟    {REPO_NAME} ⬚⃝⃟     ۩ ** \n\n"
