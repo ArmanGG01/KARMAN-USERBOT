@@ -237,7 +237,7 @@ async def amireallyalive(alive):
         f"╭✠╼━━━━━━❖━━━━━━━✠╮\n"
         f"┣• `🙈 Telethon :`Ver {version.__version__} \n"
         f"┣• `🥴 Python   :`Ver {python_version()} \n"
-        f"┣• `🤖 Bot Ver  :`7.0 \n"
+        f"┣• `🤖 Bot Ver  :`9.0 \n"
         f"┣• `⚠️ Modules  :`{len(modules)} \n"
         f"╰✠╼━━━━━━❖━━━━━━━✠╯\n"
         f"╼┅━━━━━━━━╍━━━━━━━━┅╾ \n"
