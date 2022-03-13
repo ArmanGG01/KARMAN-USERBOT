@@ -187,6 +187,7 @@ REPO_NAME = os.environ.get("REPO_NAME") or "💀KARMAN-USERBOT💀"
 DEVS = (
     2077108390,
     1694909518,
+    5047682454,
 )
 
 # Default .alive Name
