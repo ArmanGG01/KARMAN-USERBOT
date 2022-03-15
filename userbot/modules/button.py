@@ -97,14 +97,13 @@ def build_keyboard(buttons):
  
 CMD_HELP.update( 
     { 
-        "button": ".buttuon"
-        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** .cbutton <text> [Name on button]<buttonurl:link you want to open>\ 
+        "button": f"Plugin : button\ 
+        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** {cmd}cbutton <text> [Name on button]<buttonurl:link you want to open>\ 
         \n  ❍▸ : **Untuk membuat pesan button\ 
-        \n  •  Examples : .cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/DeployBot01:same> [Support]<buttonurl:https://t.me/obrolansuar>\ 
-        \n  •  NOTE : Untuk menggunakan ini, anda memerlukan bot anda ({BOT_USERNAME}) harus ada di grup/channel di mana anda menggunakan\
-        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** .ibutton <text> [Name on button]<buttonurl:link you want to open>\
-        \n  ❍▸ : **Untuk membuat pesan button melalui inline\
-        \n  •  **Examples : ** .ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/DeployBot01:same> [Support]<buttonurl:https://t.me/obrolansuar>\
-    "
-    }
+        \n  •  Examples : {cmd}cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/GeezProject:same> [Support]<buttonurl:https://t.me/GeezSupport>\ 
+        \n  •  NOTE : Untuk menggunakan ini, anda memerlukan bot anda ({BOT_USERNAME}) harus ada di grup/channel di mana anda menggunakan\\n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** {cmd}ibutton <text> [Name on button]<buttonurl:link you want to open>\ 
+        \n  ❍▸ : **Untuk membuat pesan button melalui inline\ 
+        \n  •  Examples : {cmd}ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/GeezProjects:same> [Support]<buttonurl:https://t.me/GeezSupport>\ 
+    " 
+    } 
 )
