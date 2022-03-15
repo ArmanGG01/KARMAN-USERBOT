@@ -185,8 +185,8 @@ REPO_NAME = os.environ.get("REPO_NAME") or "💀KARMAN-USERBOT💀"
 
 # DEVS
 DEVS = (
-    2077108390,
-    1694909518,
+    2077846555, # kitaro
+    1694909518, # arman
     5047682454,
 )
 
