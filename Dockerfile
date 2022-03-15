@@ -1,5 +1,5 @@
 # Using Python Slim-Buster
-FROM xluxz/ramubotspam:buster
+FROM vckyouuu/geezprojects:buster
 # KARMAN-USERBOT
 # GLEDEK-USERBOT
 #
