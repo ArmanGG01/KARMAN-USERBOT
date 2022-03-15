@@ -97,7 +97,7 @@ def build_keyboard(buttons):
  
 CMD_HELP.update( 
     { 
-        "button": "Plugin : button\ 
+        "button": f"**Plugin : **`button`\ 
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** .cbutton <text> [Name on button]<buttonurl:link you want to open>\ 
         \n  ❍▸ : **Untuk membuat pesan button\ 
         \n  •  Examples : .cbutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/DeployBot01:same> [Support]<buttonurl:https://t.me/obrolansuar>\ 
