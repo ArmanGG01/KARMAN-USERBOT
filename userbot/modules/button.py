@@ -67,7 +67,7 @@ async def _(event):
         os.remove(tgbot_reply_message)
 
 
-@geez_cmd(pattern=".ibutton(?:\\s|$)([\\s\\S]*)")
+@register(pattern=".ibutton(?:\\s|$)([\\s\\S]*)")
 async def _(event):
     reply_to_id = await reply_id(event)
     reply_message = await event.get_reply_message()
