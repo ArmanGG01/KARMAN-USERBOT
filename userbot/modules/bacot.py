@@ -49,4 +49,7 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-         "bacot" : ".bacot1-6\n untuk ngebacot"})
+         ""asupan": "**Plugin : **`asupan 1-6`\
+        \n\n  •  **Syntax :** `.bacot`\
+ }
+)
