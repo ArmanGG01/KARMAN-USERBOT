@@ -48,8 +48,10 @@ async def typewriter(typew):
     await typew.edit("**HAHAHAHAHAH KASIAN ANAK ANJING YANG TERBULY DI SINI,IYA KAU LAH BODO,KAU KAN ANAK ANJING BHAKASSSSSS**")
 
 
-CMD_HELP.update({
+CMD_HELP.update(
+        {
          ""asupan": "**Plugin : **`asupan 1-6`\
         \n\n  •  **Syntax :** `.bacot`\
- }
-)
+       "
+        }
+  )
