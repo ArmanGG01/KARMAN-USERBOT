@@ -50,4 +50,4 @@ async def typewriter(typew):
 
 CMD_HELP.update({
          ""bacot": "**.bacot1-6**"
-         "**Cobak Aja Sendiri Anjing**"})
+         "➥ Cobak Aja Sendiri Anjing"})
