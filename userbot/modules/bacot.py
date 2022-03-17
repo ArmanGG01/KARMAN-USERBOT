@@ -49,6 +49,5 @@ async def typewriter(typew):
 
 
 CMD_HELP.update({
-         ""bacot": "**.bacot1-6**\.
-         "➥ Cobak Aja Sendiri Anjing\
-         n\Usage:"})
+         "bacot": ".bacot1-6\
+         n\Usage: ➥ Cobak Aja Sendiri Anjing\"})
