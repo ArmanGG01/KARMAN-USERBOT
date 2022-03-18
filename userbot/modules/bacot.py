@@ -48,6 +48,17 @@ async def typewriter(typew):
     await typew.edit("**HAHAHAHAHAH KASIAN ANAK ANJING YANG TERBULY DI SINI,IYA KAU LAH BODO,KAU KAN ANAK ANJING BHAKASSSSSS**")
 
 
+@register(outgoing=True, pattern='^.bacot7(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**WOY NGENTOD LU ITU KAYA KONTOL,MEMEK,KURAP,BABI SEMUANYA ITU DI KAU YA ANAK ANJING HINA DAN HARAM,CUMAN MAU NGASI TAU KALO MAMAK KAU ITU LONTE BABI ANJING BIADAB NGENTOD BANGSAT**")
+
+
+@register(outgoing=True, pattern='^.bacot8(?: |$)(.*)')
+async def typewriter(typew):
+    typew.pattern_match.group(1)
+    await typew.edit("**WOY WOY LONTE GC AMPAS PCS YOKK MAU GA PCS NANTI KU BAYAR DAH BIAR KAU BISA JAJAN DAN MAKAN HAHAHAHAHAHAHAHAHAHA CUAHKKKKKK CUIHHHH**")
+
 CMD_HELP.update({
-         "bacot": ".bacot1-6n\
-         n\Usage: ➥ Cobak Aja Sendiri Anjing\"})
+         "bacot": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot1`"\
+        "\n• : Untuk Ngebacot Peris Bot Silahkan Chek Sendiri Dari 1 Sampai 8."})
