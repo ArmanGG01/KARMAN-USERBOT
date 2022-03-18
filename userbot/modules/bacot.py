@@ -61,4 +61,4 @@ async def typewriter(typew):
 
 CMD_HELP.update({
          "bacot": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot1`"\
-        "\n• : Untuk Ngebacot Peris Bot Silahkan Chek Sendiri Dari 1 Sampai 8."})
+        "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 1 Sampai 8."})
