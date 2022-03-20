@@ -5,38 +5,40 @@
 #
 """ Userbot help command """
 
-import asyncio
-from userbot import ALIVE_NAME, CMD_HELP, REPO_NAME, EMOJI_HELP
-from userbot.events import register
-from platform import uname
+from userbot import CMD_HANDLER as cmd
+from userbot import CMD_HELP, EMOJI_HELP, bot
+from userbot.utils import edit_delete, edit_or_reply, kar_cmd
 
 modules = CMD_HELP
 
-# ================= CONSTANT =================
-DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
-# ============================================
 
-
-@register(outgoing=True, pattern="^.help(?: |$)(.*)")
-async def help(KarmanNewuser_bot):
-    """ For .help command,"""
-    args = KarmanNewuser_bot.pattern_match.group(1).lower()
+@kar_cmd(pattern="help(?: |$)(.*)")
+async def help(event):
+    """For help command"""
+    args = event.pattern_match.group(1).lower()
     if args:
         if args in CMD_HELP:
-            await KarmanNewuser_bot.edit(str(CMD_HELP[args]))
+            await edit_or_reply(event, str(CMD_HELP[args]))
         else:
-            await KarmanNewuser_bot.edit("**`NGETIK YANG BENER LAH KONTOL!`**")
-            await asyncio.sleep(50)
-            await KarmanNewuser_bot.delete()
+            await edit_delete(event, f"𝘔𝘢𝘢𝘧 𝘔𝘰𝘥𝘶𝘭𝘦 `{args}` 𝘛𝘪𝘥𝘢𝘬 𝘋𝘢𝘱𝘢𝘵 𝘋𝘪𝘵𝘦𝘮𝘶𝘬𝘢𝘯!!")
     else:
+        user = await bot.get_me()
         string = ""
         for i in CMD_HELP:
             string += "`" + str(i)
-            string += f"`\t {EMOJI_HELP}  "
-        await KarmanNewuser_bot.edit(f"**{REPO_NAME}**\n\n"
-                         f"**{EMOJI_HELP} 𝙿𝙴𝙼𝙸𝙻𝙸𝙺 𝙱𝙾𝚃 : {DEFAULTUSER}**\n**{EMOJI_HELP}  𝙼𝙾𝙳𝚄𝙻𝙴𝚂 : {len(modules)}**\n\n"
-                         f"**{EMOJI_HELP} 𝚂𝙴𝙼𝚄𝙰 𝙼𝙴𝙽𝚄 :**\n\n ══════════╣❃ ♕ ❃╠══════════\n\n"
-                         f"{EMOJI_HELP} {string}\n\n ══════════╣❃ ♕ ❃╠══════════\n\nNGETIK YANG BENER YA NGENTOOOOT\n\n")
-        await KarmanNewuser_bot.reply(f"\n**Contoh** : Ketik <`.help ping`> Untuk Informasi Pengunaan.\nJangan Lupa Berdoa Sebelum Mencoba wahahaha..")
-        await asyncio.sleep(50)
-        await KarmanNewuser_bot.delete()
+            string += f"`\t\t\t{EMOJI_HELP}\t\t\t"
+        await edit_or_reply(
+            event,
+            f"{EMOJI_HELP}   {string}"
+            f"\n\nSupport @KarmanNewuser_bot\n"
+        )
+        await event.reply(
+            f"╭┄──────┈┄┈──────┄\n"
+            f"│ ▸ **Daftar Perintah KARMAN-USERBOT :**\n"
+            f"│ ▸ **Jumlah** `{len(modules)}` **Modules**\n"
+            f"│ ▸ **Owner:** [{user.first_name}](tg://user?id={user.id})\n"
+            f"├┄─────┈┄┈─────┄\n"
+            f"│ **Contoh Ketik** `{cmd}help ping`\n"
+            f"│ **Untuk Melihat Informasi Module**\n"
+            f"╰┄──────┈┈──────┄"
+        )
