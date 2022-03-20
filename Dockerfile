@@ -7,10 +7,10 @@ FROM ramadhani892/ramagans:slim-buster
 # ======================
 
 
-RUN git clone -b KARMAN-USERNOT https://github.com/ArmanGG01/KARMAN-USERBOT /home/KARMAN-USERBOT/ \
-    && chmod 777 /home/KARMAN-USERBOT \
-    && mkdir /home/KARMAN-USERBOT/bin/
-WORKDIR /home/KARMAN-USERBOT/
+RUN git clone -b KARMAN-USERNOT https://github.com/ArmanGG01/KARMAN-USERBOT /home/karman-userbot/ \
+    && chmod 777 /home/karman-userbot \
+    && mkdir /home/karman-userbot/bin/
+WORKDIR /home/karman-userbot/
 
 
 CMD ["python3", "-m", "userbot"]
