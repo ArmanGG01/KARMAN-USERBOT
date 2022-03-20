@@ -1,3 +1,5 @@
+# fixes By : RAM-UBOT
+
 import os
 import random
 
@@ -22,26 +24,26 @@ async def gen_thumb(thumbnail, title, userid, ctitle):
         async with session.get(thumbnail) as resp:
             if resp.status == 200:
                 f = await aiofiles.open(
-                    f"userbot/resources/thumb{userid}.png", mode="wb"
+                    f"userbot/resource/thumb{userid}.png", mode="wb"
                 )
                 await f.write(await resp.read())
                 await f.close()
     theme = random.choice(themes)
-    image1 = Image.open(f"userbot/resources/thumb{userid}.png")
-    image2 = Image.open(f"userbot/resources/{theme}.png")
+    image1 = Image.open(f"userbot/resource/thumb{userid}.png")
+    image2 = Image.open(f"userbot/resource/{theme}.png")
     image3 = changeImageSize(1280, 720, image1)
     image4 = changeImageSize(1280, 720, image2)
     image5 = image3.convert("RGBA")
     image6 = image4.convert("RGBA")
-    Image.alpha_composite(image5, image6).save(f"userbot/resources/temp{userid}.png")
-    img = Image.open(f"userbot/resources/temp{userid}.png")
+    Image.alpha_composite(image5, image6).save(f"userbot/resource/temp{userid}.png")
+    img = Image.open(f"userbot/resource/temp{userid}.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("userbot/resources/Roboto-Light.ttf", 52)
-    font2 = ImageFont.truetype("userbot/resources/Roboto-Medium.ttf", 76)
+    font = ImageFont.truetype("userbot/resource/Roboto-Light.ttf", 52)
+    font2 = ImageFont.truetype("userbot/resource/Roboto-Medium.ttf", 76)
     draw.text((27, 538), f"Playing on {ctitle[:15]}...", (0, 0, 0), font=font)
     draw.text((27, 612), f"{title[:20]}...", (0, 0, 0), font=font2)
-    img.save(f"userbot/resources/final{userid}.png")
-    os.remove(f"userbot/resources/temp{userid}.png")
-    os.remove(f"userbot/resources/thumb{userid}.png")
-    final = f"userbot/resources/final{userid}.png"
+    img.save(f"userbot/resource/final{userid}.png")
+    os.remove(f"userbot/resource/temp{userid}.png")
+    os.remove(f"userbot/resource/thumb{userid}.png")
+    final = f"userbot/resource/final{userid}.png"
     return final
