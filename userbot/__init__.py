@@ -1,5 +1,5 @@
 # Yaa begitu lah
-
+# Fixes by : RAM-UBOT
 """ Userbot initialization. """
 
 import logging
@@ -543,6 +543,8 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
+        bot(JoinChannelRequest("@UserbotCh"))
+        bot(JoinChannelRequest("@Ramsupportt"))
 
         dugmeler = CMD_HELP
         user = bot.get_me()
