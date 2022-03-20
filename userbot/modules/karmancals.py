@@ -7,6 +7,9 @@
 # Ambil aja gapapa tp Gaguna kaya hidup lu Woakkakaka
 
 
+from telethon.utils import get_display_name
+from telethon.tl import types
+
 from telethon.tl.functions.channels import GetFullChannelRequest as getchat
 from telethon.tl.functions.phone import CreateGroupCallRequest as startvc
 from telethon.tl.functions.phone import DiscardGroupCallRequest as stopvc
@@ -15,8 +18,10 @@ from telethon.tl.functions.phone import InviteToGroupCallRequest as invitetovc
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot import CMD_HANDLER as cmd
+from userbot.utils import edit_delete, edit_or_reply, kar_cmd
 
-NO_ADMIN = "`LU BUKAN ADMIN NGENTOT!!`"
+NO_ADMIN = "`KAU BUKAN ADMIN KONTOL`"
 
 def vcmention(user):
     full_name = get_display_name(user)
@@ -26,7 +31,7 @@ def vcmention(user):
 
 
 async def get_call(komtol):
-    karmanbot = await komtol.client(getchat(komtol.chat_id))
+    karbot = await komtol.client(getchat(komtol.chat_id))
     arman = await komtol.client(getvc(karbot.full_chat.call, limit=1))
     return arman.call
 
@@ -36,62 +41,93 @@ def user_list(l, n):
         yield l[i: i + n]
 
 
-@register(outgoing=True, pattern=r"^\.startvc$")
+@kar_cmd(pattern="startvc$")
+@register(pattern=r"^\.cstr$", sudo=True)
 async def start_voice(c):
+    me = await c.client.get_me()
     chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        await edit_delete(c, "**KAU BUKAN ADMIN LAH KONTOL JADI GA BISA**")
         return
     try:
         await c.client(startvc(c.chat_id))
-        await c.edit("`OS DI MULAI, YG ONCAM LO ANJING!`")
+        await edit_or_reply(c, "`OBROLAN SUARA DI NYALAKAN, YANG ONCAM KAU ANAK HARAM !`")
     except Exception as ex:
-        await c.edit(f"**ERROR:** `{ex}`")
+        await edit_delete(c, f"**ERROR:** `{ex}`")
 
 
-@register(outgoing=True, pattern=r"^\.stopvc$")
+@kar_cmd(pattern="stopvc$")
+@register(pattern=r"^\.cstp$", sudo=True)
 async def stop_voice(c):
+    me = await c.client.get_me()
     chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
 
     if not admin and not creator:
-        await c.edit(f"**Maaf {ALIVE_NAME} Bukan Admin 👮**")
+        await edit_delete(c, "**kau bukan admin babi**")
         return
     try:
         await c.client(stopvc(await get_call(c)))
-        await c.edit("`OS DIMATIIN, TYPING AJA YA NGENTOT!`")
+        await edit_or_reply(c, "`OBROLAN SUARA DI MATIKAN, KALIAN TYPING AJA YA KONTOL`")
     except Exception as ex:
-        await c.edit(f"**ERROR:** `{ex}`")
+        await edit_delete(c, f"**ERROR:** `{ex}`")
 
-@register(outgoing=True, pattern=r"^\.vcinvite", groups_only=True)
-async def _(karmanbot):
-    await karmanbot.edit("`Memulai Invite member group...`")
+
+@kar_cmd(pattern="vcinvite")
+async def _(c):
+    xxnx = await edit_or_reply(c, "`Inviting Members to Voice Chat...`")
     users = []
     z = 0
-    async for x in karmanbot.client.iter_participants(karmanbot.chat_id):
+    async for x in c.client.iter_participants(c.chat_id):
         if not x.bot:
             users.append(x.id)
-    hmm = list(user_list(users, 6))
-    for p in hmm:
+    botman = list(user_list(users, 6))
+    for p in botman:
         try:
-            await karmanbot.client(invitetovc(call=await get_call(karmanbot), users=p))
+            await c.client(invitetovc(call=await get_call(c), users=p))
             z += 6
         except BaseException:
             pass
-    await karmanbot.edit(f"`Menginvite {z} Member`")
+    await xxnx.edit(f"`{z}` **Orang Berhasil diundang ke VCG**")
+
+
+@kar_cmd(pattern="vctitle(?: |$)(.*)")
+@register(pattern=r"^\.cvct$", sudo=True)
+async def change_title(e):
+    title = e.pattern_match.group(1)
+    me = await e.client.get_me()
+    chat = await e.get_chat()
+    admin = chat.admin_rights
+    creator = chat.creator
+
+    if not title:
+        return await edit_delete(e, "**Silahkan Masukan Title Obrolan Suara Grup**")
+
+    if not admin and not creator:
+        await edit_delete(e, f"**Maaf {me.first_name} Bukan Admin 👮**")
+        return
+    try:
+        await e.client(settitle(call=await get_call(e), title=title.strip()))
+        await edit_or_reply(e, f"**Berhasil Mengubah Judul VCG Menjadi** `{title}`")
+    except Exception as ex:
+        await edit_delete(e, f"**ERROR:** `{ex}`")
 
 
 CMD_HELP.update(
     {
-        "karmancalls": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.startvc`\
-         \n↳ : Memulai Obrolan Suara dalam Group.\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.stopvc`\
-         \n↳ : `Menghentikan Obrolan Suara Pada Group.`\
-         \n𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.vcinvite`\
-         \n↳ : Invite semua member yang berada di group. (Kadang bisa kadang kaga)."
+        "vcg": f"**Plugin : **`vcg`\
+        \n\n  •  **Syntax :** `{cmd}startvc`\
+        \n  •  **Function : **Untuk Memulai voice chat group\
+        \n\n  •  **Syntax :** `{cmd}stopvc`\
+        \n  •  **Function : **Untuk Memberhentikan voice chat group\
+        \n\n  •  **Syntax :** `{cmd}vctitle` <title vcg>\
+        \n  •  **Function : **Untuk Mengubah title/judul voice chat group\
+        \n\n  •  **Syntax :** `{cmd}vcinvite`\
+        \n  •  **Function : **Mengundang Member group ke voice chat group\
+    "
     }
 )
