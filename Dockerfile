@@ -1,19 +1,16 @@
-# Using Python Slim-Buster
-FROM vckyouuu/geezprojects:buster
-# KARMAN-USERBOT
-# GLEDEK-USERBOT
-#  THANKS FOR RAM-UBOT
-#YA UDH IYA PEPEK
+FROM ramadhani892/ramagans:slim-buster
 
-RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /root/userbot
-RUN mkdir /root/userbot/.bin
-RUN pip install --upgrade pip setuptools
-WORKDIR /root/userbot
+# Rama ganteng, Yang hapus credit, Lo babi heheh
+# ======================
+#    RAM-UBOT DOCKER
+#   FROM DOCKERHUB.COM
+# ======================
 
-#Install python requirements
-RUN pip3 install -r https://raw.githubusercontent.com/ArmanGG01/KARMAN-USERBOT/KARMAN-USERBOT/requirements.txt
 
-EXPOSE 80 443
+RUN git clone -b KARMAN-USERNOT https://github.com/ramadhani892/KARMAN-USERBOT /home/ram-ubot/ \
+    && chmod 777 /home/ram-ubot \
+    && mkdir /home/ram-ubot/bin/
+WORKDIR /home/ram-ubot/
 
-# Finalization
-CMD ["python3","-m","userbot"]
+
+CMD ["python3", "-m", "userbot"]
