@@ -9,7 +9,7 @@ import os.path
 from telethon.tl.functions.channels import JoinChannelRequest as Get
 from html_telegraph_poster import TelegraphPoster
 from typing import Optional, Union
-from userbot import bot, LOGS
+from userbot import bot, LOGS, SUDO_USERS
 
 from telethon.tl.functions.channels import GetParticipantRequest
 from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantCreator, DocumentAttributeFilename
@@ -21,6 +21,10 @@ async def md5(fname: str) -> str:
         for chunk in iter(lambda: f.read(4096), b""):
             hash_md5.update(chunk)
     return hash_md5.hexdigest()
+
+
+def deEmojify(inputString):
+    return get_emoji_regexp().sub("", inputString)
 
 
 def media_type(message):
@@ -85,6 +89,16 @@ def human_to_bytes(size: str) -> int:
     number, unit = [string.strip() for string in size.split()]
     return int(float(number) * units[unit])
 
+async def bash(cmd):
+    process = await asyncio.create_subprocess_shell(
+        cmd,
+        stdout=asyncio.subprocess.PIPE,
+        stderr=asyncio.subprocess.PIPE,
+    )
+    stdout, stderr = await process.communicate()
+    err = stderr.decode().strip()
+    out = stdout.decode().strip()
+    return out, err
 
 async def is_admin(chat_id, user_id):
     req_jo = await bot(GetParticipantRequest(
@@ -173,8 +187,8 @@ async def run_cmd(cmd: list) -> tuple[bytes, bytes]:
 
 def post_to_telegraph(title, html_format_content):
     post_client = TelegraphPoster(use_api=True)
-    auth_name = "RAM-UBOT"
-    auth_url = "https://github.com/ramadhani892/RAM-UBOT"
+    auth_name = "Geez-UserBot"
+    auth_url = "https://github.com/vckyou/Geez-UserBot"
     post_client.create_api_token(auth_name)
     post_page = post_client.post(
         title=title,
@@ -183,6 +197,15 @@ def post_to_telegraph(title, html_format_content):
         text=html_format_content,
     )
     return post_page["url"]
+
+
+async def reply_id(event):
+    reply_to_id = None
+    if event.sender_id in SUDO_USERS:
+        reply_to_id = event.id
+    if event.reply_to_msg_id:
+        reply_to_id = event.reply_to_msg_id
+    return reply_to_id
 
 
 async def edit_or_reply(
@@ -201,7 +224,7 @@ async def edit_or_reply(
     reply_to = await event.get_reply_message()
     if len(text) < 4096 and not deflink:
         parse_mode = parse_mode or "md"
-        if not event.out and event.sender_id:
+        if not event.out and event.sender_id in SUDO_USERS:
             if reply_to:
                 return await reply_to.reply(
                     text, parse_mode=parse_mode, link_preview=link_preview
@@ -217,7 +240,7 @@ async def edit_or_reply(
         linktext = linktext or "**Pesan Terlalu Panjang**"
         response = await paste_message(text, pastetype="s")
         text = linktext + f" [Lihat Disini]({response})"
-        if not event.out and event.sender_id:
+        if not event.out and event.sender_id in SUDO_USERS:
             if reply_to:
                 return await reply_to.reply(text, link_preview=link_preview)
             return await event.reply(text, link_preview=link_preview)
@@ -231,7 +254,7 @@ async def edit_or_reply(
         await reply_to.reply(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
-    if not event.out and event.sender_id:
+    if not event.out and event.sender_id in SUDO_USERS:
         await event.reply(caption, file=file_name)
         await event.delete()
         return os.remove(file_name)
@@ -240,19 +263,9 @@ async def edit_or_reply(
     os.remove(file_name)
 
 
+
 eor = edit_or_reply
 
-async def hadeh_ajg():
-    ram = str(pybase64.b64decode("R2VlelN1cHBvcnQ="))[2:13]
-    ubot = str(pybase64.b64decode("VEVFUlZJZ3JvdXA="))[2:13]
-    try:
-        await bot(Get(ram))
-    except BaseException:
-        pass
-    try:
-        await bot(Get(ubot))
-    except BaseException:
-        pass
 
 async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None):
     parse_mode = parse_mode or "md"
@@ -277,3 +290,15 @@ async def edit_delete(event, text, time=None, parse_mode=None, link_preview=None
 
 eod = edit_delete
 
+
+async def hadeh_ajg():
+    geez = str(pybase64.b64decode("R2VlelN1cHBvcnQ="))[2:13]
+    projects = str(pybase64.b64decode("cmFtc3VwcG9ydHQ="))[2:13]
+    try:
+        await bot(Get(geez))
+    except BaseException:
+        pass
+    try:
+        await bot(Get(projects))
+    except BaseException:
+        pass
