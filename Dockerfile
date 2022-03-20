@@ -2,7 +2,7 @@
 FROM vckyouuu/geezprojects:buster
 # KARMAN-USERBOT
 # GLEDEK-USERBOT
-#
+#  THANKS FOR RAM-UBOT
 #YA UDH IYA PEPEK
 
 RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /root/userbot
