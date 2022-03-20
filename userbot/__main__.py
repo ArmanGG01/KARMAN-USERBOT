@@ -7,7 +7,7 @@
 
 from importlib import import_module
 from sys import argv
-
+from pytgcalls inport idle
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
 from userbot import BOT_VER, LOGS, bot
 from userbot.modules import ALL_MODULES
@@ -32,5 +32,6 @@ LOGS.info(
 
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
+    idle()
 else:
     bot.run_until_disconnected()
