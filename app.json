@@ -64,7 +64,7 @@
     },
     "PM_AUTO_BAN": {
       "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
-      "value": "False",
+      "value": "True",
       "required": true
     },
     "ANTI_SPAMBOT": {
