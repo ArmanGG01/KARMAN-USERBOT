@@ -1,6 +1,7 @@
 from userbot.events import register
 from userbot import CMD_HELP, bot
 
+# ADDED BY : RAM-UBOT
 
 GCAST_BLACKLIST = [
     -1001473548283,  # SharingUserbot
@@ -21,6 +22,7 @@ GCAST_BLACKLIST = [
     -1001489233533,  # RumahKitaroo
     -1001302879778,  # GRUPMUTUALANUSERBOT
     -1001705349543,  # GEEZNEWGRUP
+    -1001692751821, # ramsupportt
 ]
     
 
