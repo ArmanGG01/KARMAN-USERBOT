@@ -1,6 +1,6 @@
-# Credits: @lahtololdah
-# Thaks For Risman <Man-Userbot>
-# t.me/SharingUserbot & t.me/Geezsupport
+# Credits: @mrismanaziz
+# FROM GeezProjects <https://github.com/vckyou/GeezProjects>
+# t.me/SharingUserbot & t.me/GeezProjects
 
 import asyncio
 import importlib
@@ -36,14 +36,14 @@ async def autobot():
         return
     await bot.start()
     await bot.send_message(
-        BOTLOG_CHATID, "**AKU LAGI BIKIN BOT ASISSTANT DI @BOTFATHER YA KONTOL, SABAR DULU KAU, KALO GA SABAR MATI AJA KAU NGENTOD**"
+        BOTLOG_CHATID, "**SEDANG MEMBUAT BOT TELEGRAM UNTUK ANDA DI @BotFather**"
     )
     who = await bot.get_me()
-    name = who.first_name + " Assistant"
+    name = who.first_name + " Assistant Bot"
     if who.username:
         username = who.username + "_ubot"
     else:
-        username = "kar" + (str(who.id))[5:] + "userbot"
+        username = "geez" + (str(who.id))[5:] + "ubot"
     bf = "@BotFather"
     await bot(UnblockRequest(bf))
     await bot.send_message(bf, "/cancel")
@@ -76,7 +76,7 @@ async def autobot():
     await bot.send_read_acknowledge("botfather")
     if isdone.startswith("Sorry,"):
         ran = randint(1, 100)
-        username = "Asisstant" + (str(who.id))[6:] + str(ran) + "Bot"
+        username = "geez" + (str(who.id))[6:] + str(ran) + "ubot"
         await bot.send_message(bf, username)
         await asyncio.sleep(1)
         nowdone = (await bot.get_messages(bf, limit=1))[0].text
@@ -98,14 +98,14 @@ async def autobot():
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
-            await bot.send_message(bf, f"Asisstan punya si kontol {who.first_name}")
+            await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
             await asyncio.sleep(3)
             await bot.send_message(bf, "/setdescription")
             await asyncio.sleep(1)
             await bot.send_message(bf, f"@{username}")
             await asyncio.sleep(1)
             await bot.send_message(
-                bf, f"🌟 Owner ~ {who.first_name} 🌟\n\n🌟 Powered By ~ @obrolanauar 🌟"
+                bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @obrolansuar✨"
             )
             await bot.send_message(
                 BOTLOG_CHATID,
@@ -140,14 +140,14 @@ async def autobot():
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
-        await bot.send_message(bf, f"Buatan anak haram {who.first_name}")
+        await bot.send_message(bf, f"Managed With ☕️ By {who.first_name}")
         await asyncio.sleep(3)
         await bot.send_message(bf, "/setdescription")
         await asyncio.sleep(1)
         await bot.send_message(bf, f"@{username}")
         await asyncio.sleep(1)
         await bot.send_message(
-            bf, f"🌟 Owner ~ {who.first_name} 🌟\n\n🌟 Powered By ~ @obrolansuar 🌟"
+            bf, f"✨ Owner ~ {who.first_name} ✨\n\n✨ Powered By ~ @obrolansuar ✨"
         )
         await bot.send_message(
             BOTLOG_CHATID,
