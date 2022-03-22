@@ -209,6 +209,21 @@ DEVS = (
 )
 # DI HAPUS KU TANDAI!
 
+# Blacklist User for use KARMAN
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/ArmanGG01/Karblack/master/karblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        karblacklist = []
+        break
+    karblacklist = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
+
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
