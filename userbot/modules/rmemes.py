@@ -6,6 +6,7 @@ from telethon import events
 import asyncio
 
 from userbot.events import register
+from platform import uname
 from userbot import CMD_HELP, bot, ALIVE_NAME
 from collections import deque
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
