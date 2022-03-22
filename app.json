@@ -1,8 +1,7 @@
-
 {
-  "name": "KARMAN U-BOT",
-  "description": "KARMAN U-BOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
-  "logo": "https://telegra.ph/file/c97811e33743ce755ada5.jpg",
+  "name": "KARMAN-UBOT",
+  "description": "[KARMAN-USERBOT] USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "logo": "https://telegra.ph/file/be5a4a2cb6aac37ca7945.jpg",
   "keywords": [
     "telegram",
     "userbot",
@@ -10,124 +9,39 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/ArmanGG01/KARMAN-USERBOT/KARMAN U-BOT",
+  "repository": "https://github.com/ArmanGG01/RAM-UBOT",
   "telegram": "https://t.me/PakkPoll",
-  "success_url": "https://t.me/DeployBot01",
+  "success_url": "https://t.me/obrolansuar",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan Api Key di web my.telegram.org",
+      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan Api Hash Di Web my.telegram.org",
+      "description": "Dapatkan API Hash di web my.telegram.org",
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di termux caranya ada di repo, jika tidak tau reponya tanya ke @PakkPoll di telegram",
+      "description": "Dapatkan String Session di Grup » @obrolansuar » Lalu ketik #string",
       "required": true
     },
     "HEROKU_APP_NAME": {
-      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas ngentod)",
-      "required": true,
-      "value": "𝙻𝙸𝙰𝚃 𝙿𝙰𝙻𝙸𝙽𝙶 𝙰𝚃𝙰𝚂 𝙺𝙾𝙽𝚃𝙾𝙻"
-    },
-    "HEROKU_API_KEY": {
-      "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
-      "value": "Check Di Heroku Dashboard Mu Kontol",
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas kontol)",
       "required": true
     },
-    "BOTLOG": {
-      "description": "Kalo Mau Off in BOTLOG Ganti False",
-      "value": "True",
+    "HEROKU_API_KEY": {
+      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
       "required": true
     },
     "BOTLOG_CHATID": {
-      "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh :",
-      "value": " -1001302879778",
+      "description": "Buatlah grup telegram publik lalu masukan @MissRose_bot ketik /id, masukan id grup nya disini. contoh: -1001473548xxx",
+      "value": "Isi id grup mu wajib dengan awalan -100",
       "required": true
-    },
-    "G_BAN_LOGGER_GROUP": {
-      "description": "Buatlah Sebuah Grup Publik Lalu Masukkan Bot @MissRose_Bot Ke Grup Mu, Setelah itu Ketik /id. Nanti akan muncul ID seperti ini Contoh :",
-      "value": " -1001302879778",
-      "required": true
-    },
-    "COUNTRY": {
-      "description": "Set your Country to be used in the .time and .date commands.",
-      "value": "ID",
-      "required": true
-    },
-    "TZ_NUMBER": {
-      "description": "Change this value in case your country has multiple Time Zones.",
-      "value": "1",
-      "required": false
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban Feature Switch. Also known as the 'bleep blop, this is a bot...' module.",
+      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
       "value": "True",
-      "required": true
-    },
-    "ANTI_SPAMBOT": {
-      "description": "Kicks spambots from groups after they join. [Requires admin powers in groups to kick.]",
-      "value": "False"
-    },
-    "ANTI_SPAMBOT_SHOUT": {
-      "description": "Report spambots to @admins in groups after they join, just in case when you don't have admin powers to kick that shit yourself.",
-      "value": "False"
-    },
-    "TMP_DOWNLOAD_DIRECTORY": {
-      "description": "Download location for many modules (GDrive, .download etc..)",
-      "value": "./downloads/"
-    },
-    "CLEAN_WELCOME": {
-      "description": "When a new person joins, the old welcome message is deleted.",
-      "value": "True"
-    },
-    "HEROKU_MEMEZ": {
-      "description": "This should be True if the userbot is running on a Heroku Dyno.",
-      "value": "True",
-      "required": true
-    },
-    "DEFAULT_BIO": {
-      "description": "Default Bio Mu.",
-      "value": "💀𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💀",
-      "required": false
-    },
-    "ALIVE_NAME": {
-      "description": "Nama untuk menunjukan pesan .alive",
-      "required": true
-    },
-     "ALIVE_LOGO": {
-      "description": "Gambar dalam module .alive",
-      "value": "https://telegra.ph/file/c97811e33743ce755ada5.jpg",
-      "required": false
-    },
-    "MAN_TEKS_KUSTOM": {
-      "description": "Kustom Pesan Alive Mu Untuk Perintah .karalive (Isi Terserah)",
-      "value": "𝙸'𝚖 𝚞𝚜𝚒𝚗𝚐 𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 💀",
-      "required": false 
-    },
-    "S_PACK_NAME": {
-      "description": "Nama Sticker Pack Mu",
-      "required": false
-    },
-    "WEATHER_DEFCITY": {
-      "description": "Set the default city for the userbot's weather module.",
-      "value": "MEDAN",
-      "required": false
-    },
-    "LOGSPAMMER": {
-      "description": "Set this to True in case you want the error logs to be stored in the userbot log group, instead of spitting out the file in the current chat, requires a valid BOTLOG_CHATID to be set.",
-      "value": "True",
-      "required": true
-    },
-    "BOT_TOKEN": {
-      "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": true
-    },
-    "BOT_USERNAME": {
-      "description": "Username Bot Kamu Di @BotFather, Tanpa @",
-      "value": "𝙲𝚘𝚗𝚝𝚘𝚑 armanbotisssss_bot",
       "required": true
     }
   },
@@ -146,7 +60,7 @@
     "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
   }, {
     "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
-  }, {
+  },{
     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   }, {
     "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
@@ -154,5 +68,11 @@
     "url": "https://github.com/amivin/aria2-heroku"
   }, {
     "url": "https://github.com/stevo550/buildpack-slug-cleaner"
-  }]
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
