@@ -26,7 +26,8 @@
 [![GitHub contributors](https://img.shields.io/github/contributors/ArmanGG01/KARMAN-USERBOT?&style=plastic&logo=github)](https://GitHub.com/ArmanGG01/KARMAN-USERBOT/graphs/contributors/)
 
 
-<h3 align="center">𝙺𝙻𝙸𝙺 𝚃𝙾𝙼𝙱𝙾𝙻 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 𝙸𝙽𝙸 𝚄𝙽𝚃𝚄𝙺 𝙳𝙴𝙿𝙻𝙾𝚈 𝙳𝙸 𝙷𝙴𝚁𝙾𝙺𝚄 & 𝙱𝙾𝚃 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼</h3><p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy/"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-black?style=flat&logo=heroku" width="150" height="30.00" /></a></p>
+<h3 align="center">𝙺𝙻𝙸𝙺 𝚃𝙾𝙼𝙱𝙾𝙻 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 𝙸𝙽𝙸 𝚄𝙽𝚃𝚄𝙺 𝙳𝙴𝙿𝙻𝙾𝚈 𝙳𝙸 𝙷𝙴𝚁𝙾𝙺𝚄 & 𝙱𝙾𝚃 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼</h3><<p align="center"><a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy/"> <img src="https://img.shields.io/badge/Deploy%20Ke%20Heroku-black?style=flat&logo=heroku" width="150" height="30.00" /></a></p>
+
 
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
 
