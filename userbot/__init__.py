@@ -561,8 +561,8 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        bot(JoinChannelRequest("@UserbotCh"))
-        bot(JoinChannelRequest("@Ramsupportt"))
+        bot(JoinChannelRequest("@DeployBot01"))
+        bot(JoinChannelRequest("@obrolansuar"))
 
         dugmeler = CMD_HELP
         user = bot.get_me()
