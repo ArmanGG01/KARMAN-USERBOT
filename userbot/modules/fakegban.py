@@ -6,7 +6,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, bot, owner
+from userbot import CMD_HELP, ALIVE NAME, bot
 from userbot.utils import edit_or_reply, kar_cmd
 
 
@@ -16,7 +16,7 @@ async def gbun(event):
         return
     gbunVar = event.text
     gbunVar = gbunVar[6:]
-    mentions = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {owner}\n"
+    mentions = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {ALIVE_NAME}\n"
     await edit_or_reply(event, "**Summoning out the mighty gban hammer ☠️**")
     asyncio.sleep(3.5)
     chat = await event.get_input_chat()
@@ -38,7 +38,7 @@ async def gbun(event):
             jnl = (
                 "**Warning!!**"
                 "[{}](tg://user?id={})"
-                f"** 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {owner}\n\n"
+                f"** 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {ALIVE_NAME}\n\n"
                 "**Name: ** __{}__\n"
                 "**ID : ** `{}`\n"
             ).format(firstname, idd, firstname, idd)
@@ -55,7 +55,7 @@ async def gbun(event):
                 jnl += no_reason
             await reply_message.reply(jnl)
     else:
-        mention = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {owner} \n**Reason:** `null` "
+        mention = f"**Warning!! User 𝙂𝘽𝘼𝙉𝙉𝙀𝘿 By** {ALIVE_NAME} \n**Reason:** `null` "
         await event.reply(mention)
     await event.delete()
 
