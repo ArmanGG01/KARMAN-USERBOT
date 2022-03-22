@@ -12,6 +12,7 @@
 # Ngefork Doang Gak Bintang Anjg
 # Kalo Clone Ini Jangan dihapus ya anjg nanti Koala Ngamuk, Ok Mksh Sma Sma
 
+from platform import uname
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
