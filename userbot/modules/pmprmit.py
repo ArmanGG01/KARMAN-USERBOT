@@ -249,7 +249,7 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`OK, Pesan Telah Diterima..`")
 
-    await apprvpm.edit(f"`OK [{name0}](tg://user?id={uid}) , Pesan Kau Telah Diterima`")
+    await apprvpm.edit(f"Ok[{name0}](tg://user?id={uid})`, Pesan Kau Telah Diterima`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
