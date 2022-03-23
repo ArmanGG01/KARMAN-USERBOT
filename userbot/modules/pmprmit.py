@@ -40,7 +40,7 @@ DEF_UNAPPROVED_MSG = (
     " Gausah Spam Ya Anjeng\n"
     " Lu Bandel?\n"
     " Gua Sentil Biji Peler Lu\n"
-    " Tungguin Aja Ya Ngentot Sampai Baginda\n"
+    " Tungguin Aja Ya Ngentot Sampai  Baginda\n"
     f" `{DEFAULTUSER}` Ngebaca Pesan Elu\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
 
@@ -249,7 +249,7 @@ async def approvepm(apprvpm):
     except IntegrityError:
         return await apprvpm.edit("`OK, Pesan Telah Diterima..`")
 
-    await apprvpm.edit(f"[{name0}](tg://user?id={uid}) `OK, Pesan Telah Diterima..`")
+    await apprvpm.edit(f"`OK [{name0}](tg://user?id={uid}) , Pesan Kau Telah Diterima`")
     await apprvpm.delete(getmsg)
     await message.delete()
 
