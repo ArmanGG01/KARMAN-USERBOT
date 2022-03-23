@@ -27,12 +27,16 @@
       "description": "Dapatkan String Session di Grup » @obrolansuar » Lalu ketik #string",
       "required": true
     },
-    "HEROKU_APP_NAME": {
-      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+    "ALIVE_NAME": {
+      "description": "Nama untuk menunjukan pesan .alive",
       "required": true
     },
     "HEROKU_API_KEY": {
       "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
+      "required": true
+    },
+    "HEROKU_APP_NAME": {
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
       "required": true
     },
     "BOT_TOKEN": {
@@ -41,7 +45,7 @@
     },
     "BOT_USERNAME": {
       "description": "Username Bot Kamu Di @BotFather, Tanpa @",
-      "value": "𝙲𝚘𝚗𝚝𝚘𝚑 armanbotisssss_bot",
+      "value": "𝙲𝚘𝚗𝚝𝚘𝚑 : armanbotisssss_bot",
       "required": true
     },
     "BOTLOG_CHATID": {
