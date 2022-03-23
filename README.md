@@ -29,7 +29,7 @@
 <h3 align="center">𝙺𝙻𝙸𝙺 𝚃𝙾𝙼𝙱𝙾𝙻 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 𝙸𝙽𝙸 𝚄𝙽𝚃𝚄𝙺 𝙳𝙴𝙿𝙻𝙾𝚈 𝙳𝙸 𝙱𝙾𝚃 𝚃𝙴𝙻𝙴𝙶𝚁𝙰𝙼
 
 
-<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0RlcGxveSBtYWlu"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
+<p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
 
 #### GROUP SUPPORT KARMAN🖥
 
