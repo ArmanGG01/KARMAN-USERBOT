@@ -42,3 +42,8 @@ async def typewriter(typew):
     typew.pattern_match.group(1)
     await typew.edit("**SUMPAH KAU ITU ANAK HARAM YANG DI BUANG KE TONG SAMPAH ABIS ITU DI KUTIP SAMA BAPAK KAU YANG SEKARNG IYA YANG MISKIN JELEK BEDAKI KONTOL BENGKOK**")
 
+
+
+CMD_HELP.update({
+         "bacot01": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot01`"\
+        "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 01 Sampai 05."})
