@@ -200,7 +200,7 @@ async def typewriter(typew):
 
 CMD_HELP.update(
     {
-        "war2": "**Plugin : **`war2`\
+        "war": "**Plugin : **`war`\
         \n\n  •  **Syntax :** `.sok`\
         \n  •  **Function : **Ngatain orang sok keras\
         \n\n  •  **Syntax :** `.alay`\
@@ -227,7 +227,7 @@ CMD_HELP.update(
         \n  •  **Function : **Ngatain orang gila title\
         \n\n  •  **Syntax :** `.an`\
         \n  •  **Function : **Liat sendiri\
-        \n\n**Klo mau Req, kosa kata dari lu Hubungi @kyuraonly**\
+        \n\n**Klo mau Req, kosa kata dari lu Hubungi @PakkPoll**\
     "
     }
 )
