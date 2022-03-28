@@ -75,7 +75,7 @@ async def get_users(event):
                 return await ram.edit(f"**Tugas Selesai bersama dengan Error**\n(`May Got Limit Error from telethon Please try agin Later`)\n**Error** : \n`{error}`\n\n• Invited `{s}` people \n• Failed to Invite `{f}` people")
             await event.client(functions.channels.InviteToChannelRequest(channel=chat, users=[user.id]))
             s = s + 1
-            await man.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Kontol \n• Failed to Invite `{f}` people\n\n**× LastError:** `{error}`")
+            await man.edit(f"**Sedang berjalan...**\n\n• Menambahkan `{s}` Anak Kontol \n• Gagal Mengundang `{f}` Anak Kontol\n\n**× LastError:** `{error}`")
         except Exception as e:
             error = str(e)
             f = f + 1
