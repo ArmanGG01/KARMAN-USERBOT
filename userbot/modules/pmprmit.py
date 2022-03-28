@@ -45,7 +45,7 @@ DEF_UNAPPROVED_MSG = (
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
 
     "╾─────────────────────╼\n"
-    "   😡😡KONTOLLLLL 😡😡\n"
+    "   😡😡KONTOL😡😡\n"
     "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
     f"- 👑Babu Nya `{DEFAULTUSER}`\n"
     "- DIKELOLAH OLEH 👑 KARMAN-USERBOT 👑")
