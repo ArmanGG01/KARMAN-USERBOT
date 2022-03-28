@@ -613,7 +613,7 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=True,
-                    text=f"**👑 inline KARMAN-USERBOT 👑**\n\n👑 **Owner** [ARMAN](t.me/PakkPoll)\n👑 **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**👑 𝙸𝙽𝙻𝙸𝙽𝙴 KARMAN-USERBOT 👑**\n\n❥ **𝙾𝚆𝙽𝙴𝚁 :** [𝙰𝚁𝙼𝙰𝙽](t.me/PakkPoll)\n❥ **𝙱𝙾𝚃 𝚅𝙴𝚁 :** 9.0\n❥ **𝙹𝚄𝙼𝙻𝙰𝙷 :** `{len(dugmeler)}` 𝙼𝙾𝙳𝚄𝙻𝙴𝚂",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
