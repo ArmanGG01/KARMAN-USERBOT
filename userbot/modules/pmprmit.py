@@ -41,7 +41,7 @@ DEF_UNAPPROVED_MSG = (
     " Kau Bandel?\n"
     " Ku Sentil Biji Peler Kau\n"
     " Tungguin Aja Ya Kontol Sampai Si\n"
-    f" `{DEFAULTUSER}` Ngebaca Pesan Elu\n"
+    f" `{DEFAULTUSER}` Ngebaca Pesan Kau\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
 
     "╾─────────────────────╼\n"
