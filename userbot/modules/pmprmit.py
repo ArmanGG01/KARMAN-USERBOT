@@ -28,25 +28,25 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "    APA LU KONTOL?\n"
-    f"  MAU GANGGUIN BAGINDA `{DEFAULTUSER}` ?\n"
+    "    APA KAU KONTOL?\n"
+    f"  MAU GANGGUIN RAJA `{DEFAULTUSER}` ?\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
 
-    f"Gua Babu Nya `{DEFAULTUSER}`\n"
+    f"Aku Babu Nya `{DEFAULTUSER}`\n"
     "╾─────────────────────╼\n\n"
 
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    " Baca Kontol\n"
+    " Baca Ini Kontol\n"
     " Gausah Spam Ya Anjeng\n"
-    " Lu Bandel?\n"
-    " Gua Sentil Biji Peler Lu\n"
-    " Tungguin Aja Ya Ngentot Sampai  Baginda\n"
+    " Kau Bandel?\n"
+    " Ku Sentil Biji Peler Kau\n"
+    " Tungguin Aja Ya Kontol Sampai Si\n"
     f" `{DEFAULTUSER}` Ngebaca Pesan Elu\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
 
     "╾─────────────────────╼\n"
-    "   😡😡KONTOL😡😡\n"
-    "─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇─̇\n"
+    "  JANGAN SPAM KAU KONTOL\n"
+    "╾─────────────────────╼\n"
     f"- 👑Babu Nya `{DEFAULTUSER}`\n"
     "- DIKELOLAH OLEH 👑 KARMAN-USERBOT 👑")
 # =================================================================
