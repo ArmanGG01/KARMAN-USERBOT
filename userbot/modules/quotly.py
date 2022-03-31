@@ -1,27 +1,26 @@
-# Thanks Full For © TeamUltroid
-# Port By @Vckyaz
-# FROM GeezProjects <https://github.com/vckyou/GeezProjects>
-# Support @GeezSupport & @GeezProjects
-#
+# Ported by @mrismanaziz
+# FROM Man-Userbot <https://github.com/mrismanaziz/Man-Userbot>
+# t.me/SharingUserbot & t.me/Lunatic0de
 
-import os
+from os import remove
+from random import choice
 
+from telethon.tl.functions.users import GetFullUserRequest
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot.utils import edit_delete, edit_or_reply, kar_cmd
 from userbot.utils.misc import create_quotly
-from telethon.tl.functions.users import GetFullUserRequest
 
-from .karmancarbon import all_col
+from .carbon import all_col
 
 
-@kar_cmd(pattern="q ?(.*)")
-async def quott_(event):
+@kar_cmd(pattern="q( (.*)|$)")
+async def quotly(event):
     match = event.pattern_match.group(1).strip()
     if not event.is_reply:
-        return await edit_delete(event, "`Reply Kepesan!`")
-    msg = await edit_or_reply(event, "Sedang Memprosess!!")
+        return await edit_delete(event, "**Mohon Balas ke Pesan**")
+    msg = await edit_or_reply(event, "`Processing...`")
     reply = await event.get_reply_message()
     replied_to, reply_ = None, None
     if match:
@@ -70,9 +69,9 @@ async def quott_(event):
     try:
         file = await create_quotly(reply_, bg=match, reply=replied_to, sender=user)
     except Exception as er:
-        return await msg.edit(str(er))
-    message = await reply.reply("Quotly by KARMAN-USERBOT", file=file)
-    os.remove(file)
+        return await msg.edit(f"**ERROR:** `{er}`")
+    message = await reply.reply("Quotly by Skyzu-Userbot", file=file)
+    remove(file)
     await msg.delete()
     return message
 
@@ -80,14 +79,14 @@ async def quott_(event):
 CMD_HELP.update(
     {
         "quotly": f"**Plugin : **`quotly`\
-        \n\n**Command :** `{cmd}q`\
-        \n**Usage : **Membuat pesan menjadi sticker dengan random background.\
-        \n\n**Command :** `{cmd}q` <angka>\
-        \n**Usage : **Membuat pesan menjadi sticker dengan custom jumlah pesan yang diberikan.\
-        \n\n**Command :** `{cmd}q` <warna>\
-        \n**Usage : **Membuat pesan menjadi sticker dengan custom warna background yang diberikan.\
-        \n\n**Command :** `{cmd}q` <username>\
-        \n**Usage : **Membuat pesan menjadi sticker dengan custom username user tele yang diberikan.\
+        \n\n  •  **Syntax :** `{cmd}q`\
+        \n  •  **Function : **Membuat pesan menjadi sticker dengan random background.\
+        \n\n  •  **Syntax :** `{cmd}q` <angka>\
+        \n  •  **Function : **Membuat pesan menjadi sticker dengan custom jumlah pesan yang diberikan.\
+        \n\n  •  **Syntax :** `{cmd}q` <warna>\
+        \n  •  **Function : **Membuat pesan menjadi sticker dengan custom warna background yang diberikan.\
+        \n\n  •  **Syntax :** `{cmd}q` <username>\
+        \n  •  **Function : **Membuat pesan menjadi sticker dengan custom username user tele yang diberikan.\
     "
     }
 )
