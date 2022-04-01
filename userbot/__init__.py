@@ -610,7 +610,7 @@ with bot:
             query = event.text
             if event.query.user_id == uid and query.startswith("@KarmanNewuser_bot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
-                result = builder.photo(
+                result = await event.builder.photo(
                     file=ramlogo,
                     link_preview=True,
                     text=f"**👑 𝙸𝙽𝙻𝙸𝙽𝙴 KARMAN-USERBOT 👑**\n\n❥ **𝙾𝚆𝙽𝙴𝚁 :** [𝙰𝚁𝙼𝙰𝙽](t.me/PakkPoll)\n❥ **𝙱𝙾𝚃 𝚅𝙴𝚁 :** 9.0\n❥ **𝙹𝚄𝙼𝙻𝙰𝙷 :** `{len(dugmeler)}` 𝙼𝙾𝙳𝚄𝙻𝙴𝚂",
