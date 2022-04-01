@@ -57,7 +57,7 @@ async def join_(event):
         chats,
         stream_type=ya().pulse_stream,
     )
-    await edit_delete(event, f"**Berhasil Join Obrolan Suara.**\n**ID:{chat_id}!**", 5)
+    await edit_delete(event, f"**Berhasil Join OS Jamet.**\n**ID:{chat_id}**", 5)
 
 
 @kar_cmd(pattern="leavevc(?: |$)(.*)")
@@ -71,5 +71,5 @@ async def leavevc(event):
         try:
             await call_py.leave_group_call(chat_id)
         except (memek, ajg):
-            await edit_or_reply(event, f"Eh {from_user}, Lo ga ada di os ngentot!!!!!")
-        await edit_delete(event, f"**Babay Anak kontol, {from_user} Turun dulu...**", 2)
+            await edit_or_reply(event, f"Woy {from_user}, Kontol Kau Ga Ada Di OS")
+        await edit_delete(event, f"**Di OS Banyak Jamet Jadi, {from_user} Mau Turun Hahaha **", 2)
