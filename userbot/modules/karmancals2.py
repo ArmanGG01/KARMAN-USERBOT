@@ -13,8 +13,9 @@ from pytgcalls.types.input_stream.quality import (
     MediumQualityVideo,
 )
 from pytgcalls.exceptions import (
-    NoActiveGroupCall,
-    NotInGroupCallError
+    NoActiveGroupCall as memek,
+    AlreadyJoinedError as asu,
+    NotInGroupCallError as ajg
 )
 
 from telethon.tl import types
@@ -23,7 +24,7 @@ from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
-from userbot.events import register
+from userbot.events import register as tod
 from userbot import PLAY_PIC as fotoplay
 from userbot import QUEUE_PIC as ngantri
 from userbot import call_py
@@ -459,51 +460,55 @@ async def vc_volume(event):
 # credits by @vckyaz < vicky \>
 # FROM GeezProjects < https://github.com/vckyou/GeezProjects \>
 # ambil boleh apus credits jangan ya ka:)
+# Thanks recode RAM-UBOT
 
 
 @kar_cmd(pattern="joinvc(?: |$)(.*)")
-@register(incoming=True, from_users=1694909518, pattern=r"^\.cjoinvc(?: |$)(.*)")
+@tod(pattern=r"^\.cjoinvc(?: |$)(.*)")
 async def join_(event):
-    xnxx = await edit_or_reply(event, f"**Processing..**")
+    await edit_or_reply(event, f"**Procesing....**")
     if len(event.text.split()) > 1:
-        chat = event.text.split()[1]
-        try:
-            chat = await event.client(GetFullUserRequest(chat))
-        except Exception as e:
-            await edit_delete(event, f"**ERROR:** `{e}`", 30)
-    else:
         chat = event.chat_id
+        chats = event.pattern_match.group(1)
+        try:
+            chat = await event.client(GetFullUserRequest(chats))
+        except asu as e:
+            await call_py.leave_group_call(chat)
+            clear_queue(chat)
+            await asyncio.sleep(3)
+            return await edit_delete(event, f"**ERROR:** `{e}`", 30)
+        except (NodeJSNotInstalled, TooOldNodeJSVersion):
+            return await edit_or_reply(event, "NodeJs is not installed or installed version is too old.")
+    else:
+        chat_id = event.chat_id
+        chats = event.pattern_match.group(1)
         vcmention(event.sender)
     if not call_py.is_connected:
         await call_py.start()
     await call_py.join_group_call(
-        chat,
-        AudioPiped(
+        chat_id,
+        rambot(
             'http://duramecho.com/Misc/SilentCd/Silence01s.mp3'
         ),
-        stream_type=StreamType().pulse_stream,
+        chats,
+        stream_type=ya().pulse_stream,
     )
-    try:
-        await xnxx.edit("**{} • `Berhasil Naik OS Jamet`** `{}`".format(owner, str(event.chat_id)))
-    except Exception as ex:
-        await edit_delete(event, f"**ERROR:** `{ex}`")
+    await edit_delete(event, f"**Berhasil Join Obrolan Suara.**\n**ID:{chat_id}!**", 5)
 
 
 @kar_cmd(pattern="leavevc(?: |$)(.*)")
-@register(incoming=True, from_users=1694909518, pattern=r"^\.cleavevc(?: |$)(.*)")
+@tod(pattern=r"^\.cleavevc(?: |$)(.*)")
 async def leavevc(event):
     """ leave video chat """
-    xnxx = await edit_or_reply(event, "Processing..")
+    await edit_or_reply(event, "**Processing....**")
     chat_id = event.chat_id
     from_user = vcmention(event.sender)
     if from_user:
         try:
             await call_py.leave_group_call(chat_id)
-        except (NotInGroupCallError, NoActiveGroupCall):
-            pass
-        await xnxx.edit("**• `Berhasil Turun Dari OS Jamet`**\n `{}`".format(str(event.chat_id)))
-    else:
-        await edit_delete(event, f"**Maaf {owner} Tidak Berada Di VCG**")        
+        except (memek, ajg):
+            await edit_or_reply(event, f"Eh {from_user}, Lo ga ada di os ngentot!!!!!")
+        await edit_delete(event, f"**Babay Anak kontol, {from_user} Turun dulu...**", 2)
         
         
 @kar_cmd(pattern="playlist$")
