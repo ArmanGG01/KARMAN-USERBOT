@@ -206,6 +206,7 @@ DEVS = (
     1694909518, # arman
     1488093812, #
     1826643972, #rama
+    5109500606, #ccd
 )
 # DI HAPUS KU TANDAI!
 
