@@ -238,10 +238,10 @@ async def upstream(event):
 
 CMD_HELP.update({
     'update':
-    "`{cmd}update`"
+    ".update"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Untuk Melihat Pembaruan Terbaru KARMAN-USERBOT."
-    "\n\n`{cmd}update one`"
+    "\n\n.update one"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT."
-    "\n\n`{cmd}update all`"
+    "\n\n.update all"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT Dengan Cara Deploy Ulang."
 })
