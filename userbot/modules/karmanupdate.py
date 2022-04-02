@@ -9,7 +9,6 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
-from userbot import CMD_HANDLER as cmd
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -20,7 +19,6 @@ from userbot import (
     UPSTREAM_REPO_BRANCH,
     REPO_NAME,
     EMOJI_HELP)
-from userbot.utils import edit_delete, edit_or_reply, kar_cmd
 from userbot.events import register
 
 requirements_path = path.join(
@@ -140,7 +138,7 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@kar_cmd(outgoing=True, pattern=r"^.update(?: |$)(one|all)?")
+@register(outgoing=True, pattern=r"^.update(?: |$)(one|all)?")
 @register(pattern=r"^.cupdate(?: |$)(one|all)?", sudo=True)
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
