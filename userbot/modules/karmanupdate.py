@@ -236,15 +236,12 @@ async def upstream(event):
     return
 
 
-CMD_HELP.update(
-    }
-        "update": f"**Plugin : **`update`\
-        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update`\
-        \n  ↳ : **untuk melihat apakah ada yang harus saya perbarui di karman userbot.\
-        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update one`\
-        \n  ↳ : **memperbarui KARMAN USERBOT.\
-        \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update all`\
-        \n  ↳ : **memperbarui bot dengan cara deploy ulang.\
-    "
-    }
-)
+CMD_HELP.update({
+    'update':
+    ".update"
+    "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Untuk Melihat Pembaruan Terbaru KARMAN-USERBOT."
+    "\n\n.update one"
+    "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT."
+    "\n\n.update all"
+    "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT Dengan Cara Deploy Ulang."
+})
