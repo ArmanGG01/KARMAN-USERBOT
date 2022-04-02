@@ -29,7 +29,7 @@ def vcmention(user):
 # ex by OpyRights
 
 @kar_cmd(pattern="joinvc(?: |$)(.*)")
-@tod(pattern="^\.cjoinvc(?: |$)(.*)")
+@tod(pattern=r"^\.cjoinvc(?: |$)(.*)")
 async def join_(event):
     await edit_or_reply(event, f"**processing....**")
     if len(event.text.split()) > 1:
