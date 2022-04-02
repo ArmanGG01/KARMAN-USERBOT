@@ -73,3 +73,14 @@ async def leavevc(event):
         except (memek, ajg):
             await edit_or_reply(event, f"Woy {from_user}, Kontol Kau Ga Ada Di OS")
         await edit_delete(event, f"**Di OS Banyak Jamet Jadi, {from_user} Mau Turun Hahaha **", 2)
+
+CMD_HELP.update(
+    {
+        "joinvc": f"**Plugin : **`joinvc`\
+        \n\n  •  **Syntax :** `{cmd}joinvc`\
+        \n  •  **Function : **Untuk Naik Ke Dalam Obrolan Suara Jamet.\
+        \n\n  •  **Syntax :** `{cmd}leavevc`\
+        \n  •  **Function : **Untuk Turun Dari Obrolan Suara Jamet.\
+    "
+    }
+)
