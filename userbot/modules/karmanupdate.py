@@ -244,7 +244,7 @@ CMD_HELP.update(
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update one`\
         \n  ↳ : **Memperbarui KARMAN USERBOT.\
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update all`\
-        \n  ↳ : **Memperbarui KARMAN-USERBOT Dengan Cara Deploy Ulang.\
+        \n  ↳ : **Memperbarui KARMAN USERBOT Dengan Cara Deploy Ulang.\
     "
     }
 )
