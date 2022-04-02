@@ -240,11 +240,11 @@ CMD_HELP.update(
     }
         "update": f"**Plugin : **`update`\
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update`\
-        \n  ↳ : **Untuk melihat apakah ada yang harus saya perbarui di karman userbot.\
+        \n  ↳ : **untuk melihat apakah ada yang harus saya perbarui di karman userbot.\
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update one`\
-        \n  ↳ : **Memperbarui KARMAN USERBOT.\
+        \n  ↳ : **memperbarui KARMAN USERBOT.\
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `{cmd}update all`\
-        \n  ↳ : **Memperbarui bot dengan cara deploy ulang.\
+        \n  ↳ : **memperbarui bot dengan cara deploy ulang.\
     "
     }
 )
