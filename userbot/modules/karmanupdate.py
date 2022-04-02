@@ -9,6 +9,7 @@ import sys
 from git import Repo
 from git.exc import GitCommandError, InvalidGitRepositoryError, NoSuchPathError
 
+from userbot import CMD_HANDLER as cmd
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
@@ -19,6 +20,7 @@ from userbot import (
     UPSTREAM_REPO_BRANCH,
     REPO_NAME,
     EMOJI_HELP)
+from userbot.utils import edit_delete, edit_or_reply, kar_cmd
 from userbot.events import register
 
 requirements_path = path.join(
@@ -138,8 +140,8 @@ async def update(event, repo, ups_rem, ac_br):
     return
 
 
-@register(outgoing=True, pattern=r"^.update(?: |$)(one|all)?")
-@register(pattern=r"^.cupdate(?: |$)(one|all)?", sudo=True)
+@kar_cmd(pattern=r"update(?: |$)(one|all)?")
+@register(outgoing=True, pattern=r"^.cupdate(?: |$)(one|all)?")
 async def upstream(event):
     "For .update command, check if the bot is up to date, update if specified"
     await event.edit("`Mengecek Pembaruan, Silakan Menunggu....`")
@@ -236,10 +238,10 @@ async def upstream(event):
 
 CMD_HELP.update({
     'update':
-    ".update"
+    "{cmd}update"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Untuk Melihat Pembaruan Terbaru KARMAN-USERBOT."
-    "\n\n.update one"
+    "\n\n{cmd}update one"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT."
-    "\n\n.update all"
+    "\n\n{cmd}update all"
     "\n↳𝘾𝙤𝙢𝙢𝙖𝙣𝙙: Memperbarui KARMAN-USERBOT Dengan Cara Deploy Ulang."
 })
