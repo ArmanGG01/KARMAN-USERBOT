@@ -9,7 +9,7 @@ from pytgcalls.exceptions import (
 from telethon.tl import types
 from telethon.utils import get_display_name
 from telethon.tl.functions.users import GetFullUserRequest as ngentod
-from userbot import call_py
+from userbot import CMD_HELP, call_py
 from userbot.utils import edit_delete, edit_or_reply, edit_delete, kar_cmd
 from userbot.events import register as tod
 
