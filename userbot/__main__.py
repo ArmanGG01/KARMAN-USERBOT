@@ -29,7 +29,6 @@ try:
     LOGS.info(f"💀KARMAN - USERBOT💀 🌟 V{9.0} [ TELAH DIAKTIFKAN KONTOL ]")
 except BaseException as e:
 
-
 async def ram_ubot_on():
     try:
         if BOTLOG_CHATID != 0:
