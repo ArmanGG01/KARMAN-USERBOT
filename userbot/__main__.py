@@ -44,18 +44,11 @@ async def ram_ubot_on():
     except BaseException:
         pass
 
-LOOP.run_until_complete(ram_ubot_on())
-if not BOTLOG_CHATID:
-    LOOP.run_until_complete(creatgr())
-if not BOT_TOKEN:
-    LOOP.run_until_complete(autobot())
+bot.loop.run_until_complete(autobot())
+bot.loop.run_until_complete(ram_ubot_on())
 idle()
 bot.loop.run_until_complete(hadeh_ajg())
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
-    try:
-        bot.run_until_disconnected()
-    except ConnectionError:
-        pass
