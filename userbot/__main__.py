@@ -11,7 +11,7 @@ from pytgcalls import idle
 from telethon.tl.functions.channels import InviteToChannelRequest
 from userbot import BOTLOG_CHATID, BOTLOG_MSG, BOT_USERNAME, BOT_VER, LOGS, bot, karblacklist, call_py
 from userbot.modules import ALL_MODULES
-from userbot.utils.utils import autobot, autopilot 
+from userbot.utils.utils import autobot
 from userbot.utils.tools import hadeh_ajg
 
 
@@ -26,23 +26,8 @@ try:
             "MAKANYA GA USAH BANYAK TINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK KAU.\nCredits: @PakkPoll"
         )
         sys.exit(1)
-        except Exception as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
-    
-for module_name in ALL_MODULES:
-    imported_module = import_module("userbot.modules." + module_name)
-
-if not BOTLOG_CHATID:
-    LOGS.info(
-        "BOTLOG_CHATID Vars tidak terisi, Memulai Membuat Grup Otomatis..."
-    )
-    bot.loop.run_until_complete(autopilot())
-
-LOGS.info(
-    f"Jika {user.first_name} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/obrolansuar")
-LOGS.info(
-    f"karman-userbot ⚙️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
+    LOGS.info(f"💀KARMAN - USERBOT💀 🌟 V{9.0} [ TELAH DIAKTIFKAN KONTOL ]")
+except BaseException as e:
 
 
 async def ram_ubot_on():
