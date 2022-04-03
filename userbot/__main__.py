@@ -29,17 +29,6 @@ try:
     LOGS.info(f"💀KARMAN - USERBOT💀 🌟 V{9.0} [ TELAH DIAKTIFKAN KONTOL ]")
 except BaseException as e:
 
-    user = bot.get_me()
-    if user.id in ramblacklist:
-        LOGS.warning(
-            "MAKANYA GA USAH BANYAK TINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK KAU.\nCredits: @PakkPoll"
-        )
-        sys.exit(1)
-    LOGS.info(f"💀KARMAN - USERBOT💀 ✴️ V{9.0} [ TELAH DIAKTIFKAN KONTOL ]")
-except BaseException as e:
-    LOGS.info(str(e), exc_info=True)
-    sys.exit(1)
-
 
 async def ram_ubot_on():
     try:
