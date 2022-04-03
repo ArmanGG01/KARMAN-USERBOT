@@ -35,7 +35,7 @@ async def ram_ubot_on():
         if BOTLOG_CHATID != 0:
             await bot.send_message(
                 BOTLOG_CHATID,
-                f"{BOTLOG_MSG}",
+                f"```💢 KARMAN - USERBOT 𝚄𝙳𝙰𝙷 𝙰𝙺𝚃𝙸𝙵 💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Branch : 𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝙱𝙾𝚃\n❍▹ BotVer : 9.0\n❍▹``` Owner : [𝙰𝚁𝙼𝙰𝙽](https://t.me/PakkPoll)\n\n╼┅━━━━━╍━━━━━┅╾\n\n```𝙹𝙰𝙽𝙶𝙰𝙽 𝙺𝙰𝚄 𝙺𝙴𝙻𝚄𝙰𝚁 𝙳𝙰𝚁𝙸 𝙶𝚁𝚄𝙿 𝙺𝚄```\n@obrolansuar\n ```𝙱𝙸𝙰𝚁 𝙺𝙰𝚄 𝚃𝙰𝚄 𝙸𝙽𝙵𝙾,𝙿𝙴𝙿𝙴𝙺.\n ```𝙹𝙸𝙺𝙰 𝙱𝙾𝚃 𝚃𝙸𝙳𝙰𝙺 𝙱𝙸𝚂𝙰  .ping 𝚂𝙸𝙻𝙰𝙷𝙺𝙰𝙽 𝙲𝙷𝙴𝙲𝙺 𝚅𝙸𝚆𝙻𝙾𝙶 𝙿𝙰𝙳𝙰 𝙰𝙺𝚄𝙽 𝙷𝙴𝚁𝙾𝙺𝚄 𝙰𝚃𝙰𝚄 𝙿𝚄𝙽 𝙱𝙸𝚂𝙰 𝙻𝙰𝙽𝙶𝚂𝚄𝙽𝙶 𝙿𝙲 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 👇",
             )
     except Exception as e:
         LOGS.info(str(e))
