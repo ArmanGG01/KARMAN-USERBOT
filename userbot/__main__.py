@@ -30,25 +30,18 @@ try:
 except BaseException as e:
 
 
-async def ram_ubot_on():
-    try:
-        if BOTLOG_CHATID != 0:
-            await bot.send_message(
-                BOTLOG_CHATID,
-                f"{BOTLOG_MSG}",
-            )
-    except Exception as e:
-        LOGS.info(str(e))
-    try:
-        await bot(InviteToChannelRequest(int(BOTLOG_CHATID), [BOT_USERNAME]))
-    except BaseException:
-        pass
-
-bot.loop.run_until_complete(ram_ubot_on())
-bot.loop.run_until_complete(autobot())
+LOOP.run_until_complete(ram_ubot_on())
+if not BOTLOG_CHATID:
+    LOOP.run_until_complete(creatgr())
+if not BOT_TOKEN:
+    LOOP.run_until_complete(autobot())
 idle()
 bot.loop.run_until_complete(hadeh_ajg())
 if len(sys.argv) not in (1, 3, 4):
     bot.disconnect()
 else:
     bot.run_until_disconnected()
+    try:
+        bot.run_until_disconnected()
+    except ConnectionError:
+        pass
