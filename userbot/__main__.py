@@ -20,7 +20,7 @@ try:
         imported_module = import_module("userbot.modules." + module_name)
     bot.start()
     call_py.start()
-user = bot.get_me()
+    user = bot.get_me()
     if user.id in karblacklist:
         LOGS.warning(
             "MAKANYA GA USAH BANYAK TINGKAH GOBLOK, USERBOTnya GUA MATIIN NAJIS BANGET DIPAKE JAMET KEK KAU.\nCredits: @PakkPoll"
