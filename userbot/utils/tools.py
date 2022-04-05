@@ -1,3 +1,7 @@
+# @vcky
+# Aku Nda Tau Punya Siapa Yang Pada Intinya Aku UcapKan Terima Kasi 😊
+# Aku Ijin Ya
+
 import re
 import hashlib
 import asyncio
@@ -187,8 +191,8 @@ async def run_cmd(cmd: list) -> tuple[bytes, bytes]:
 
 def post_to_telegraph(title, html_format_content):
     post_client = TelegraphPoster(use_api=True)
-    auth_name = "Geez-UserBot"
-    auth_url = "https://github.com/vckyou/Geez-UserBot"
+    auth_name = "KARMAN-USERBOT"
+    auth_url = "https://github.com/ArmanGG01/KARMAN-USERBOT"
     post_client.create_api_token(auth_name)
     post_page = post_client.post(
         title=title,
