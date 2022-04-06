@@ -27,27 +27,21 @@ from userbot.events import register
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
-    "╾─────────────────────╼\n"
-    "     🚫 𝗦𝗣𝗔𝗠=𝗕𝗟𝗢𝗖𝗞 🚫\n"    
-    "╾─────────────────────╼\n"
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "    APA KAU KONTOL?\n"
-    f"  MAU KAU GANGGU SI `{DEFAULTUSER}` ?\n"
+    "   🚫𝗝𝗔𝗡𝗚𝗔𝗡 𝗦𝗔𝗣𝗔𝗠 𝗧𝗢𝗧🚫\n"
+    "       𝗦𝗣𝗔𝗠 = 𝗕𝗟𝗢𝗖𝗞\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
-
-    f"AKU BABU NYA `{DEFAULTUSER}`\n"
-    "╾─────────────────────╼\n\n"
-
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    " BACA INI KONTOL!\n"
-    " GAUSAH SPAM YA ANJING\n"
-    " KAU MELAWAN?\n"
-    " KU PECAHKAN KONTOL KAU\n"
-    " TUNGGU AJA LAH SAMPAI SI\n"
-    f" `{DEFAULTUSER}` NGEBACA PESAN KAU\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
-    f"- Babu Nya `{DEFAULTUSER}`\n"
-    "- DIKELOLAH OLEH 👑KARMAN-USERBOT👑")
+    "  APA KAU NGENTOD?\n"
+    f"  MAU KAU GANGGU SI `{DEFAULTUSER}`?\n"
+    f"  KAU LEWATI DULU AKU BABUNYA `{DEFAULTUSER}`\n"
+    "  BARU KAU CHATTAN SAMA DIA.\n"
+    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"   
+    "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
+    f"┣[• 𝗢𝗪𝗡𝗘𝗥 `{DEFAULTUSER}`\n"
+    "┣[• 𝐁𝐘 👑𝗞𝗮𝗿𝗺𝗮𝗻-𝗨𝗯𝗼𝘁👑\n"
+    "╰✠╼━━━━━━❖━━━━━━━✠╯"
+     )
 # =================================================================
 
 
