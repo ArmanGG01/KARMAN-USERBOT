@@ -33,7 +33,7 @@ DEF_UNAPPROVED_MSG = (
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
     "  APA KAU NGENTOD?\n"
-    f"  MAU KAU GANGGU RAJA `{DEFAULTUSER}`?\n"
+    f"  MAU KAU GANGGU SI `{DEFAULTUSER}`?\n"
     f"  KAU LEWATI DULU AKU BABUNYA `{DEFAULTUSER}`\n"
     "  BARU KAU CHATTAN SAMA DIA.\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"   
