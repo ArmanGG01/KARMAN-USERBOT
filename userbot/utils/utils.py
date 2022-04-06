@@ -307,5 +307,3 @@ async def autopilot():
         anonymous=False,
         manage_call=True,
     )
-© 2022 GitHub, Inc.
-Terms
