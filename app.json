@@ -23,7 +23,7 @@
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di @KarmanString_bot caranya ada di group @obrolansuar, jika tidak tau botnya tanya ke @PakkPoll di telegram",
+      "description": "Dapatkan String Session di @KarmanString_bot liat caranya ada di group @obrolansuar, jika tidak tau botnya tanya ke @PakkPoll di telegram",
       "required": true
     },
      "ALIVE_NAME": {
