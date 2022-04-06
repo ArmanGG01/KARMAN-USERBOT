@@ -1,7 +1,6 @@
-
 {
-  "name": "KARMAN U-BOT",
-  "description": "KARMAN U-BOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "name": "KARMAN-USERBOT",
+  "description": "USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
   "logo": "https://telegra.ph/file/c97811e33743ce755ada5.jpg",
   "keywords": [
     "telegram",
@@ -10,53 +9,40 @@
     "modular",
     "productivity"
   ],
-  "repository": "https://github.com/ArmanGG01/KARMAN-USERBOT/KARMAN U-BOT",
+  "repository": "https://github.com/ArmanGG01/KARMAN-USERBOT/KARMAN-USERBOT",
   "telegram": "https://t.me/PakkPoll",
-  "success_url": "https://t.me/DeployBot01",
+  "success_url": "https://t.me/obrolansuar",
   "stack": "container",
   "env": {
     "API_KEY": {
-      "description": "Dapatkan API KEY di web my.telegram.org Masukan yg APP ID Telegram",
+      "description": "Dapatkan Api Key di web my.telegram.org",
       "required": true
     },
     "API_HASH": {
-      "description": "Dapatkan API Hash di web my.telegram.org",
+      "description": "Dapatkan Api Hash Di Web my.telegram.org",
       "required": true
     },
      "STRING_SESSION": {
-      "description": "Dapatkan String Session di Grup » @obrolansuar » Lalu ketik #string",
+      "description": "Dapatkan String Session di @KarmanString_bot caranya ada di group @obrolansuar, jika tidak tau botnya tanya ke @PakkPoll di telegram",
       "required": true
     },
-    "ALIVE_NAME": {
+     "ALIVE_NAME": {
       "description": "Nama untuk menunjukan pesan .alive",
       "required": true
     },
-    "HEROKU_API_KEY": {
-      "description": "Ambil Heroku API KEY mu disini » https://dashboard.heroku.com/account",
-      "required": true
-    },
     "HEROKU_APP_NAME": {
-      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas)",
+      "description": "Nama App heroku, Nama App yang paling pertama di isi (liat paling atas memek)",
       "required": true
     },
-    "BOT_TOKEN": {
-      "description": "Set this to enable inline bot helper. get the token from @BotFather",
-      "required": true
-    },
-    "BOT_USERNAME": {
-      "description": "Username Bot Kamu Di @BotFather, Tanpa @",
-      "value": "𝙲𝚘𝚗𝚝𝚘𝚑 : armanbotisssss_bot",
-      "required": true
-    }, 
-    "BOTLOG_CHATID": {
-      "description": "Buatlah grup telegram publik lalu masukan @KarmanRobot_bot ketik /id, masukan id grup nya disini. contoh: -100xxx",
-      "value": "Isi id grup mu wajib dengan awalan -100",
+    "HEROKU_API_KEY": {
+      "description": "Heroku API KEY mu, dapatkan dari web 'https://dashboard.heroku.com/account'",
+      "value": "Check Di Heroku Dashboard Mu",
       "required": true
     },
     "PM_AUTO_BAN": {
-      "description": "PM Auto-Ban adalah module untuk bot welcome otomatis ketika ada orang ngePC kamu, jika Mau di matikan ubah ke False",
+      "description": "Pengalihan Fitur Larangan Otomatis PM. atau /skip",
       "value": "True",
-      "required": false
+      "required": true
     }
   },
   "addons": [
@@ -74,7 +60,7 @@
     "url": "https://github.com/heroku/heroku-buildpack-google-chrome"
   }, {
     "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
-  }, {
+  },{
     "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
   }, {
     "url": "https://github.com/opendoor-labs/heroku-buildpack-p7zip"
@@ -82,5 +68,11 @@
     "url": "https://github.com/amivin/aria2-heroku"
   }, {
     "url": "https://github.com/stevo550/buildpack-slug-cleaner"
-  }]
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
 }
