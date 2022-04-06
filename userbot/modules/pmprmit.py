@@ -28,27 +28,20 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "    APA KAU KONTOL?\n"
-    f"  MAU GANGGUIN RAJA `{DEFAULTUSER}` ?\n"
+    "   🚫𝗝𝗔𝗡𝗚𝗔𝗡 𝗦𝗔𝗣𝗔𝗠 𝗧𝗢𝗧🚫\n"
+    "       𝗦𝗣𝗔𝗠 = 𝗕𝗟𝗢𝗖𝗞\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
-
-    f"Aku Babu Nya `{DEFAULTUSER}`\n"
-    "╾─────────────────────╼\n\n"
-
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    " Baca Ini Kontol\n"
-    " Gausah Spam Ya Anjeng\n"
-    " Kau Bandel?\n"
-    " Ku Sentil Biji Peler Kau\n"
-    " Tungguin Aja Ya Kontol Sampai Si\n"
-    f" `{DEFAULTUSER}` Ngebaca Pesan Kau\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
-
-    "╾─────────────────────╼\n"
-    "  JANGAN SPAM KAU KONTOL\n"
-    "╾─────────────────────╼\n"
-    f"- 👑Babu Nya `{DEFAULTUSER}`\n"
-    "- DIKELOLAH OLEH 👑 KARMAN-USERBOT 👑")
+    "   APA KAU NGENTOD?\n"
+    f"  MAU KAU GANGGU RAJA `{DEFAULTUSER}` ?\n"
+    f"   KAU LEWATI DULU AKU BABUNYA `{DEFAULTUSER}`\n"
+    "   BARU KAU CHATTAN SAMA DIA.\n"
+    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"   
+    "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
+    f"┣[• 𝗢𝗪𝗡𝗘𝗥 `{DEFAULTUSER}`\n"
+    "┣[• 𝐁𝐘 👑𝗞𝗮𝗿𝗺𝗮𝗻-𝗨𝗯𝗼𝘁👑\n"
+    "╰✠╼━━━━━━❖━━━━━━━✠╯"
+     )
 # =================================================================
 
 
