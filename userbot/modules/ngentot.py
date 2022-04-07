@@ -9,7 +9,7 @@ from time import sleep
 from userbot import CMD_HELP
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply, kar_cmd
-from userbot.utils import as tod
+from userbot.utils import kar_cmd as tod
 
 #┏▼━━━━━━━━━━━━━━━━━━━▼┓
 #    🚫YANG HAPUS LU KTL🚫
