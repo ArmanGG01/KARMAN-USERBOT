@@ -8,7 +8,7 @@ from time import sleep
 
 from userbot import CMD_HELP
 from userbot import CMD_HANDLER as cmd
-from userbot.utils import bash, edit_delete, edit_or_reply, kar_cmd as tod
+from userbot.utils import bash, edit_delete, edit_or_reply, kar_cmd
 
 
 #┏▼━━━━━━━━━━━━━━━━━━━▼┓
