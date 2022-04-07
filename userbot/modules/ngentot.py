@@ -41,45 +41,6 @@ async def _(typew):
     await typew.delete()
     
     
-@kar_cmd(pattern="pink$")
-async def redis(pong):
-    """For .ping command, ping the userbot from any chat."""
-    await get_readable_time((time.time() - StartTime))
-    start = datetime.now()
-    kar = await edit_or_reply(pong, "**𓀐.....................................𓂸**")
-    await kar.edit("**𓀐..................................𓂸..**")
-    await kar.edit("**𓀐................................𓂸....**")
-    await kar.edit("**𓀐..............................𓂸......**")
-    await kar.edit("**𓀐............................𓂸........**")
-    await kar.edit("**𓀐..........................𓂸..........**")
-    await kar.edit("**𓀐.......................𓂸.............**")
-    await kar.edit("**𓀐.....................𓂸...............**")
-    await kar.edit("**𓀐...................𓂸.................**")
-    await kar.edit("**𓀐..................𓂸..................**")
-    await kar.edit("**𓀐................𓂸....................**")
-    await kar.edit("**𓀐..............𓂸......................**")
-    await kar.edit("**𓀐............𓂸........................**")
-    await kar.edit("**𓀐..........𓂸..........................**")
-    await kar.edit("**𓀐........𓂸............................**")
-    await kar.edit("**𓀐.......𓂸.............................**")
-    await kar.edit("**𓀐....𓂸...............................**")
-    await kar.edit("**𓀐..𓂸.................................**")
-    await kar.edit("**𓀐.𓂸..................................**")
-    await kar.edit("**𓀐𓂸...................................**")
-    await kar.edit("**𓀐.𓂸..................................**")
-    await kar.edit("**𓀐𓂸...................................**")
-    await kar.edit("**𓀐.𓂸..................................**")
-    await kar.edit("**𓂺**")
-    await asyncio.sleep(2)
-    end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    user= await pong.client.get_me()
-    await pong.client.send_message(
-        pong.chat_id, f"**➾ OWNER      :** [{user.first_name}](tg://user?id={user.id}) \n"
-                     f"**➾ Kecepatan : ** %sms  \n"
-                     f"**➾ Branch       : ** [{branch}] \n" % (duration), reply_to=pong.reply_to_msg_id) 
-    await pong.delete()
-    
     
 @tod(pattern=r"heu(?: |$)(.*)")
 async def _(typew):
