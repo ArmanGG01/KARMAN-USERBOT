@@ -31,7 +31,7 @@ async def _(typew):
 @kar_cmd(pattern="ngentot2(?: |$)(.*)")
 async def _(typew):
     await typew.client.send_message(
-        typew.chat_id, "**ANAK HARAM YANG LAHIR DARI LOBANG PANTAT LANGSUNG MASUK KE DALAM LOBANG NERAKA JAHANNAM HAHAHAHAHAHAHAHABA**", reply_to=typew.reply_to_msg_id)
+        typew.chat_id, "**ANAK HARAM YANG LAHIR DARI LOBANG PANTAT LANGSUNG MASUK KE DALAM LOBANG NERAKA JAHANNAM HAHAHAHAHAHAHAHAHAHAHAHAH**", reply_to=typew.reply_to_msg_id)
     await typew.delete()
     
     
