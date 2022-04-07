@@ -43,7 +43,7 @@ async def redis(pong):
     """For .ping command, ping the userbot from any chat."""
     await get_readable_time((time.time() - StartTime))
     start = datetime.now()
-    ram = await edit_or_reply(pong, "**𓀐.....................................𓂸**")
+    kar = await edit_or_reply(pong, "**𓀐.....................................𓂸**")
     await kar.edit("**𓀐..................................𓂸..**")
     await kar.edit("**𓀐................................𓂸....**")
     await kar.edit("**𓀐..............................𓂸......**")
