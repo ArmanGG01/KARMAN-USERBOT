@@ -1,5 +1,6 @@
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
+# Karman-userbot
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
@@ -28,19 +29,27 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 
 DEF_UNAPPROVED_MSG = (
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "   🚫𝗝𝗔𝗡𝗚𝗔𝗡 𝗦𝗔𝗣𝗔𝗠 𝗧𝗢𝗧🚫\n"
-    "       𝗦𝗣𝗔𝗠 = 𝗕𝗟𝗢𝗖𝗞\n"
+    "    APA LU KONTOL?\n"
+    f"  MAU GANGGUIN BAGINDA `{DEFAULTUSER}` ?\n"
     "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
+
+    f"Gua Babu Nya `{DEFAULTUSER}`\n"
+    "╾─────────────────────╼\n\n"
+
     "┏▼━━━━━━━━━━━━━━━━━━━▼┓\n"
-    "  APA KAU NGENTOD?\n"
-    f"  MAU KAU GANGGU SI `{DEFAULTUSER}`?\n"
-    f"  KAU LEWATI DULU AKU BABUNYA `{DEFAULTUSER}`\n"
-    "  BARU KAU CHATTAN SAMA DIA.\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"   
-    "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
-    f"┣[• 𝗢𝗪𝗡𝗘𝗥 `{DEFAULTUSER}`\n"
-    "┣[• 𝐁𝐘 👑𝗞𝗮𝗿𝗺𝗮𝗻-𝗨𝗯𝗼𝘁👑\n"
-    "╰✠╼━━━━━━❖━━━━━━━✠╯")
+    " Baca Kontol\n"
+    " Gausah Spam Ya Anjeng\n"
+    " Lu Bandel?\n"
+    " Gua Sentil Biji Peler Lu\n"
+    " Tungguin Aja Ya Ngentot Sampai  Baginda\n"
+    f" `{DEFAULTUSER}` Ngebaca Pesan Elu\n"
+    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
+
+    "╾─────────────────────╼\n"
+    "    🚫 SPAM=BLOCK 🚫\n"
+    "╾─────────────────────╼\n"
+    f"- 👑Babu Nya `{DEFAULTUSER}`\n"
+    "- DIKELOLAH OLEH 👑 KARMAN-USERBOT 👑")
 # =================================================================
 
 
