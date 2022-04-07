@@ -172,7 +172,7 @@ async def _(typew):
     
     CMD_HELP.update(
     {
-        "ngentot": f"**Plugin : **`ngentot`or `pink`and `memes15`\
+        "ngentot": f"**Plugin : **`ngentot` or `pink` and `memes15`\
         \n\n  •  **Syntax :** `{cmd}ngentot`\
         \n  •  **Function : **Untuk Mengetot Mamak Kau Dari ngetot 1-2.\
         \n\n  •  **Syntax :** `{cmd}pink`\
