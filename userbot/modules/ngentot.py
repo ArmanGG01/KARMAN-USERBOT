@@ -4,9 +4,11 @@
 
 import asyncio
 from time import sleep
+import time
 
+from speedtest import Speedtest
 
-from userbot import CMD_HELP
+from userbot import CMD_HELP, StartTime, branch
 from userbot import CMD_HANDLER as cmd
 from userbot.utils import edit_or_reply, kar_cmd
 from userbot.utils import kar_cmd as tod
