@@ -40,8 +40,7 @@ async def _(typew):
         typew.chat_id, "**ANAK HARAM YANG LAHIR DARI LOBANG PANTAT LANGSUNG MASUK KE DALAM LOBANG NERAKA JAHANNAM HAHAHAHAHAHAHAHAHAHAHAHAH**", reply_to=typew.reply_to_msg_id)
     await typew.delete()
     
-    
-    
+       
 @tod(pattern=r"heu(?: |$)(.*)")
 async def _(typew):
     await typew.client.send_message(
