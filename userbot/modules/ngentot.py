@@ -5,6 +5,7 @@
 import asyncio
 from time import sleep
 import time
+from datetime import datetime
 
 from speedtest import Speedtest
 
