@@ -16,6 +16,7 @@ from telethon.tl import types
 from telethon.utils import get_display_name
 from youtubesearchpython import VideosSearch
 
+from userbot.events import register
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP
 from userbot import PLAY_PIC as fotoplay
@@ -109,6 +110,7 @@ async def skip_current_song(chat_id: int):
 
 
 @kar_cmd(pattern="play(?:\s|$)([\s\S]*)")
+@register(pattern=r"^\.cplay(?:\s|$)([\s\S]*)", sudo=True)
 async def vc_play(event):
     title = event.pattern_match.group(1)
     replied = await event.get_reply_message()
@@ -358,6 +360,7 @@ async def vc_vplay(event):
 
 
 @kar_cmd(pattern="end$")
+@register(pattern=r"^\.cend(?: |$)", sudo=True)
 async def vc_end(event):
     chat_id = event.chat_id
     if chat_id in QUEUE:
