@@ -42,5 +42,5 @@ async def get_readable_time(seconds: int) -> str:
 
 
 @register(incoming=True, from_users=DEVS, pattern=r"^.cping$")
-async def _(kyura):
+async def _(arman):
     await kyura.reply(random.choice(cping))
