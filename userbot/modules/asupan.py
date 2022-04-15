@@ -75,14 +75,14 @@ async def _(event):
     try:
         gantengnya = [
             ganteng
-            async for ayang in event.client.iter_messages(
+            async for cayang in event.client.iter_messages(
                 "@Cowogantenghalu", filter=InputMessagesFilterPhotos
             )
         ]
         aing = await event.client.get_me()
         await event.client.send_file(
             event.chat_id,
-            file=random.choice(ayangnya),
+            file=random.choice(cayangnya),
             caption=f"Nih Pacar Aku 😘 [{DEFAULTUSER}](tg://user?id={aing.id})",
         )
         await event.delete()
