@@ -269,7 +269,7 @@ async def amireallyalive(alive):
     await get_readable_time((time.time() - StartTime))
     output = (
         f"**╭✠╼━━━━━━❖━━━━━━━✠╮**\n"
-        f"   **♕ ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️  ♕** \n"
+        f"    **♕ ⚠️ 𝐊𝐀𝐑𝐌𝐀𝐍 ⚠️  ♕** \n"
         f"**╰✠╼━━━━━━❖━━━━━━━✠╯**\n"
         f"❃ **Tuan**             ➥ `{DEFAULTUSER}` \n"
         f"❃ **Username**    ➥ `@{user.username}` \n"
