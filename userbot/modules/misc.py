@@ -15,7 +15,7 @@ import os
 import io
 import sys
 from platform import uname
-from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, OWNER_BOT, IG_ALIVE, REPO_NAME, GROUP_LINK, bot
+from userbot import ALIVE_NAME, BOTLOG, BOTLOG_CHATID, CMD_HELP, IG_ALIVE, OWNER_BOT, REPO_NAME, bot
 from userbot.events import register
 from userbot.utils import time_formatter
 import urllib

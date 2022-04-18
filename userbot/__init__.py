@@ -2,6 +2,9 @@
 # Fixes by : RAM-UBOT
 """ Userbot initialization. """
 
+from userbot import (
+    ALIVE_NAME
+)
 import logging
 import os
 import time
@@ -32,8 +35,10 @@ from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
 from .storage import Storage
 
+
 def STORAGE(n):
     return Storage(Path("data") / n)
+
 
 load_dotenv("config.env")
 
@@ -53,7 +58,7 @@ LOAD_PLUG = {}
 INT_PLUG = ""
 ISAFK = False
 AFKREASON = None
-ENABLE_KILLME = True 
+ENABLE_KILLME = True
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -65,7 +70,8 @@ logging.basicConfig(
 logging.getLogger("asyncio").setLevel(logging.ERROR)
 logging.getLogger("pytgcalls").setLevel(logging.ERROR)
 logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
-logging.getLogger("telethon.network.connection.connection").setLevel(logging.ERROR)
+logging.getLogger(
+    "telethon.network.connection.connection").setLevel(logging.ERROR)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 8:
@@ -129,7 +135,7 @@ UPSTREAM_REPO_BRANCH = os.environ.get(
 SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
 BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
 
-#handler
+# handler
 CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
 
 SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
@@ -204,12 +210,12 @@ REPO_NAME = os.environ.get("REPO_NAME") or "💀KARMAN-USERBOT💀"
 
 # DEVS
 DEVS = (
-    2077846555, # kitaro
-    1694909518, # arman
-    1488093812, #
-    1826643972, #rama
-    5109500606, #ccd
-    2069649330, #coco
+    2077846555,  # kitaro
+    1694909518,  # arman
+    1488093812,
+    1826643972,  # rama
+    5109500606,  # ccd
+    2069649330,  # coco
 )
 # DI HAPUS KU TANDAI!
 
@@ -263,7 +269,7 @@ ALIVE_LOGO = os.environ.get(
 
 # Default .helpme logo
 HELP_LOGO = os.environ.get(
-   "HELP_LOGO") or "https://telegra.ph/file/c462ecd5d46ebaeb5b9d8.jpg"
+    "HELP_LOGO") or "https://telegra.ph/file/c462ecd5d46ebaeb5b9d8.jpg"
 
 # Default .alive Instagram
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/arman_nasution123"
@@ -271,18 +277,15 @@ IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/arman_nasution123"
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "👑"
 
-INLINE_PIC = (
-    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
-)
+INLINE_PIC = (os.environ.get("INLINE_PIC")
+              or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg")
 
 # Picture For VCPLUGIN
-PLAY_PIC = (
-    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
-)
+PLAY_PIC = (os.environ.get("PLAY_PIC")
+            or "https://telegra.ph/file/6213d2673486beca02967.png")
 
-QUEUE_PIC = (
-    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
-)
+QUEUE_PIC = (os.environ.get("QUEUE_PIC")
+             or "https://telegra.ph/file/d6f92c979ad96b2031cba.png")
 
 # Default .alive Group
 GROUP_LINK = os.environ.get(
@@ -472,14 +475,12 @@ ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
 
-#Import Userbot - Ported by ArmanGG01
-from userbot import (
-    ALIVE_NAME
-)
+# Import Userbot - Ported by ArmanGG01
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
+
 
 async def update_restart_msg(chat_id, msg_id):
     DEFAULTUSER = ALIVE_NAME or "Set `ALIVE_NAME` ConfigVar!"
@@ -499,7 +500,9 @@ try:
     chat_id, msg_id = gvarstatus("restartstatus").split("\n")
     with bot:
         try:
-            bot.loop.run_until_complete(update_restart_msg(int(chat_id), int(msg_id)))
+            bot.loop.run_until_complete(
+                update_restart_msg(
+                    int(chat_id), int(msg_id)))
         except BaseException:
             pass
     delgvar("restartstatus")
@@ -507,7 +510,7 @@ except AttributeError:
     pass
 
 
-if not BOT_TOKEN is None:
+if BOT_TOKEN is not None:
     tgbot = TelegramClient(
         "TG_BOT_TOKEN",
         api_id=API_KEY,
@@ -546,20 +549,15 @@ def paginate_help(page_number, loaded_modules, prefix):
     modulo_page = page_number % max_num_pages
     if len(pairs) > number_of_rows:
         pairs = pairs[
-            modulo_page * number_of_rows : number_of_rows * (modulo_page + 1)
-        ] + [
-            (
-                custom.Button.inline(
-                    "< ̤< ̤", data="{}_prev({})".format(prefix, modulo_page)
-                ),
-                custom.Button.inline(
-                    f"❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data="{}_close({})".format(prefix, modulo_page)
-                ),
-                custom.Button.inline(
-                    "> ̤> ̤", data="{}_next({})".format(prefix, modulo_page)
-                ),
-            )
-        ]
+            modulo_page * number_of_rows: number_of_rows * (
+                modulo_page + 1)] + [
+            (custom.Button.inline(
+                "< ̤< ̤", data="{}_prev({})".format(
+                    prefix, modulo_page)), custom.Button.inline(
+                        f"❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data="{}_close({})".format(
+                            prefix, modulo_page)), custom.Button.inline(
+                                "> ̤> ̤", data="{}_next({})".format(
+                                    prefix, modulo_page)), )]
     return pairs
 
 
@@ -583,8 +581,7 @@ with bot:
                 f"       __Thanks For Using me__\n\n"
                 f"🗿 **Group Support :** [OS](t.me/obrolansuar)\n"
                 f"⚠️ **Owner Repo :** [ARMAN](t.me/PakkPoll)\n"
-                f"📌 **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n"
-            )
+                f"📌 **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n")
             await tgbot.send_file(
                 event.chat_id,
                 logo,
@@ -612,7 +609,8 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KarmanNewuser_bot"):
+            if event.query.user_id == uid and query.startswith(
+                    "@KarmanNewuser_bot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=ramlogo,
@@ -628,10 +626,12 @@ with bot:
                     text="**💀KARMAN-USERBOT💀**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **Owner :** [ARMAN](https://t.me/PakkPoll)\n👑 **Support :** @obrolansuar\n👑 **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠ ",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
-                            ),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/obrolansuar"),
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/ArmanGG01/KARMAN-USERBOT"),
                         ],
                     ],
                     link_preview=False,
@@ -644,10 +644,12 @@ with bot:
                     text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **OWNER:** [ARMAN](t.me/PakkPoll)\n👑 **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@DeplyoBot01\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
-                                "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
-                            ),
+                                "ɢʀᴏᴜᴘ",
+                                "https://t.me/obrolansuar"),
+                            custom.Button.url(
+                                "ʀᴇᴘᴏ",
+                                "https://github.com/ArmanGG01/KARMAN-USERBOT"),
                         ],
                     ],
                     link_preview=False,
@@ -675,7 +677,8 @@ with bot:
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query.startswith("@KarmanNewuser_bot"):
+            if event.query.user_id == uid and query.startswith(
+                    "@KarmanNewuser_bot"):
                 buttons = paginate_help(0, dugmeler, "helpme")
                 result = builder.photo(
                     file=ramlogo,
@@ -704,7 +707,6 @@ with bot:
                     link_preview=False,
                 )
             await event.answer([result] if result else None)
-
 
         @tgbot.on(
             events.callbackquery.CallbackQuery(  # pylint:disable=E0602
@@ -748,7 +750,7 @@ with bot:
 
         @tgbot.on(events.CallbackQuery(data=b"close"))
         async def close(event):
-            buttons =[
+            buttons = [
                 [custom.Button.inline("Open Menu", data="nepo")],
             ]
             await event.edit("Menu Ditutup!", buttons=buttons.clear())

@@ -17,6 +17,7 @@ from userbot.utils.tools import media_type
 
 from userbot.events import register
 
+
 class LOG_CHATS:
     def __init__(self):
         self.RECENT_USER = None

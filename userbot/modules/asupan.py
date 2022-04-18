@@ -32,6 +32,7 @@ async def _(event):
     except Exception:
         await event.edit("Tidak bisa menemukan video orang colmek.")
 
+
 @register(outgoing=True, pattern=r"^\.desah$")
 async def _(event):
     try:
@@ -50,7 +51,8 @@ async def _(event):
         await event.delete()
     except Exception:
         await event.edit("Tidak bisa menemukan vn desahan.")
-        
+
+
 @register(outgoing=True, pattern=r"^\.ayang$")
 async def _(event):
     try:
@@ -69,6 +71,7 @@ async def _(event):
         await event.delete()
     except Exception:
         await event.edit("Gada Yang Mau Sama Kamu Karena Kau Jelek🤪.")
+
 
 @register(outgoing=True, pattern=r"^\.cayang$")
 async def _(event):

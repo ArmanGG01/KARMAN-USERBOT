@@ -445,6 +445,7 @@ async def typewriter(typew):
     await typew.edit("**YANG GA JAWAB, FIX ATHEISS!!**")
    # Create by myself @ram-ubot
 
+
 @register(outgoing=True, pattern='^.gblk(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
@@ -461,8 +462,8 @@ async def typewriter(typew):
     await typew.edit("JAUHIN AJA AJG, BOCAH KYA DIA MAH")
     sleep(2)
     await typew.edit("TINGGALIN AJA YA AJG!!!!")
-    
-    
+
+
 CMD_HELP.update({
     "memes9":
     "`.gabut` ; `.orgil`\

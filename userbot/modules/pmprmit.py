@@ -37,7 +37,7 @@ DEF_UNAPPROVED_MSG = (
     f"  MAU KAU GANGGU SI `{DEFAULTUSER}`?\n"
     f"  KAU LEWATI DULU AKU BABUNYA `{DEFAULTUSER}`\n"
     "  BARU KAU CHATTAN SAMA DIA.\n"
-    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"   
+    "┗▲━━━━━━━━━━━━━━━━━━━▲┛\n\n"
     "╭✠╼━━━━━━❖━━━━━━━✠╮\n"
     f"┣[• 𝗢𝗪𝗡𝗘𝗥 `{DEFAULTUSER}`\n"
     "┣[• 𝐁𝐘 👑𝗞𝗮𝗿𝗺𝗮𝗻-𝗨𝗯𝗼𝘁👑\n"

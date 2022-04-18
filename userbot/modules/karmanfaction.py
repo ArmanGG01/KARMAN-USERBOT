@@ -80,6 +80,4 @@ async def _(arman):
 CMD_HELP.update(
     {
         "faction": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.ftyping : .faudio : .fvideo : .fgame <jumlah text>`"
-        "\n• : Fake action ini Berfungsi dalam group"
-    }
-)
+        "\n• : Fake action ini Berfungsi dalam group"})
