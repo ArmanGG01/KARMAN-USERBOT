@@ -1,4 +1,4 @@
-# JANGAN KAU UBAH ANJING 
+# JANGAN KAU UBAH ANJING
 # BY KARMAN-USERBOT
 # KAU ITU KONTOL
 
@@ -60,5 +60,5 @@ async def typewriter(typew):
     await typew.edit("**WOY WOY LONTE GC AMPAS PCS YOKK MAU GA PCS NANTI KU BAYAR DAH BIAR KAU BISA JAJAN DAN MAKAN HAHAHAHAHAHAHAHAHAHA CUAHKKKKKK CUIHHHH**")
 
 CMD_HELP.update({
-         "bacot": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot1`"\
-        "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 1 Sampai 8."})
+    "bacot": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot1`"
+    "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 1 Sampai 8."})

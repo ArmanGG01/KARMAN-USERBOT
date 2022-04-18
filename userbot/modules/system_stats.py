@@ -14,7 +14,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, RAM_TEKS_KOSTUM, IG_ALIVE, REPO_NAME, GROUP_LINK, StartTime, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, CMD_HELP, GROUP_LINK, IG_ALIVE, RAM_TEKS_KOSTUM, REPO_NAME, StartTime, bot
 from userbot.events import register
 
 

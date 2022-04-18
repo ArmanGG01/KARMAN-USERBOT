@@ -17,7 +17,7 @@ async def _(event):
     ureply = await event.get_reply_message()
     if not (ureply and ("audio" in ureply.document.mime_type)):
         await event.edit("`Balas Ke Audio Aja Ngentot..`")
-        
+
     await event.edit("`sabar tot, giproses`")
     d = os.path.join("resources/extras", "ul.mp3")
     await event.edit("`Mengunduh... File Besar Membutuhkan Waktu..`")

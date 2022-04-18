@@ -1,4 +1,4 @@
-# JANGAN KAU UBAH ANJING 
+# JANGAN KAU UBAH ANJING
 # BY KARMAN-USERBOT
 # KAU ITU KONTOL
 
@@ -43,7 +43,6 @@ async def typewriter(typew):
     await typew.edit("**SUMPAH KAU ITU ANAK HARAM YANG DI BUANG KE TONG SAMPAH ABIS ITU DI KUTIP SAMA BAPAK KAU YANG SEKARNG IYA YANG MISKIN JELEK BANYAK DAKI KONTOL DI MUKAK KAU**")
 
 
-
 CMD_HELP.update({
-         "bacot01": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot01`"\
-        "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 01 Sampai 05."})
+    "bacot01": "𝘾𝙤𝙢𝙢𝙖𝙣𝙙: `.bacot01`"
+    "\n➥ : Untuk Ngebacot Perisi Bot Silahkan Chek Sendiri Dari 01 Sampai 05."})

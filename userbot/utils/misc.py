@@ -174,7 +174,8 @@ async def create_quotly(
         raise er
     if request.get("ok"):
         with open(file_name, "wb") as file:
-            image = base64.decodebytes(request["result"]["image"].encode("utf-8"))
+            image = base64.decodebytes(
+                request["result"]["image"].encode("utf-8"))
             file.write(image)
         return file_name
     raise Exception(str(request))
@@ -200,7 +201,7 @@ async def animator(media, mainevent, textevent):
     w, h = (-1, 512) if h > w else (512, -1)
     if not os.path.isdir(TEMP_DOWNLOAD_DIRECTORY):
         os.makedirs(TEMP_DOWNLOAD_DIRECTORY)
-    Ram = await mainevent.client.download_media(media, TEMP_DOWNLOAD_DIRECTORY)
+    await mainevent.client.download_media(media, TEMP_DOWNLOAD_DIRECTORY)
     await textevent.edit("`Converting...`")
     await runcmd(
         f"ffmpeg -ss 00:00:00 -to 00:00:02.900 -i {Coba} -vf scale={w}:{h} -c:v libvpx-vp9 -crf 30 -b:v 560k -maxrate 560k -bufsize 256k -an Video.webm"

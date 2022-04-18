@@ -1,4 +1,4 @@
-## Copyright (C) 2019 The Raphielscape Company LLC.
+# Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
@@ -9,7 +9,7 @@ import sys
 from importlib import import_module
 from pytgcalls import idle
 from telethon.tl.functions.channels import InviteToChannelRequest
-from userbot import BOTLOG_CHATID, BOTLOG_MSG, BOT_USERNAME, BOT_VER, LOGS, bot, karblacklist, call_py
+from userbot import BOTLOG_CHATID, BOTLOG_MSG, BOT_USERNAME, LOGS, bot, call_py, karblacklist
 from userbot.modules import ALL_MODULES
 from userbot.utils.utils import autobot
 from userbot.utils.tools import hadeh_ajg
@@ -30,7 +30,6 @@ try:
 except BaseException as e:
     LOGS.info(str(e), exc_info=True)
     sys.exit(1)
-
 
 
 async def ram_ubot_on():

