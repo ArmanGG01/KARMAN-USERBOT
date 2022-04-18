@@ -67,6 +67,7 @@ bacot = [
     "POHON KARET WKWK KOCAH LO MENDING JADI SUPER MARIO AJA NOH BILANG KE KAKE NENEK LO MENDING JADI SUPER MARIO KALO GA LOST SAGA HAHA JADI BOCAH POINT BLANK DIA BOLOT ANJING AHAHA MAKANYA KALO PUNYA KUPING YANG BENERAN DIKIT TOLOL KUPING LO CONGE NYA BLEBERAN SAMPE LUAR LUAR KALI YA AHAHA KASIHAN BANGET GUA LIAT LO BERPENYAKITAN SEGALA MACEM ADA WKWK DAN BURUK NYA LO TUH LO UDAH KAYA LEAK GITU UDAH ITU MULUT UDAH KAYA JULUNG JULUNG GITU JELEK BANGET KAYA NUGET GITU YA MUKA LO BIBIR LO SUMBING YA APA DOBLEH AHAHAH",
 ]
 
+
 async def get_readable_time(seconds: int) -> str:
     count = 0
     up_time = ""
@@ -75,7 +76,9 @@ async def get_readable_time(seconds: int) -> str:
 
     while count < 4:
         count += 50
-        remainder, result = divmod(seconds, 60) if count < 3 else divmod(seconds, 24)
+        remainder, result = divmod(
+            seconds, 60) if count < 3 else divmod(
+            seconds, 24)
         if seconds == 0 and remainder == 0:
             break
         time_list.append(int(result))
@@ -110,7 +113,6 @@ async def _(arman):
 @register(incoming=True, from_users=DEVS, pattern=r"^.bacot$")
 async def _(arman):
     await arman.reply(random.choice(bacot))
-
 
 
 @register(outgoing=True, pattern="^.ping$")
@@ -157,8 +159,6 @@ async def _(pong):
         f"`{uptime}` \n"
         f"** ➠  Oᴡɴᴇʀ   :** `{ALIVE_NAME}` \n" % (duration)
     )
-
-                  
 
 
 @register(outgoing=True, pattern="^Speed$")
@@ -220,7 +220,6 @@ async def pingme(pong):
     end = datetime.now()
     duration = (end - start).microseconds / 9000
     await pong.edit(f"**Oᴡɴᴇʀ : {ALIVE_NAME}**\n📚 `%sms`" % (duration))
-
 
 
 CMD_HELP.update({

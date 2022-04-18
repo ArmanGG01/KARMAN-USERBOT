@@ -5,6 +5,7 @@ from userbot import CMD_HELP
 # Devoted To GeezProject
 # Gausah kesini ngentot
 
+
 @register(outgoing=True, pattern=r"^\.(?:dm)\s?(.*)?")
 async def remoteaccess(event):
 

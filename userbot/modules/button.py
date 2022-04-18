@@ -1,19 +1,20 @@
-# Copyright (C) 2020  sandeep.n(π.$) 
-# button post makker for catuserbot thanks to uniborg for the base 
-# by @sandy1709 (@mrconfused) 
- 
-import os 
-import re 
- 
-from telethon import Button 
- 
-from userbot import BOT_USERNAME 
-from userbot import CMD_HELP, tgbot 
+# Copyright (C) 2020  sandeep.n(π.$)
+# button post makker for catuserbot thanks to uniborg for the base
+# by @sandy1709 (@mrconfused)
+
+import os
+import re
+
+from telethon import Button
+
+from userbot import BOT_USERNAME
+from userbot import CMD_HELP, tgbot
 from userbot.events import register
- 
+
 # regex obtained from:
 # https://github.com/PaulSonOfLars/tgbot/blob/master/tg_bot/modules/helper_funcs/string_handling.py#L23
-BTN_URL_REGEX = re.compile(r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
+BTN_URL_REGEX = re.compile(
+    r"(\[([^\[]+?)\]\<buttonurl:(?:/{0,2})(.+?)(:same)?\>)")
 
 
 @register(pattern=".cbutton(?:\\s|$)([\\s\\S]*)")
@@ -37,8 +38,12 @@ async def _(event):
             n_escapes += 1
             to_check -= 1
         if n_escapes % 2 == 0:
-            buttons.append((match.group(2), match.group(3), bool(match.group(4))))
-            note_data += markdown_note[prev : match.start(1)]
+            buttons.append(
+                (match.group(2),
+                 match.group(3),
+                 bool(
+                    match.group(4))))
+            note_data += markdown_note[prev: match.start(1)]
             prev = match.end(1)
         elif n_escapes % 2 == 1:
             note_data += markdown_note[prev:to_check]
@@ -92,11 +97,11 @@ def build_keyboard(buttons):
             keyb[-1].append(Button.url(btn[0], btn[1]))
         else:
             keyb.append([Button.url(btn[0], btn[1])])
-    return keyb 
- 
- 
-CMD_HELP.update( 
-    { 
+    return keyb
+
+
+CMD_HELP.update(
+    {
         "button": f"**Plugin : **`button`\
         \n\n  𝘾𝙤𝙢𝙢𝙖𝙣𝙙 :** `.cbutton` <text> [Name on button]<buttonurl:link you want to open>\
         \n  ❍▸ : **Untuk membuat pesan button\
@@ -106,5 +111,5 @@ CMD_HELP.update(
         \n  ❍▸ : **Untuk membuat pesan button melalui inline\
         \n  •  **Examples : **`.ibutton test [google]<buttonurl:https://www.google.com> [Channel]<buttonurl:https://t.me/DeployBot01:same> [Support]<buttonurl:https://t.me/obrolansuar>`\
     "
-    } 
+    }
 )

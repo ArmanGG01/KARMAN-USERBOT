@@ -68,6 +68,5 @@ async def insta(event):
             await event.delete()
 
 
-
 CMD_HELP.update({"instagram": "**Modules:** __Instagram__\n\n**Perintah:** `.ig`"
                  "\n**Penjelasan:** Download Media di Postingan Instagram, Balas ke link instagram ketik `.ig`"})
