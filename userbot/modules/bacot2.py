@@ -40,7 +40,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern='^.bacot05(?: |$)(.*)')
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit("**SUMPAH KAU ITU ANAK HARAM YANG DI BUANG KE TONG SAMPAH ABIS ITU DI KUTIP SAMA BAPAK KAU YANG SEKARNG IYA YANG MISKIN JELEK BEDAKI KONTOL BENGKOK**")
+    await typew.edit("**SUMPAH KAU ITU ANAK HARAM YANG DI BUANG KE TONG SAMPAH ABIS ITU DI KUTIP SAMA BAPAK KAU YANG SEKARNG IYA YANG MISKIN JELEK BANYAK DAKI KONTOL DI MUKAK KAU**")
 
 
 
