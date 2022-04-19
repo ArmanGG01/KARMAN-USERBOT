@@ -30,9 +30,9 @@ gesss = [
 ]
 
 brb = [
-    "Bang Arman mau off?",
+    "Abang mau off ya?",
     "Jangan off dong bang.",
-    "Bang, mau kemana?",
+    "Abang, mau kemana?",
     "Jangan lama lama bang",
     "Siap bang.",
     "Yah udah off aja bang.",
