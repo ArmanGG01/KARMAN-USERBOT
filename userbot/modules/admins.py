@@ -86,7 +86,7 @@ UNMUTE_RIGHTS = ChatBannedRights(until_date=None, send_messages=False)
 # ================================================
 
 
-@man_cmd(pattern="setgpic( -s| -d)$", admins_only=True)
+@kar_cmd(pattern="setgpic( -s| -d)$", admins_only=True)
 @register(pattern=r"^\.csetgpic( -s| -d)$", sudo=True)
 async def set_group_photo(event):
     "For changing Group dp"
@@ -123,7 +123,7 @@ async def set_group_photo(event):
         await edit_delete(event, "**Foto Profil Grup Berhasil dihapus.**", 30)
 
 
-@man_cmd(pattern="promote(?:\s|$)([\s\S]*)", admins_only=True)
+@kar_cmd(pattern="promote(?:\s|$)([\s\S]*)", admins_only=True)
 @register(pattern=r"^\.cpromote(?:\s|$)([\s\S]*)", sudo=True)
 async def promote(event):
     new_rights = ChatAdminRights(
@@ -148,7 +148,7 @@ async def promote(event):
     await edit_delete(eventman, "`Promoted Successfully!`", 30)
 
 
-@man_cmd(pattern="demote(?:\s|$)([\s\S]*)", admins_only=True)
+@kar_cmd(pattern="demote(?:\s|$)([\s\S]*)", admins_only=True)
 @register(pattern=r"^\.cdemote(?:\s|$)([\s\S]*)", sudo=True)
 async def demote(event):
     "To demote a person in group"
@@ -173,7 +173,7 @@ async def demote(event):
     await edit_delete(eventman, "`Demoted Successfully!`", 30)
 
 
-@man_cmd(pattern="ban(?:\s|$)([\s\S]*)", admins_only=True)
+@kar_cmd(pattern="ban(?:\s|$)([\s\S]*)", admins_only=True)
 @register(pattern=r"^\.cban(?:\s|$)([\s\S]*)", sudo=True)
 async def ban(bon):
     me = await bon.client.get_me()
@@ -198,7 +198,7 @@ async def ban(bon):
         )
 
 
-@man_cmd(pattern="unban(?:\s|$)([\s\S]*)", admins_only=True)
+@kar_cmd(pattern="unban(?:\s|$)([\s\S]*)", admins_only=True)
 @register(pattern=r"^\.cunban(?:\s|$)([\s\S]*)", sudo=True)
 async def nothanos(unbon):
     man = await edit_or_reply(unbon, "`Processing...`")
@@ -213,7 +213,7 @@ async def nothanos(unbon):
         await edit_delete(man, "`Sepertinya Terjadi ERROR!`")
 
 
-@man_cmd(pattern="mute(?: |$)(.*)", admins_only=True)
+@kar_cmd(pattern="mute(?: |$)(.*)", admins_only=True)
 @register(pattern=r"^\.cmute(?: |$)(.*)", sudo=True)
 async def spider(spdr):
     try:
@@ -259,7 +259,7 @@ async def spider(spdr):
         return await edit_delete(man, "**Terjadi ERROR!**")
 
 
-@man_cmd(pattern="unmute(?: |$)(.*)", admins_only=True)
+@kar_cmd(pattern="unmute(?: |$)(.*)", admins_only=True)
 @register(pattern=r"^\.cunmute(?: |$)(.*)", sudo=True)
 async def unmoot(unmot):
     try:
@@ -281,7 +281,7 @@ async def unmoot(unmot):
         return await edit_delete(man, "**Terjadi ERROR!**")
 
 
-@man_handler(incoming=True)
+@kar_handler(incoming=True)
 async def muter(moot):
     try:
         from userbot.modules.sql_helper.gmute_sql import is_gmuted
@@ -312,7 +312,7 @@ async def muter(moot):
             await moot.delete()
 
 
-@man_cmd(pattern="ungmute(?: |$)(.*)", admins_only=True)
+@kar_cmd(pattern="ungmute(?: |$)(.*)", admins_only=True)
 @register(pattern=r"^\.cungmute(?: |$)(.*)", sudo=True)
 async def ungmoot(un_gmute):
     try:
@@ -331,7 +331,7 @@ async def ungmoot(un_gmute):
         await edit_delete(un_gmute, "**Berhasil! Pengguna Sudah Tidak Dibisukan**")
 
 
-@man_cmd(pattern="gmute(?: |$)(.*)", admins_only=True)
+@kar_cmd(pattern="gmute(?: |$)(.*)", admins_only=True)
 @register(pattern=r"^\.cgmute(?: |$)(.*)", sudo=True)
 async def gspider(gspdr):
     try:
@@ -368,7 +368,7 @@ async def gspider(gspdr):
         )
 
 
-@man_cmd(pattern="zombies(?: |$)(.*)")
+@kar_cmd(pattern="zombies(?: |$)(.*)")
 async def rm_deletedacc(show):
     con = show.pattern_match.group(1).lower()
     del_u = 0
@@ -425,7 +425,7 @@ async def rm_deletedacc(show):
         )
 
 
-@man_cmd(pattern="admins$")
+@kar_cmd(pattern="admins$")
 async def get_admin(show):
     info = await show.client.get_entity(show.chat_id)
     title = info.title or "Grup Ini"
@@ -444,7 +444,7 @@ async def get_admin(show):
     await show.edit(mentions, parse_mode="html")
 
 
-@man_cmd(pattern="pin( loud|$)", admins_only=True)
+@kar_cmd(pattern="pin( loud|$)", admins_only=True)
 @register(pattern=r"^\.cpin( loud|$)", sudo=True)
 async def pin(event):
     to_pin = event.reply_to_msg_id
@@ -461,7 +461,7 @@ async def pin(event):
     await edit_delete(event, "`Pinned Successfully!`")
 
 
-@man_cmd(pattern="unpin( all|$)", admins_only=True)
+@kar_cmd(pattern="unpin( all|$)", admins_only=True)
 @register(pattern=r"^\.cunpin( all|$)", sudo=True)
 async def unpin(event):
     to_unpin = event.reply_to_msg_id
@@ -490,7 +490,7 @@ async def unpin(event):
     await edit_delete(event, "`Unpinned Successfully!`")
 
 
-@man_cmd(pattern="kick(?: |$)(.*)", admins_only=True)
+@kar_cmd(pattern="kick(?: |$)(.*)", admins_only=True)
 @register(pattern=r"^\.ckick(?: |$)(.*)", sudo=True)
 async def kick(usr):
     user, reason = await get_user_from_event(usr)
@@ -512,7 +512,7 @@ async def kick(usr):
         )
 
 
-@man_cmd(pattern="undlt( -u)?(?: |$)(\d*)?", admins_only=True)
+@kar_cmd(pattern="undlt( -u)?(?: |$)(\d*)?", admins_only=True)
 async def _iundlt(event):
     catevent = await edit_or_reply(event, "`Searching recent actions...`")
     flag = event.pattern_match.group(1)
