@@ -30,7 +30,7 @@
 
 <h3>Deploy to Heroku </h3>
 <div>
-    <a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
+    <a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy01"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
 
 <p align="center"><a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/HerokuBot-%230088cc.svg?&style=for-the-badge&logo=telegram&logoColor=white" /></p>
