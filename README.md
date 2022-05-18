@@ -32,6 +32,7 @@
 <div>
     <a href="https://heroku.com/deploy?template=https://github.com/ArmanGG01/Deploy01"><img src="https://www.herokucdn.com/deploy/button.svg"></a>
 </div>
+<a href="https://telegram.dog/XTZ_HerokuBot?start=QXJtYW5HRzAxL0tBUk1BTi1VU0VSQk9UIEtBUk1BTi1VU0VSQk9U"><img src="https://img.shields.io/badge/Deploy%20Via%20Telegram-blue?style=for-the-badge&logo=telegram" width="250""/</a>  </p>
 
 #### GROUP SUPPORT KARMAN🖥
 
