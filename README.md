@@ -36,7 +36,7 @@
 
 #### GROUP SUPPORT KARMAN🖥
 
-<a href="https://t.me/DeployBot01"><img src="https://img.shields.io/badge/Channel%20KARMAN%20SUPPORT-red.svg?style=for-the-badge&logo=Telegram"></a>
+<a href="https://t.me/StoryArman"><img src="https://img.shields.io/badge/Channel%20KARMAN%20SUPPORT-red.svg?style=for-the-badge&logo=Telegram"></a>
 <a href="https://t.me/obrolansuar"><img src="https://img.shields.io/badge/Join-KARMAN%20Support-purple.svg?style=for-the-badge&logo=Telegram"></a>
 
 
