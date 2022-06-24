@@ -565,8 +565,9 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        bot(JoinChannelRequest("@DeployBot01"))
+        bot(JoinChannelRequest("@StoryArman"))
         bot(JoinChannelRequest("@obrolansuar"))
+        bot(JoinChannelRequest("@StoryMan01"))
 
         dugmeler = CMD_HELP
         user = bot.get_me()
@@ -601,7 +602,7 @@ with bot:
                             text="GROUP", url="https://t.me/obrolansuar"
                         ),
                         custom.Button.url(
-                            text="CHANNEL", url="https://t.me/DeployBot01"
+                            text="CHANNEL", url="https://t.me/StoryArman"
                         ),
                     ],
                 ],
@@ -641,7 +642,7 @@ with bot:
                     title="💀KARMAN-USERBOT💀",
                     description="KARMAN-USERBOT | Telethon",
                     url="https://t.me/obrolansuar",
-                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **OWNER:** [ARMAN](t.me/PakkPoll)\n👑 **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@DeplyoBot01\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
+                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **OWNER:** [ARMAN](t.me/PakkPoll)\n👑 **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@StoryArman\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
                     buttons=[
                         [
                             custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
@@ -737,7 +738,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("📢 Channel Support",
-                                       "t.me/DeployBot01"),
+                                       "t.me/StoryArman"),
                             Button.url("📌 Group support",
                                        "t.me/obrolansuar")],
                         [Button.inline("Open Menu", data="nepo")],
