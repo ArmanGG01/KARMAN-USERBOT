@@ -10,7 +10,7 @@ import heroku3
 import urllib3
 import requests
 
-from userbot import BOTLOG_CHATID, owner
+from userbot import BOTLOG_CHATID
 from userbot import CMD_HANDLER as cmd
 from userbot import CMD_HELP, HEROKU_API_KEY, HEROKU_APP_NAME, SUDO_USERS
 from userbot.utils import edit_or_reply, edit_delete, kar_cmd
@@ -195,7 +195,7 @@ async def dyno_usage(dyno):
                 f"┣•  ▸ {hours} ᴊᴀᴍ - {minutes} ᴍᴇɴɪᴛ. \n"
                 f"┣•  ▸ ᴘʀᴇꜱᴇɴᴛᴀꜱᴇ : {percentage}%. \n"
                 "╰✠╼━━━━━━❖━━━━━━━✠╯\n"
-                f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {owner} \n"
+                f"• 𝗣𝗘𝗠𝗜𝗟𝗜𝗞  : {ᴀʀᴍᴀɴ} \n"
                 f"• 𝗦𝗨𝗣𝗣𝗢𝗥𝗧 : [𝗞𝗔𝗥𝗠𝗔𝗡-𝗨𝗦𝗘𝗥𝗕𝗢𝗧](https://t.me/StoryArman) \n", 10
             )
         return True
