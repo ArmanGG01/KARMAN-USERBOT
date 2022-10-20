@@ -565,7 +565,7 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
-        bot(JoinChannelRequest("@StoryArman"))
+        bot(JoinChannelRequest("@Karc0de"))
         bot(JoinChannelRequest("@obrolansuar"))
         bot(JoinChannelRequest("@StoryMan01"))
 
