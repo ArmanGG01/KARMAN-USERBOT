@@ -44,7 +44,7 @@ def user_list(l, n):
 @kar_cmd(pattern="startvc$")
 @register(pattern=r"^\.cstr$", sudo=True)
 async def start_voice(c):
-    me = await c.client.get_me()
+    await c.client.get_me()
     chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
@@ -62,7 +62,7 @@ async def start_voice(c):
 @kar_cmd(pattern="stopvc$")
 @register(pattern=r"^\.cstp$", sudo=True)
 async def stop_voice(c):
-    me = await c.client.get_me()
+    await c.client.get_me()
     chat = await c.get_chat()
     admin = chat.admin_rights
     creator = chat.creator
