@@ -113,7 +113,6 @@ def command(**args):
 
     return decorator
 
-
 def register(**args):
     """Register a new event."""
     pattern = args.get("pattern")
@@ -168,7 +167,53 @@ def register(**args):
                 await check.respond("`I don't think this is a group.`")
                 return
 
-            if check.via_bot_id and not insecure and check.out:ftext += "\n\n\n10 commits Terakhir:\n"
+            if check.via_bot_id and not insecure and check.out:
+                return
+
+            try:
+                await func(check)
+
+            except events.StopPropagation:
+                raise events.StopPropagation
+            except KeyboardInterrupt:
+                pass
+            except BaseException:
+
+                # Check if we have to disable it.
+
+                # If not silence the log spam on the console,
+                # with a dumb except.
+
+                if not disable_errors:
+                    date = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+
+                    text = "**✘ KARMAN-USERBOT ERROR REPORT ✘**\n\n"
+                    link = "[Group Support](https://t.me/obrolansuar)"
+                    text += "Jika mau, Anda bisa melaporkan error ini, "
+                    text += f"Cukup forward saja pesan ini ke {link}.\n\n"
+
+                    ftext = "========== DISCLAIMER =========="
+                    ftext += "\nFile ini HANYA diupload di sini,"
+                    ftext += "\nkami hanya mencatat fakta error dan tanggal,"
+                    ftext += "\nkami menghormati privasi Anda."
+                    ftext += "\nJika mau, Anda bisa melaporkan error ini,"
+                    ftext += "\ncukup forward saja pesan ini ke @obrolansuar"
+                    ftext += "\n================================\n\n"
+                    ftext += "--------BEGIN USERBOT TRACEBACK LOG--------\n"
+                    ftext += "\nTanggal : " + date
+                    ftext += "\nChat ID : " + str(check.chat_id)
+                    ftext += "\nUser ID : " + str(check.sender_id)
+                    ftext += "\n\nEvent Trigger:\n"
+                    ftext += str(check.text)
+                    ftext += "\n\nTraceback info:\n"
+                    ftext += str(format_exc())
+                    ftext += "\n\nError text:\n"
+                    ftext += str(sys.exc_info()[1])
+                    ftext += "\n\n--------END USERBOT TRACEBACK LOG--------"
+
+                    command = 'git log --pretty=format:"%an: %s" -10'
+
+                    ftext += "\n\n\n10 commits Terakhir:\n"
 
                     process = await asyncsubshell(
                         command, stdout=asyncsub.PIPE, stderr=asyncsub.PIPE
