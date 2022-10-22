@@ -223,7 +223,7 @@ HELP_LOGO = os.environ.get(
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/arman_nasution123"
 
 # Default emoji help
-EMOJI_HELP = os.environ.get("EMOJI_HELP") or "🐷"
+EMOJI_HELP = os.environ.get("EMOJI_HELP") or "👑"
 
 # Default .alive Group
 GROUP_LINK = os.environ.get(
@@ -278,8 +278,7 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or "```║💀𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💀 UDAH AKTIF KONTOL║\n\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰\nJika Tidak Bisa Di .ping\nSilahkan Anda\nCek viewlogs\nPada heroku Anda.\n▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰▰```"
-
+    "BOTLOG_MSG") or "```💢𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💢 UDAH AKTIF KONTOL```"
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
