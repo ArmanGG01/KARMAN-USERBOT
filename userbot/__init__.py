@@ -1,55 +1,71 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
+# Yaa begitu lah
+# Fixes by : RAM-UBOT
+""" Userbot initialization. """
 
-
+import logging
 import os
 import time
 import re
 import redis
-import io
-import random
 
-from datetime import datetime
-
+from platform import uname
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 from math import ceil
 
+from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pymongo import MongoClient
+from git import Repo
+from datetime import datetime
 from redis import StrictRedis
+from markdown import markdown
 from dotenv import load_dotenv
+from pytgcalls import PyTgCalls
 from requests import get
+from telethon.network.connection.tcpabridged import ConnectionTcpAbridged
 from telethon.sync import TelegramClient, custom, events
+from telethon.tl.functions.channels import JoinChannelRequest
 from telethon.sessions import StringSession
 from telethon import Button, events, functions, types
 from telethon.utils import get_display_name
+from .storage import Storage
 
-redis_db = None
+def STORAGE(n):
+    return Storage(Path("data") / n)
 
 load_dotenv("config.env")
 
 StartTime = time.time()
+repo = Repo()
+branch = repo.active_branch.name
 
-CMD_LIST = {}
-# for later purposes
+COUNT_MSG = 0
+USERS = {}
+COUNT_PM = {}
+LASTMSG = {}
 CMD_HELP = {}
-INT_PLUG = ""
+CMD_LIST = {}
+SUDO_LIST = {}
+ZALG_LIST = {}
 LOAD_PLUG = {}
+INT_PLUG = ""
+ISAFK = False
+AFKREASON = None
+ENABLE_KILLME = True 
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
-if CONSOLE_LOGGER_VERBOSE:
-    basicConfig(
-        format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        level=DEBUG,
-    )
-else:
-    basicConfig(format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-                level=INFO)
+logging.basicConfig(
+    format="[%(name)s] - [%(levelname)s] - %(message)s",
+    level=logging.INFO,
+)
+logging.getLogger("asyncio").setLevel(logging.ERROR)
+logging.getLogger("pytgcalls").setLevel(logging.ERROR)
+logging.getLogger("telethon.network.mtprotosender").setLevel(logging.ERROR)
+logging.getLogger("telethon.network.connection.connection").setLevel(logging.ERROR)
 LOGS = getLogger(__name__)
 
 if version_info[0] < 3 or version_info[1] < 8:
@@ -108,6 +124,15 @@ UPSTREAM_REPO_URL = os.environ.get(
     "https://github.com/ArmanGG01/KARMAN-USERBOT")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "KARMAN-USERBOT")
+
+# sudo
+SUDO_USERS = {int(x) for x in os.environ.get("SUDO_USERS", "").split()}
+BL_CHAT = {int(x) for x in os.environ.get("BL_CHAT", "").split()}
+
+#handler
+CMD_HANDLER = os.environ.get("CMD_HANDLER") or "."
+
+SUDO_HANDLER = os.environ.get("SUDO_HANDLER", r"$")
 
 # Console verbose logging
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -179,9 +204,30 @@ REPO_NAME = os.environ.get("REPO_NAME") or "💀KARMAN-USERBOT💀"
 
 # DEVS
 DEVS = (
-    2077108390,
-    1694909518,
+    2077846555, # kitaro
+    1694909518, # arman
+    1488093812, #
+    1826643972, #rama
+    5109500606, #ccd
+    2069649330, #coco
 )
+# DI HAPUS KU TANDAI!
+
+# Blacklist User for use KARMAN
+while 0 < 6:
+    _BLACKLIST = get(
+        "https://raw.githubusercontent.com/ArmanGG01/Karblack/master/karblacklist.json"
+    )
+    if _BLACKLIST.status_code != 200:
+        if 0 != 5:
+            continue
+        karblacklist = []
+        break
+    karblacklist = _BLACKLIST.json()
+    break
+
+del _BLACKLIST
+
 
 # Default .alive Name
 ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
@@ -213,17 +259,30 @@ S_PACK_NAME = os.environ.get("S_PACK_NAME", None)
 
 # Default .alive Logo
 ALIVE_LOGO = os.environ.get(
-    "ALIVE_LOGO") or "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg"
+    "ALIVE_LOGO") or "https://telegra.ph/file/c462ecd5d46ebaeb5b9d8.jpg"
 
 # Default .helpme logo
 HELP_LOGO = os.environ.get(
-   "HELP_LOGO") or "https://telegra.ph/file/9a269b4f210f7c9021a2a.jpg"
+   "HELP_LOGO") or "https://telegra.ph/file/c462ecd5d46ebaeb5b9d8.jpg"
 
 # Default .alive Instagram
 IG_ALIVE = os.environ.get("IG_ALIVE") or "instagram.com/arman_nasution123"
 
 # Default emoji help
 EMOJI_HELP = os.environ.get("EMOJI_HELP") or "👑"
+
+INLINE_PIC = (
+    os.environ.get("INLINE_PIC") or "https://telegra.ph/file/9dc4e335feaaf6a214818.jpg"
+)
+
+# Picture For VCPLUGIN
+PLAY_PIC = (
+    os.environ.get("PLAY_PIC") or "https://telegra.ph/file/6213d2673486beca02967.png"
+)
+
+QUEUE_PIC = (
+    os.environ.get("QUEUE_PIC") or "https://telegra.ph/file/d6f92c979ad96b2031cba.png"
+)
 
 # Default .alive Group
 GROUP_LINK = os.environ.get(
@@ -242,7 +301,7 @@ LASTFM_API = os.environ.get("LASTFM_API", None)
 LASTFM_SECRET = os.environ.get("LASTFM_SECRET", None)
 LASTFM_USERNAME = os.environ.get("LASTFM_USERNAME", None)
 LASTFM_PASSWORD_PLAIN = os.environ.get("LASTFM_PASSWORD", None)
-LASTFM_PASS = (LASTFM_PASSWORD_PLAIN)
+LASTFM_PASS = md5(LASTFM_PASSWORD_PLAIN)
 if LASTFM_API and LASTFM_SECRET and LASTFM_USERNAME and LASTFM_PASS:
     lastfm = LastFMNetwork(api_key=LASTFM_API,
                            api_secret=LASTFM_SECRET,
@@ -278,7 +337,8 @@ QUOTES_API_TOKEN = os.environ.get("QUOTES_API_TOKEN", None)
 
 # Defaul botlog msg
 BOTLOG_MSG = os.environ.get(
-    "BOTLOG_MSG") or "```💢𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃💢 UDAH AKTIF KONTOL```"
+    "BOTLOG_MSG") or f"```💢 KARMAN - USERBOT 𝚄𝙳𝙰𝙷 𝙰𝙺𝚃𝙸𝙵 💢\n\n╼┅━━━━━╍━━━━━┅╾\n❍▹ Branch : 𝙺𝙰𝚁𝙼𝙰𝙽-𝚄𝙱𝙾𝚃\n❍▹ BotVer : 9.0\n❍▹``` Owner : [𝙰𝚁𝙼𝙰𝙽](https://t.me/PakkPoll)\n\n╼┅━━━━━╍━━━━━┅╾\n\n```𝙹𝙰𝙽𝙶𝙰𝙽 𝙺𝙰𝚄 𝙺𝙴𝙻𝚄𝙰𝚁 𝙳𝙰𝚁𝙸 𝙶𝚁𝚄𝙿 𝙺𝚄```\n@obrolansuar\n ```𝙱𝙸𝙰𝚁 𝙺𝙰𝚄 𝚃𝙰𝚄 𝙸𝙽𝙵𝙾,𝙿𝙴𝙿𝙴𝙺.\n ```𝙹𝙸𝙺𝙰 𝙱𝙾𝚃 𝚃𝙸𝙳𝙰𝙺 𝙱𝙸𝚂𝙰  .ping 𝚂𝙸𝙻𝙰𝙷𝙺𝙰𝙽 𝙲𝙷𝙴𝙲𝙺 𝚅𝙸𝚆𝙻𝙾𝙶 𝙿𝙰𝙳𝙰 𝙰𝙺𝚄𝙽 𝙷𝙴𝚁𝙾𝙺𝚄 𝙰𝚃𝙰𝚄 𝙿𝚄𝙽 𝙱𝙸𝚂𝙰 𝙻𝙰𝙽𝙶𝚂𝚄𝙽𝙶 𝙿𝙲 𝙳𝙸 𝙱𝙰𝚆𝙰𝙷 👇"
+
 # Deezloader
 DEEZER_ARL_TOKEN = os.environ.get("DEEZER_ARL_TOKEN", None)
 
@@ -336,11 +396,22 @@ for binary, path in binaries.items():
 
 # 'bot' variable
 if STRING_SESSION:
-    # pylint: disable=invalid-name
-    bot = TelegramClient(StringSession(STRING_SESSION), API_KEY, API_HASH)
+    session = StringSession(str(STRING_SESSION))
 else:
-    # pylint: disable=invalid-name
-    bot = TelegramClient("userbot", API_KEY, API_HASH)
+    session = "JsUserBot"
+try:
+    bot = TelegramClient(
+        session=session,
+        api_id=API_KEY,
+        api_hash=API_HASH,
+        connection=ConnectionTcpAbridged,
+        auto_reconnect=True,
+        connection_retries=None,
+    )
+    call_py = PyTgCalls(bot)
+except Exception as e:
+    print(f"STRING_SESSION - {e}")
+    sys.exit()
 
 
 async def check_botlog_chatid():
@@ -482,7 +553,7 @@ def paginate_help(page_number, loaded_modules, prefix):
                     "< ̤< ̤", data="{}_prev({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
-                    f"💀 𝗖𝗟𝗢𝗦𝗘 💀", data="{}_close({})".format(prefix, modulo_page)
+                    f"❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data="{}_close({})".format(prefix, modulo_page)
                 ),
                 custom.Button.inline(
                     "> ̤> ̤", data="{}_next({})".format(prefix, modulo_page)
@@ -494,6 +565,9 @@ def paginate_help(page_number, loaded_modules, prefix):
 
 with bot:
     try:
+        bot(JoinChannelRequest("@StoryArman"))
+        bot(JoinChannelRequest("@obrolansuar"))
+        bot(JoinChannelRequest("@StoryMan01"))
 
         dugmeler = CMD_HELP
         user = bot.get_me()
@@ -508,7 +582,7 @@ with bot:
             text = (
                 f"**Hey**, __I am using__  **💀 KARMAN-USERBOT 💀** \n\n"
                 f"       __Thanks For Using me__\n\n"
-                f"🗿 **Group Support :** [JAKANA](t.me/masukksiniJKN)\n"
+                f"🗿 **Group Support :** [OS](t.me/obrolansuar)\n"
                 f"⚠️ **Owner Repo :** [ARMAN](t.me/PakkPoll)\n"
                 f"📌 **Repo :** [KARMAN-USERBOT](https://github.com/ArmanGG01/KARMAN-USERBOT)\n"
             )
@@ -519,16 +593,16 @@ with bot:
                 buttons=[
                     [
                         custom.Button.url(
-                            text="⚠️ REPO KARMAN-USERBOT ⚠️",
+                            text="👑 REPO KARMAN-USERBOT 👑",
                             url="https://github.com/ArmanGG01/KARMAN-USERBOT",
                         )
                     ],
                     [
                         custom.Button.url(
-                            text="GROUP", url="https://t.me/masukksiniJKN"
+                            text="GROUP", url="https://t.me/obrolansuar"
                         ),
                         custom.Button.url(
-                            text="CHANNEL", url="https://t.me/DeployBot01"
+                            text="CHANNEL", url="https://t.me/StoryArman"
                         ),
                     ],
                 ],
@@ -544,18 +618,18 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=True,
-                    text=f"**⚠️ inline KARMAN-USERBOT ⚠️**\n\n💀 **Owner** [ARMAN](t.me/PakkPoll)\n⚠️ **Jumlah** `{len(dugmeler)}` Modules",
+                    text=f"**👑 𝙸𝙽𝙻𝙸𝙽𝙴 KARMAN-USERBOT 👑**\n\n❥ **𝙾𝚆𝙽𝙴𝚁 :** [𝙰𝚁𝙼𝙰𝙽](t.me/PakkPoll)\n❥ **𝙱𝙾𝚃 𝚅𝙴𝚁 :** 9.0\n❥ **𝙹𝚄𝙼𝙻𝙰𝙷 :** `{len(dugmeler)}` 𝙼𝙾𝙳𝚄𝙻𝙴𝚂",
                     buttons=buttons,
                 )
             elif query.startswith("repo"):
                 result = builder.article(
                     title="Repository",
-                    description="Repository ⚠️KARMAN-USERBOT⚠️",
-                    url="https://t.me/masukksiniJKN",
-                    text="**💀KARMAN-USERBOT💀**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **Owner :** [ARMAN](https://t.me/PakkPoll)\n⚠️ **Support :** @masukksiniJKN\n⚠️ **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n➖➖➖➖➖➖➖➖➖➖ ",
+                    description="Repository 👑KARMAN-USERBOT👑",
+                    url="https://t.me/obrolansuar",
+                    text="**💀KARMAN-USERBOT💀**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **Owner :** [ARMAN](https://t.me/PakkPoll)\n👑 **Support :** @obrolansuar\n👑 **Repository :** [💀KARMAN-USERBOT💀](https://github.com/ArmanGG01/KARMAN-USERBOT)\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠ ",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/masukksiniJKN"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
                             ),
@@ -567,11 +641,11 @@ with bot:
                 result = builder.article(
                     title="💀KARMAN-USERBOT💀",
                     description="KARMAN-USERBOT | Telethon",
-                    url="https://t.me/masukksiniJKN",
-                    text=f"**KARMAN-USERBOT**\n➖➖➖➖➖➖➖➖➖➖\n⚠️ **OWNER:** [ARMAN](t.me/PakkPoll)\n⚠️ **Assistant:** {tgbotusername}\n➖➖➖➖➖➖➖➖➖➖\n**Support:**DeplyoBot01\n➖➖➖➖➖➖➖➖➖➖",
+                    url="https://t.me/obrolansuar",
+                    text=f"**KARMAN-USERBOT**\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n👑 **OWNER:** [ARMAN](t.me/PakkPoll)\n👑 **Assistant:** {tgbotusername}\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠\n**Support:**@StoryArman\n✠╼━━━━━━━━━━━❖━━━━━━━━━━━✠",
                     buttons=[
                         [
-                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/masukksiniJKN"),
+                            custom.Button.url("ɢʀᴏᴜᴘ", "https://t.me/obrolansuar"),
                             custom.Button.url(
                                 "ʀᴇᴘᴏ", "https://github.com/ArmanGG01/KARMAN-USERBOT"
                             ),
@@ -607,7 +681,7 @@ with bot:
                 result = builder.photo(
                     file=ramlogo,
                     link_preview=False,
-                    text=f"💀KARMAN-USERBOT💀\n\n⚠️**Owner : [ARMAN](t.me/PakkPoll)**\n\n⚠️ **Bot Ver :** `8.0`\n⚠️ **𝗠odules :** `{len(dugmeler)}`",
+                    text=f"💀KARMAN-USERBOT💀\n\n👑**Owner : [ARMAN](t.me/PakkPoll)**\n\n👑 **Bot Ver :** `9.0`\n👑 **𝗠odules :** `{len(dugmeler)}`",
                     buttons=buttons,
                 )
             elif query.startswith("tb_btn"):
@@ -619,7 +693,7 @@ with bot:
             else:
                 result = builder.article(
                     " 💀KARMAN-USERBOT💀 ",
-                    text="""**💀KARMAN-USERBOT💀\n\n Anda Bisa Membuat Geez Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
+                    text="""**💀KARMAN-USERBOT💀\n\n Anda Bisa Membuat Karman Userbot Anda Sendiri Dengan Cara:** __TEKEN DIBAWAH INI!__ 👇""",
                     buttons=[
                         [
                             custom.Button.url(
@@ -664,7 +738,7 @@ with bot:
                     buttons=[
                         [
                             Button.url("📢 Channel Support",
-                                       "t.me/Karc0de"),
+                                       "t.me/StoryArman"),
                             Button.url("📌 Group support",
                                        "t.me/obrolansuar")],
                         [Button.inline("Open Menu", data="nepo")],
