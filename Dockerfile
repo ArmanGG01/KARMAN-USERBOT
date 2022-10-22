@@ -7,9 +7,9 @@ FROM ramadhani892/ramagans:slim-buster
 # ======================
 
 
-RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /home/ram-ubot/ \
-    && chmod 777 /home/ram-ubot \
-    && mkdir /home/ram-ubot/bin/
+RUN git clone -b KARMAN-USERBOT https://github.com/ArmanGG01/KARMAN-USERBOT /home/KARMAN-USERBOT/ \
+    && chmod 777 /home/KARMAN-USERBOT \
+    && mkdir /home/KARMAN-USERBOT/bin/
 WORKDIR /home/ram-ubot/
 
 
