@@ -666,9 +666,9 @@ with bot:
                     buttons=[
                         [
                             Button.url("📢 Channel Support",
-                                       "t.me/Deplo"),
+                                       "t.me/Karc0de"),
                             Button.url("📌 Group support",
-                                       "t.me/masukksiniJKN")],
+                                       "t.me/obrolansuar")],
                         [Button.inline("Open Menu", data="nepo")],
                         [custom.Button.inline(
                             "Close", b"close")],
