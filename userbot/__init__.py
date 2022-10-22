@@ -14,7 +14,6 @@ from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
 from math import ceil
 
-from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
 from pymongo import MongoClient
 from git import Repo
