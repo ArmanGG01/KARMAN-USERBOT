@@ -106,6 +106,7 @@ async def log(log_text):
 
 
 @register(outgoing=True, pattern="^.exit$")
+@register(sudo=True, pattern="^.cexit$")
 async def kickme(leave):
     """ Basically it's .kickme command """
     await leave.edit(f"▬▬▬.◙.▬▬▬ \n"
