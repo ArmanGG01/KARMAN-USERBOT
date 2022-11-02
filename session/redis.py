@@ -1,18 +1,18 @@
-# TG-rams - A modular Telegram rams script for Python.
+# TG-UserBot - A modular Telegram UserBot script for Python.
 # Copyright (C) 2019  Kandarp <https://github.com/kandnub>
 #
-# TG-rams is free software: you can redistribute it and/or modify
+# TG-UserBot is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# TG-rams is distributed in the hope that it will be useful,
+# TG-UserBot is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with TG-rams.  If not, see <https://www.gnu.org/licenses/>.
+# along with TG-UserBot.  If not, see <https://www.gnu.org/licenses/>.
 
 # This was purely based on https://github.com/ezdev128/telethon-session-redis/
 # since it hasn't been updated for a while now and missed a few things.
@@ -159,11 +159,9 @@ class RedisSession(MemorySession):
     def get_update_state(self, entity_id):
         key_pattern = "{}:update_states:{}".format(self.sess_prefix, entity_id)
         return self.redis_connection.get(key_pattern)
-
     def set_update_state(self, entity_id, state):
         key_pattern = "{}:update_states:{}".format(self.sess_prefix, entity_id)
         self.redis_connection.set(key_pattern, state)
-
     def _get_entities(self, strip_prefix=False):
         key_pattern = "{}:entities:".format(self.sess_prefix)
         try:
@@ -174,12 +172,10 @@ class RedisSession(MemorySession):
         except Exception as ex:
             LOGGER.exception(ex.args)
             return []
-
     def process_entities(self, tlo):
         rows = self._entities_to_rows(tlo)
         if not rows or len(rows) == 0 or len(rows[0]) == 0:
             return
-
         try:
             for row in rows:
                 key = "{}:entities:{}".format(self.sess_prefix, row[0])
@@ -193,7 +189,6 @@ class RedisSession(MemorySession):
                 self.redis_connection.hmset(key, s)
         except Exception as ex:
             LOGGER.exception(ex.args)
-
     def get_entity_rows_by_phone(self, phone):
         try:
             for key in self._get_entities():
@@ -211,7 +206,6 @@ class RedisSession(MemorySession):
         except Exception as ex:
             LOGGER.exception(ex.args)
         return None
-
     def get_entity_rows_by_username(self, username):
         try:
             for key in self._get_entities():
@@ -229,7 +223,6 @@ class RedisSession(MemorySession):
         except Exception as ex:
             LOGGER.exception(ex.args)
         return None
-
     def get_entity_rows_by_name(self, name):
         try:
             for key in self._get_entities():
@@ -247,7 +240,6 @@ class RedisSession(MemorySession):
         except Exception as ex:
             LOGGER.exception(ex.args)
         return None
-
     def get_entity_rows_by_id(self, id, exact=True):
         if exact:
             key = "{}:entities:{}".format(self.sess_prefix, id)
@@ -273,11 +265,9 @@ class RedisSession(MemorySession):
                         return ID, int(entity.get(b'hash').decode())
             except Exception as ex:
                 LOGGER.exception(ex.args)
-
     def cache_file(self, md5_digest, file_size, instance):
         if not isinstance(instance, (types.InputDocument, types.InputPhoto)):
             raise TypeError('Cannot cache %s instance' % type(instance))
-
         key = "{}:sent_files:{}".format(self.sess_prefix, md5_digest)
         s = {
             'md5_digest': md5_digest,
@@ -290,7 +280,6 @@ class RedisSession(MemorySession):
             self.redis_connection.hmset(key, s)
         except Exception as ex:
             LOGGER.exception(ex.args)
-
     def get_file(self, md5_digest, file_size, cls):
         key = "{}:sent_files:{}".format(self.sess_prefix, md5_digest)
         s = self.redis_connection.hgetall(key)
