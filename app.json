@@ -1,6 +1,7 @@
 {
   "name": "KARMAN-USERBOT",
   "description": "USERBOT KHUSUS YANG DIGUNAKAN UNTUK BERSENANG-SENANG DI TELEGRAM.",
+  "stack": "heroku-22",
   "logo": "https://telegra.ph/file/c97811e33743ce755ada5.jpg",
   "keywords": [
     "telegram",
