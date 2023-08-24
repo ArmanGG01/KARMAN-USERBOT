@@ -27,11 +27,11 @@ requirements_path = path.join(
 
 
 async def gen_chlog(repo, diff):
-    ch_log = ''
     d_form = "%d/%m/%y"
-    for c in repo.iter_commits(diff):
-        ch_log += f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
-    return ch_log
+    return ''.join(
+        f'•[{c.committed_datetime.strftime(d_form)}]: {c.summary} <{c.author}>\n'
+        for c in repo.iter_commits(diff)
+    )
 
 
 async def update_requirements():
@@ -75,7 +75,8 @@ async def deploy(event, repo, ups_rem, ac_br, txt):
         ups_rem.fetch(ac_br)
         repo.git.reset("--hard", "FETCH_HEAD")
         heroku_git_url = heroku_app.git_url.replace(
-            "https://", "https://api:" + HEROKU_API_KEY + "@")
+            "https://", f"https://api:{HEROKU_API_KEY}@"
+        )
         if "heroku" in repo.remotes:
             remote = repo.remote("heroku")
             remote.set_url(heroku_git_url)
@@ -148,8 +149,10 @@ async def upstream(event):
     off_repo = UPSTREAM_REPO_URL
     force_update = False
     try:
-        txt = "`Maaf Pembaruan Tidak Dapat Di Lanjutkan Karena "
-        txt += "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
+        txt = (
+            "`Maaf Pembaruan Tidak Dapat Di Lanjutkan Karena "
+            + "Beberapa Masalah Terjadi`\n\n**LOGTRACE:**\n"
+        )
         repo = Repo()
     except NoSuchPathError as error:
         await event.edit(f'{txt}\n`Directory {error} Tidak Dapat Di Temukan`')
@@ -190,20 +193,19 @@ async def upstream(event):
 
     changelog = await gen_chlog(repo, f'HEAD..upstream/{ac_br}')
 
-    if changelog == '' and force_update is False:
+    if changelog == '' and not force_update:
         await event.edit(
             f"\n**{REPO_NAME} Sudah Versi Terbaru**\n")
         await asyncio.sleep(15)
         await event.delete()
         return repo.__del__()
 
-    if conf is None and force_update is False:
+    if conf is None and not force_update:
         changelog_str = f"**Pembaruan Untuk {REPO_NAME} [{REPO_NAME}]:\n\n🖥Pembaruan:**\n`{changelog}`"
         if len(changelog_str) > 4096:
             await event.edit("`Changelog Terlalu Besar, Lihat File Untuk Melihatnya.`")
-            file = open("output.txt", "w+")
-            file.write(changelog_str)
-            file.close()
+            with open("output.txt", "w+") as file:
+                file.write(changelog_str)
             await event.client.send_file(
                 event.chat_id,
                 "output.txt",

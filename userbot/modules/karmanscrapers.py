@@ -186,7 +186,7 @@ async def img_sampler(event):
     try:
         lim = lim[0]
         lim = lim.replace("lim=", "")
-        query = query.replace("lim=" + lim[0], "")
+        query = query.replace(f"lim={lim[0]}", "")
     except IndexError:
         lim = 8
     gi = googleimagesdownload()
@@ -212,28 +212,24 @@ async def img_sampler(event):
 async def moni(event):
     input_str = event.pattern_match.group(1)
     input_sgra = input_str.split(" ")
-    if len(input_sgra) == 3:
-        try:
-            number = float(input_sgra[0])
-            currency_from = input_sgra[1].upper()
-            currency_to = input_sgra[2].upper()
-            request_url = "https://api.exchangeratesapi.io/latest?base={}".format(
-                currency_from)
-            current_response = get(request_url).json()
-            if currency_to in current_response["rates"]:
-                current_rate = float(current_response["rates"][currency_to])
-                rebmun = round(number * current_rate, 2)
-                await event.edit(
-                    "{} {} = {} {}".format(number, currency_from, rebmun, currency_to)
-                )
-            else:
-                await event.edit(
-                    "`This seems to be some alien currency, which I can't convert right now.`"
-                )
-        except Exception as e:
-            await event.edit(str(e))
-    else:
+    if len(input_sgra) != 3:
         return await event.edit("`Invalid syntax.`")
+    try:
+        number = float(input_sgra[0])
+        currency_from = input_sgra[1].upper()
+        currency_to = input_sgra[2].upper()
+        request_url = f"https://api.exchangeratesapi.io/latest?base={currency_from}"
+        current_response = get(request_url).json()
+        if currency_to in current_response["rates"]:
+            current_rate = float(current_response["rates"][currency_to])
+            rebmun = round(number * current_rate, 2)
+            await event.edit(f"{number} {currency_from} = {rebmun} {currency_to}")
+        else:
+            await event.edit(
+                "`This seems to be some alien currency, which I can't convert right now.`"
+            )
+    except Exception as e:
+        await event.edit(str(e))
 
 
 @register(outgoing=True, pattern=r"^\.google (.*)")
@@ -243,10 +239,10 @@ async def gsearch(q_event):
     try:
         page = page[0]
         page = page.replace("page=", "")
-        match = match.replace("page=" + page[0], "")
+        match = match.replace(f"page={page[0]}", "")
     except IndexError:
         page = 1
-    search_args = (str(match), int(page))
+    search_args = str(match), page
     gsearch = GoogleSearch()
     gresults = await gsearch.async_search(*search_args)
     msg = ""
@@ -265,7 +261,7 @@ async def gsearch(q_event):
     if BOTLOG:
         await q_event.client.send_message(
             BOTLOG_CHATID,
-            "Google Search query `" + match + "` was executed successfully",
+            f"Google Search query `{match}` was executed successfully",
         )
 
 
@@ -280,9 +276,8 @@ async def wiki(wiki_q):
         return await wiki_q.edit(f"Page not found.\n\n{pageerror}")
     result = summary(match)
     if len(result) >= 4096:
-        file = open("output.txt", "w+")
-        file.write(result)
-        file.close()
+        with open("output.txt", "w+") as file:
+            file.write(result)
         await wiki_q.client.send_file(
             wiki_q.chat_id,
             "output.txt",
@@ -313,17 +308,16 @@ async def urban_dict(ud_e):
     if int(meanlen) >= 0:
         if int(meanlen) >= 4096:
             await ud_e.edit("`Output too large, sending as file.`")
-            file = open("output.txt", "w+")
-            file.write(
-                "Text: "
-                + query
-                + "\n\nMeaning: "
-                + mean[0]["def"]
-                + "\n\n"
-                + "Example: \n"
-                + mean[0]["example"]
-            )
-            file.close()
+            with open("output.txt", "w+") as file:
+                file.write(
+                    "Text: "
+                    + query
+                    + "\n\nMeaning: "
+                    + mean[0]["def"]
+                    + "\n\n"
+                    + "Example: \n"
+                    + mean[0]["example"]
+                )
             await ud_e.client.send_file(
                 ud_e.chat_id,
                 "output.txt",
@@ -344,10 +338,10 @@ async def urban_dict(ud_e):
         )
         if BOTLOG:
             await ud_e.client.send_message(
-                BOTLOG_CHATID, "ud query `" + query + "` executed successfully."
+                BOTLOG_CHATID, f"ud query `{query}` executed successfully."
             )
     else:
-        await ud_e.edit("No result found for **" + query + "**")
+        await ud_e.edit(f"No result found for **{query}**")
 
 
 @register(outgoing=True, pattern=r"^\.tts(?: |$)([\s\S]*)")
@@ -399,10 +393,7 @@ async def imdb(e):
         movie_name = e.pattern_match.group(1)
         remove_space = movie_name.split(" ")
         final_name = "+".join(remove_space)
-        page = get(
-            "https://www.imdb.com/find?ref_=nv_sr_fn&q=" +
-            final_name +
-            "&s=all")
+        page = get(f"https://www.imdb.com/find?ref_=nv_sr_fn&q={final_name}&s=all")
         soup = BeautifulSoup(page.content, "lxml")
         odds = soup.findAll("tr", "odd")
         mov_title = odds[0].findNext("td").findNext("td").text
@@ -426,25 +417,20 @@ async def imdb(e):
             stars = "Not available"
         elif len(credits) > 2:
             writer = credits[1].a.text
-            actors = []
-            for x in credits[2].findAll("a"):
-                actors.append(x.text)
+            actors = [x.text for x in credits[2].findAll("a")]
             actors.pop()
-            stars = actors[0] + "," + actors[1] + "," + actors[2]
+            stars = f"{actors[0]},{actors[1]},{actors[2]}"
         else:
             writer = "Not available"
-            actors = []
-            for x in credits[1].findAll("a"):
-                actors.append(x.text)
+            actors = [x.text for x in credits[1].findAll("a")]
             actors.pop()
-            stars = actors[0] + "," + actors[1] + "," + actors[2]
+            stars = f"{actors[0]},{actors[1]},{actors[2]}"
         if soup.find("div", "inline canwrap"):
             story_line = soup.find(
                 "div", "inline canwrap").findAll("p")[0].text
         else:
             story_line = "Not available"
-        info = soup.findAll("div", "txt-block")
-        if info:
+        if info := soup.findAll("div", "txt-block"):
             mov_country = []
             mov_language = []
             for node in info:
@@ -460,9 +446,7 @@ async def imdb(e):
         else:
             mov_rating = "Not available"
         await e.edit(
-            "<a href=" + poster + ">&#8203;</a>"
-            "<b>Title : </b><code>"
-            + mov_title
+            f"<a href={poster}>&#8203;</a><b>Title : </b><code>{mov_title}"
             + "</code>\n<code>"
             + mov_details
             + "</code>\n<b>Rating : </b><code>"
@@ -524,13 +508,12 @@ async def lang(value):
         scraper = "Translator"
         global TRT_LANG
         arg = value.pattern_match.group(2).lower()
-        if arg in LANGUAGES:
-            TRT_LANG = arg
-            LANG = LANGUAGES[arg]
-        else:
+        if arg not in LANGUAGES:
             return await value.edit(
                 f"`Invalid Language code !!`\n`Available language codes for TRT`:\n\n`{LANGUAGES}`"
             )
+        TRT_LANG = arg
+        LANG = LANGUAGES[arg]
     elif util == "tts":
         scraper = "Text to Speech"
         global TTS_LANG
@@ -563,7 +546,7 @@ async def wolfram(wvent):
     appid = WOLFRAM_ID
     server = f"https://api.wolframalpha.com/v1/spoken?appid={appid}&i={i}"
     res = get(server)
-    await wvent.edit(f"**{i}**\n\n" + res.text, parse_mode="Markdown")
+    await wvent.edit(f"**{i}**\n\n{res.text}", parse_mode="Markdown")
     if BOTLOG:
         await wvent.client.send_message(
             BOTLOG_CHATID, f".wolfram {i} was executed successfully"
@@ -734,8 +717,7 @@ async def capture(url):
     chrome_options.arguments.remove("--window-size=1920x1080")
     driver = await chrome(chrome_options=chrome_options)
     input_str = url.pattern_match.group(1)
-    link_match = match(r'\bhttps?://.*\.\S+', input_str)
-    if link_match:
+    if link_match := match(r'\bhttps?://.*\.\S+', input_str):
         link = link_match.group()
     else:
         return await url.edit("`I need a valid link to take screenshots from.`")
@@ -759,9 +741,7 @@ async def capture(url):
     im_png = driver.get_screenshot_as_png()
     # saves screenshot of entire page
     driver.quit()
-    message_id = url.message.id
-    if url.reply_to_msg_id:
-        message_id = url.reply_to_msg_id
+    message_id = url.reply_to_msg_id if url.reply_to_msg_id else url.message.id
     with io.BytesIO(im_png) as out_file:
         out_file.name = "screencapture.png"
         await url.edit("`Uploading screenshot as file..`")
@@ -785,7 +765,7 @@ async def neko(nekobin):
 
     if match:
         message = match
-    elif reply_id:
+    else:
         message = await nekobin.get_reply_message()
         if message.media:
             downloaded_file_name = await nekobin.client.download_media(
@@ -795,16 +775,14 @@ async def neko(nekobin):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            message = "".join(m.decode("UTF-8") for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = message.text
 
     # Nekobin
     await nekobin.edit("`Pasting text . . .`")
-    resp = post(NEKOBIN_URL + "api/documents", json={"content": message})
+    resp = post(f"{NEKOBIN_URL}api/documents", json={"content": message})
 
     if resp.status_code == 201:
         response = resp.json()
@@ -838,7 +816,7 @@ async def neko(nekobin):
 
     if match:
         message = match
-    elif reply_id:
+    else:
         message = await nekobin.get_reply_message()
         if message.media:
             downloaded_file_name = await nekobin.client.download_media(
@@ -848,16 +826,14 @@ async def neko(nekobin):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            message = "".join(m.decode("UTF-8") for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = message.text
 
     # Nekobin
     await nekobin.edit("`Pasting text . . .`")
-    resp = post(NEKOBIN_URL + "api/documents", json={"content": message})
+    resp = post(f"{NEKOBIN_URL}api/documents", json={"content": message})
 
     if resp.status_code == 201:
         response = resp.json()
@@ -905,7 +881,7 @@ async def get_dogbin_content(dog_url):
         )
         return
     except exceptions.Timeout as TimeoutErr:
-        await dog_url.edit("Request timed out." + str(TimeoutErr))
+        await dog_url.edit(f"Request timed out.{str(TimeoutErr)}")
         return
     except exceptions.TooManyRedirects as RedirectsErr:
         await dog_url.edit(
@@ -937,7 +913,7 @@ async def paste(pstl):
 
     if match:
         message = match
-    elif reply_id:
+    else:
         message = await pstl.get_reply_message()
         if message.media:
             downloaded_file_name = await pstl.client.download_media(
@@ -947,16 +923,14 @@ async def paste(pstl):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8")
+            message = "".join(m.decode("UTF-8") for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = message.message
 
     # Dogbin
     await pstl.edit("`Pasting text . . .`")
-    resp = post(DOGBIN_URL + "documents", data=message.encode("utf-8"))
+    resp = post(f"{DOGBIN_URL}documents", data=message.encode("utf-8"))
 
     if resp.status_code == 200:
         response = resp.json()
@@ -1036,8 +1010,9 @@ async def kbg(remob):
                 reply_to=message_id)
             await remob.delete()
     else:
-        await remob.edit("**Error (Invalid API key, I guess ?)**\n`{}`".format(
-            output_file_name.content.decode("UTF-8")))
+        await remob.edit(
+            f'**Error (Invalid API key, I guess ?)**\n`{output_file_name.content.decode("UTF-8")}`'
+        )
 
 # this method will call the API, and return in the appropriate format
 # with the name provided.
@@ -1050,12 +1025,13 @@ async def ReTrieveFile(input_file_name):
     files = {
         "image_file": (input_file_name, open(input_file_name, "rb")),
     }
-    r = requests.post("https://api.remove.bg/v1.0/removebg",
-                      headers=headers,
-                      files=files,
-                      allow_redirects=True,
-                      stream=True)
-    return r
+    return requests.post(
+        "https://api.remove.bg/v1.0/removebg",
+        headers=headers,
+        files=files,
+        allow_redirects=True,
+        stream=True,
+    )
 
 
 async def ReTrieveURL(input_url):
@@ -1063,12 +1039,13 @@ async def ReTrieveURL(input_url):
         "X-API-Key": REM_BG_API_KEY,
     }
     data = {"image_url": input_url}
-    r = requests.post("https://api.remove.bg/v1.0/removebg",
-                      headers=headers,
-                      data=data,
-                      allow_redirects=True,
-                      stream=True)
-    return r
+    return requests.post(
+        "https://api.remove.bg/v1.0/removebg",
+        headers=headers,
+        data=data,
+        allow_redirects=True,
+        stream=True,
+    )
 
 
 @register(outgoing=True, pattern=r"^.direct(?: |$)([\s\S]*)")
@@ -1120,8 +1097,7 @@ def gdrive(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://drive\.google\.com\S+', url)[0]
     except IndexError:
-        reply = "`No Google drive links found`\n"
-        return reply
+        return "`No Google drive links found`\n"
     file_id = ''
     reply = ''
     if link.find("view") != -1:
@@ -1165,8 +1141,7 @@ def zippy_share(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*zippyshare\.com\S+', url)[0]
     except IndexError:
-        reply = "`No ZippyShare links found`\n"
-        return reply
+        return "`No ZippyShare links found`\n"
     session = requests.Session()
     base_url = re.search('http.+.com', link).group()
     response = session.get(link)
@@ -1178,8 +1153,7 @@ def zippy_share(url: str) -> str:
                                 script.text).group('url')
             math = re.search(r'= (?P<url>\".+\" \+ (?P<math>\(.+\)) .+);',
                              script.text).group('math')
-            dl_url = url_raw.replace(math,
-                                     '"' + str(ast.literal_eval(math)) + '"')
+            dl_url = url_raw.replace(math, f'"{str(ast.literal_eval(math))}"')
             break
     dl_url = base_url + ast.literal_eval(dl_url)
     name = urllib.parse.unquote(dl_url.split('/')[-1])
@@ -1194,8 +1168,7 @@ def yandex_disk(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*yadi\.sk\S+', url)[0]
     except IndexError:
-        reply = "`No Yandex.Disk links found`\n"
-        return reply
+        return "`No Yandex.Disk links found`\n"
     api = 'https://cloud-api.yandex.net/v1/disk/public/resources/download?public_key={}'
     try:
         dl_url = requests.get(api.format(link)).json()['href']
@@ -1214,8 +1187,7 @@ def cm_ru(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*cloud\.mail\.ru\S+', url)[0]
     except IndexError:
-        reply = "`No cloud.mail.ru links found`\n"
-        return reply
+        return "`No cloud.mail.ru links found`\n"
     command = f'bin/cmrudl -s {link}'
     result = subprocess.call(command, shell=False).read()
     result = result.splitlines()[-1]
@@ -1236,8 +1208,7 @@ def mediafire(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*mediafire\.com\S+', url)[0]
     except IndexError:
-        reply = "`No MediaFire links found`\n"
-        return reply
+        return "`No MediaFire links found`\n"
     reply = ''
     page = BeautifulSoup(requests.get(link).content, 'lxml')
     info = page.find('a', {'aria-label': 'Download file'})
@@ -1253,8 +1224,7 @@ def sourceforge(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*sourceforge\.net\S+', url)[0]
     except IndexError:
-        reply = "`No SourceForge links found`\n"
-        return reply
+        return "`No SourceForge links found`\n"
     file_path = re.findall(r'files(.*)/download', link)[0]
     reply = f"Mirrors for __{file_path.split('/')[-1]}__\n"
     project = re.findall(r'projects?/(.*?)/files', link)[0]
@@ -1275,8 +1245,7 @@ def osdn(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*osdn\.net\S+', url)[0]
     except IndexError:
-        reply = "`No OSDN links found`\n"
-        return reply
+        return "`No OSDN links found`\n"
     page = BeautifulSoup(
         requests.get(link, allow_redirects=True).content, 'lxml')
     info = page.find('a', {'class': 'mirror_link'})
@@ -1296,8 +1265,7 @@ def github(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*github\.com.*releases\S+', url)[0]
     except IndexError:
-        reply = "`No GitHub Releases links found`\n"
-        return reply
+        return "`No GitHub Releases links found`\n"
     reply = ''
     dl_url = ''
     download = requests.get(url, stream=True, allow_redirects=False)
@@ -1315,8 +1283,7 @@ def androidfilehost(url: str) -> str:
     try:
         link = re.findall(r'\bhttps?://.*androidfilehost.*fid.*\S+', url)[0]
     except IndexError:
-        reply = "`No AFH links found`\n"
-        return reply
+        return "`No AFH links found`\n"
     fid = re.findall(r'\?fid=(.*)', link)[0]
     session = requests.Session()
     user_agent = useragent()
@@ -1381,8 +1348,12 @@ async def parseqr(qr_e):
         await qr_e.get_reply_message())
     # parse the Official ZXing webpage to decode the QRCode
     command_to_exec = [
-        "curl", "-X", "POST", "-F", "f=@" + downloaded_file_name + "",
-        "https://zxing.org/w/decode"
+        "curl",
+        "-X",
+        "POST",
+        "-F",
+        f"f=@{downloaded_file_name}",
+        "https://zxing.org/w/decode",
     ]
     process = await asyncio.create_subprocess_exec(
         *command_to_exec,
@@ -1422,9 +1393,7 @@ async def bq(event):
             m_list = None
             with open(downloaded_file_name, "rb") as fd:
                 m_list = fd.readlines()
-            message = ""
-            for m in m_list:
-                message += m.decode("UTF-8") + "\r\n"
+            message = "".join(m.decode("UTF-8") + "\r\n" for m in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message
@@ -1463,9 +1432,7 @@ async def make_qr(makeqr):
             m_list = None
             with open(downloaded_file_name, "rb") as file:
                 m_list = file.readlines()
-            message = ""
-            for media in m_list:
-                message += media.decode("UTF-8") + "\r\n"
+            message = "".join(media.decode("UTF-8") + "\r\n" for media in m_list)
             os.remove(downloaded_file_name)
         else:
             message = previous_message.message

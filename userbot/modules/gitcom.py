@@ -20,7 +20,6 @@ GIT_TEMP_DIR = "./userbot/temp/"
 
 
 @register(outgoing=True, pattern=r"^\.gcommit(?: |$)(.*)")
-# @register(pattern=r".commit (.*)", outgoing=True)
 async def download(event):
     if event.fwd_from:
         return
@@ -48,7 +47,7 @@ async def download(event):
         end = datetime.now()
         ms = (end - start).seconds
         await event.delete()
-        await mone.edit("Downloaded to `{}` in {} seconds.".format(downloaded_file_name, ms))
+        await mone.edit(f"Downloaded to `{downloaded_file_name}` in {ms} seconds.")
         await mone.edit("Committing to Github....")
         await git_commit(downloaded_file_name, mone)
 
@@ -68,10 +67,9 @@ async def git_commit(file_name, mone):
         print(content_file)
     for i in content_list:
         create_file = True
-        if i == 'ContentFile(path="' + file_name + '")':
+        if i == f'ContentFile(path="{file_name}")':
             return await mone.edit("`File Already Exists`")
-            create_file = False
-    file_name = "userbot/modules/" + file_name
+    file_name = f"userbot/modules/{file_name}"
     if create_file:
         file_name = file_name.replace("./userbot/temp/", "")
         print(file_name)

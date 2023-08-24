@@ -48,8 +48,7 @@ async def _(e):
                 if not (bb.bot or bb.deleted):
                     xx += f"\n[{get_display_name(bb)}](tg://user?id={bb.id})"
         if isinstance(y, owner):
-            if "admin" or "owner" in okk:
-                xx += f"\n👑 [{get_display_name(bb)}](tg://user?id={bb.id}) 👑"
+            xx += f"\n👑 [{get_display_name(bb)}](tg://user?id={bb.id}) 👑"
         if isinstance(y, admin):
             if "admin" in okk:
                 if not bb.deleted:

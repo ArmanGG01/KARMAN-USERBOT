@@ -18,7 +18,7 @@ async def _(event):
 
     token = "19e7f2b6fe27deb566140aae134dec6b"
 
-    api = "http://api.ipstack.com/" + adress + "?access_key=" + token + "&format=1"
+    api = f"http://api.ipstack.com/{adress}?access_key={token}&format=1"
 
     result = urllib.request.urlopen(api).read()
     result = result.decode()

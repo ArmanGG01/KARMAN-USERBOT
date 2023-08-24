@@ -21,17 +21,14 @@ async def fban(event):
         fban_id = reply_msg.from_id
         reason = event.pattern_match.group(1)
         user_link = f"[{fban_id}](tg://user?id={fban_id})"
-    elif not reply_msg:
+    else:
         pattern = str(event.pattern_match.group(1)).split()
         fban_id = pattern[0]
         reason = " ".join(pattern[1:])
         user_link = fban_id
-    else:
-        return
-
     self_user = await event.client.get_me()
 
-    if fban_id == self_user.id or fban_id == "@" + self_user.username:
+    if fban_id in [self_user.id, f"@{self_user.username}"]:
         return await event.edit(
             "**Error: This action has been prevented by KensurBot self preservation protocols.**"
         )
@@ -42,7 +39,7 @@ async def fban(event):
 
     await event.edit(f"**Fbanning** {user_link}...")
     failed = []
-    total = int(0)
+    total = 0
 
     for i in fed_list:
         total += 1
@@ -70,7 +67,7 @@ async def fban(event):
     if failed:
         status = f"Failed to fban in {len(failed)}/{total} feds.\n"
         for i in failed:
-            status += "• " + i + "\n"
+            status += f"• {i}" + "\n"
     else:
         status = f"Success! Fbanned in {total} feds."
 
@@ -93,17 +90,14 @@ async def unfban(event):
         unfban_id = reply_msg.from_id
         reason = event.pattern_match.group(1)
         user_link = f"[{unfban_id}](tg://user?id={unfban_id})"
-    elif not reply_msg:
+    else:
         pattern = str(event.pattern_match.group(1)).split()
         unfban_id = pattern[0]
         reason = " ".join(pattern[1:])
         user_link = unfban_id
-    else:
-        return
-
     self_user = await event.client.get_me()
 
-    if unfban_id == self_user.id or unfban_id == "@" + self_user.username:
+    if unfban_id in [self_user.id, f"@{self_user.username}"]:
         return await event.edit("**Wait, that's illegal**")
 
     if len((fed_list := get_flist())) == 0:
@@ -112,7 +106,7 @@ async def unfban(event):
 
     await event.edit(f"**Un-fbanning **{user_link}**...**")
     failed = []
-    total = int(0)
+    total = 0
 
     for i in fed_list:
         total += 1
@@ -139,7 +133,7 @@ async def unfban(event):
     if failed:
         status = f"Failed to un-fban in {len(failed)}/{total} feds.\n"
         for i in failed:
-            status += "• " + i + "\n"
+            status += f"• {i}" + "\n"
     else:
         status = f"Success! Un-fbanned in {total} feds."
 
@@ -197,7 +191,7 @@ async def listf(event):
     msg = "**Connected federations:**\n\n"
 
     for i in fed_list:
-        msg += "• " + str(i.fed_name) + "\n"
+        msg += f"• {str(i.fed_name)}" + "\n"
 
     await event.edit(msg)
 

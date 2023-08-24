@@ -23,45 +23,45 @@ async def lst(event):
         return
     if isdir(path):
         if cat:
-            msg = "**Folders and Files in `{}`** :\n\n".format(path)
+            msg = f"**Folders and Files in `{path}`** :\n\n"
         else:
             msg = "**Folders and Files in Current Directory** :\n\n"
         lists = os.listdir(path)
         files = ""
         folders = ""
         for contents in sorted(lists):
-            catpath = path + "/" + contents
+            catpath = f"{path}/{contents}"
             if not isdir(catpath):
                 size = os.stat(catpath).st_size
                 if contents.endswith((".mp3", ".flac", ".wav", ".m4a")):
-                    files += "🎵 " + f"`{contents}`\n"
+                    files += f"🎵 `{contents}`\n"
                 if contents.endswith((".opus")):
-                    files += "🎙 " + f"`{contents}`\n"
+                    files += f"🎙 `{contents}`\n"
                 elif contents.endswith(
                     (".mkv", ".mp4", ".webm", ".avi", ".mov", ".flv")
                 ):
-                    files += "🎞 " + f"`{contents}`\n"
+                    files += f"🎞 `{contents}`\n"
                 elif contents.endswith(
                     (".zip", ".tar", ".tar.gz", ".rar", ".7z", ".xz")
                 ):
-                    files += "🗜 " + f"`{contents}`\n"
+                    files += f"🗜 `{contents}`\n"
                 elif contents.endswith(
                     (".jpg", ".jpeg", ".png", ".gif", ".bmp", ".ico", ".webp")
                 ):
-                    files += "🖼 " + f"`{contents}`\n"
+                    files += f"🖼 `{contents}`\n"
                 elif contents.endswith((".exe", ".deb")):
-                    files += "⚙️ " + f"`{contents}`\n"
+                    files += f"⚙️ `{contents}`\n"
                 elif contents.endswith((".iso", ".img")):
-                    files += "💿 " + f"`{contents}`\n"
+                    files += f"💿 `{contents}`\n"
                 elif contents.endswith((".apk", ".xapk")):
-                    files += "📱 " + f"`{contents}`\n"
+                    files += f"📱 `{contents}`\n"
                 elif contents.endswith((".py")):
-                    files += "🐍 " + f"`{contents}`\n"
+                    files += f"🐍 `{contents}`\n"
                 else:
-                    files += "📄 " + f"`{contents}`\n"
+                    files += f"📄 `{contents}`\n"
             else:
                 folders += f"📁 `{contents}`\n"
-        msg = msg + folders + files if files or folders else msg + "__empty path__"
+        msg = msg + folders + files if files or folders else f"{msg}__empty path__"
     else:
         size = os.stat(path).st_size
         msg = "**The details of given file** :\n\n"

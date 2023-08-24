@@ -15,8 +15,7 @@ modules = CMD_HELP
 @kar_cmd(pattern="help(?: |$)(.*)")
 async def help(event):
     """For help command"""
-    args = event.pattern_match.group(1).lower()
-    if args:
+    if args := event.pattern_match.group(1).lower():
         if args in CMD_HELP:
             await edit_or_reply(event, str(CMD_HELP[args]))
         else:
@@ -25,7 +24,7 @@ async def help(event):
         user = await bot.get_me()
         string = ""
         for i in CMD_HELP:
-            string += "`" + str(i)
+            string += f"`{str(i)}"
             string += f"`\t\t\t{EMOJI_HELP}\t\t\t"
         await edit_or_reply(
             event,

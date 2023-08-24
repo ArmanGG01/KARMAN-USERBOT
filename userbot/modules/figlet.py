@@ -13,20 +13,6 @@ from userbot.events import register
 async def figlet(e):
     if e.fwd_from:
         return
-    CMD_FIG = {
-        "slant": "slant",
-        "3D": "3-d",
-        "5line": "5lineoblique",
-        "alpha": "alphabet",
-        "banner": "banner3-D",
-        "doh": "doh",
-        "iso": "isometric1",
-        "letter": "letters",
-        "allig": "alligator",
-        "dotm": "dotmatrix",
-        "bubble": "bubble",
-        "bulb": "bulbhead",
-        "digi": "digital"}
     input_str = e.pattern_match.group(1)
     if "." in input_str:
         text, cmd = input_str.split(".", maxsplit=1)
@@ -37,6 +23,20 @@ async def figlet(e):
         await e.edit("`Please add some text to figlet`")
         return
     if cmd is not None:
+        CMD_FIG = {
+            "slant": "slant",
+            "3D": "3-d",
+            "5line": "5lineoblique",
+            "alpha": "alphabet",
+            "banner": "banner3-D",
+            "doh": "doh",
+            "iso": "isometric1",
+            "letter": "letters",
+            "allig": "alligator",
+            "dotm": "dotmatrix",
+            "bubble": "bubble",
+            "bulb": "bulbhead",
+            "digi": "digital"}
         try:
             font = CMD_FIG[cmd]
         except KeyError:

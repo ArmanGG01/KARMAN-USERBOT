@@ -31,9 +31,7 @@ async def telegraphs(graph):
                 )
                 end = datetime.now()
                 ms = (end - start).seconds
-                await graph.edit(
-                    "Di Download Ke {} Dalam {} Detik.".format(downloaded_file_name, ms)
-                )
+                await graph.edit(f"Di Download Ke {downloaded_file_name} Dalam {ms} Detik.")
                 try:
                     if downloaded_file_name.endswith((".webp")):
                         resize_image(downloaded_file_name)
@@ -43,16 +41,14 @@ async def telegraphs(graph):
                     start = datetime.now()
                     media_urls = upload_file(downloaded_file_name)
                 except exceptions.TelegraphException as exc:
-                    await graph.edit("ERROR: " + str(exc))
+                    await graph.edit(f"ERROR: {str(exc)}")
                     os.remove(downloaded_file_name)
                 else:
                     end = datetime.now()
                     ms_two = (end - start).seconds
                     os.remove(downloaded_file_name)
                     await graph.edit(
-                        "Berhasil Mengunggah Ke [Telegraph](https://telegra.ph{}).".format(
-                            media_urls[0], (ms + ms_two)
-                        ),
+                        f"Berhasil Mengunggah Ke [Telegraph](https://telegra.ph{media_urls[0]}).",
                         link_preview=True,
                     )
             elif input_str == "t":
@@ -79,9 +75,7 @@ async def telegraphs(graph):
                 end = datetime.now()
                 ms = (end - start).seconds
                 await graph.edit(
-                    "Berhasil Mengunggah Ke [Telegraph](https://telegra.ph/{}).".format(
-                        response["path"], ms
-                    ),
+                    f'Berhasil Mengunggah Ke [Telegraph](https://telegra.ph/{response["path"]}).',
                     link_preview=True,
                 )
         else:

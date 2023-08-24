@@ -18,7 +18,7 @@ async def _(arman):
                 t = await landak.ban_time(t)
             except BaseException:
                 return await arman.edit("`Incorrect Format`")
-    await arman.edit(f"`Kebanyakan fake hidup lu ngentot!`")
+    await arman.edit("`Kebanyakan fake hidup lu ngentot!`")
     await arman.edit(f"`Memulai Fake Typing {t} detik.`")
     async with arman.client.action(arman.chat_id, "typing"):
         await asyncio.sleep(t)

@@ -20,9 +20,7 @@ async def gps(event):
     await event.edit("`Menemukan Lokasi Ini Di Server Map....`")
 
     geolocator = Nominatim(user_agent="Lord")
-    geoloc = geolocator.geocode(input_str)
-
-    if geoloc:
+    if geoloc := geolocator.geocode(input_str):
         lon = geoloc.longitude
         lat = geoloc.latitude
         await reply_to_id.reply(

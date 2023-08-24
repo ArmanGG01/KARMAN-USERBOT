@@ -15,7 +15,7 @@ from userbot import ALIVE_NAME, CMD_HELP, DEVS
 async def get_user_from_event(event):
     args = event.pattern_match.group(1).split(':', 1)
     extra = None
-    if event.reply_to_msg_id and not len(args) == 2:
+    if event.reply_to_msg_id and len(args) != 2:
         previous_message = await event.get_reply_message()
         user_obj = await event.client.get_entity(previous_message.from_id)
         extra = event.pattern_match.group(1)
@@ -33,8 +33,7 @@ async def get_user_from_event(event):
             if isinstance(probable_user_mention_entity,
                           MessageEntityMentionName):
                 user_id = probable_user_mention_entity.user_id
-                user_obj = await event.client.get_entity(user_id)
-                return user_obj
+                return await event.client.get_entity(user_id)
         try:
             user_obj = await event.client.get_entity(user)
         except Exception as err:
@@ -64,13 +63,13 @@ async def gspide(rk):
     lazy = rk
     sender = await lazy.get_sender()
     me = await lazy.client.get_me()
-    if not sender.id == me.id:
+    if sender.id != me.id:
         rkp = await lazy.reply("`Proses global kick jamet tolol`")
     else:
         rkp = await lazy.edit("`Proses Global KICK SI KONTOLL...`")
     me = await rk.client.get_me()
     await rkp.edit(f"`{ALIVE_NAME}:` **Melakukan Aksi Global Kick..**")
-    my_mention = "[{}](tg://user?id={})".format(me.first_name, me.id)
+    my_mention = f"[{me.first_name}](tg://user?id={me.id})"
     f"@{me.username}" if me.username else my_mention
     await rk.get_chat()
     a = b = 0
@@ -90,7 +89,9 @@ async def gspide(rk):
         return await rkp.edit(f"`{ALIVE_NAME}`, **Kesalahan! Pengguna tidak dikenal.**")
     if user:
         if user.id in DEVS:
-            return await rkp.edit(f"`ETT NGENTOT, LU GABISA GKICK DIA TOLOL,DIA DEVELOPER GUA..` ")
+            return await rkp.edit(
+                "`ETT NGENTOT, LU GABISA GKICK DIA TOLOL,DIA DEVELOPER GUA..` "
+            )
         try:
             await rk.client(BlockRequest(user))
             await rk.client(UnblockRequest(user))

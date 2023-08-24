@@ -179,7 +179,7 @@ async def upload_google_photos(event):
             "Lord-Goog-Upload-File-Name": file_name,
             "Lord-Goog-Upload-Protocol": "resumable",
             "Lord-Goog-Upload-Raw-Size": str(file_size),
-            "Authorization": "Bearer " + creds.access_token,
+            "Authorization": f"Bearer {creds.access_token}",
         }
         # Step 1: Initiating an upload session
         step_one_response = await session.post(
@@ -214,7 +214,7 @@ async def upload_google_photos(event):
                     "Content-Length": str(part_size),
                     "Lord-Goog-Upload-Command": "upload",
                     "Lord-Goog-Upload-Offset": str(offset),
-                    "Authorization": "Bearer " + creds.access_token,
+                    "Authorization": f"Bearer {creds.access_token}",
                 }
                 logger.info(i)
                 logger.info(headers)
@@ -232,7 +232,7 @@ async def upload_google_photos(event):
                 )
                 logger.info(response.headers)
 
-                # await f_d.seek(i * upload_granularity)
+                            # await f_d.seek(i * upload_granularity)
             # await f_d.seek(upload_granularity)
             current_chunk = await f_d.read(upload_granularity)
 
@@ -240,8 +240,10 @@ async def upload_google_photos(event):
             headers = {
                 "Content-Length": str(len(current_chunk)),
                 "Lord-Goog-Upload-Command": "upload, finalize",
-                "Lord-Goog-Upload-Offset": str(number_of_req_s * upload_granularity),
-                "Authorization": "Bearer " + creds.access_token,
+                "Lord-Goog-Upload-Offset": str(
+                    number_of_req_s * upload_granularity
+                ),
+                "Authorization": f"Bearer {creds.access_token}",
             }
             logger.info(headers)
             response = await session.post(

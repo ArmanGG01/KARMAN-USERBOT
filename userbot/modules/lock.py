@@ -70,11 +70,9 @@ async def locks(event):
     else:
         if not input_str:
             await event.edit("`APA YG MAU GUA KUNCI? MULUT OWNER KAH?`")
-            return
         else:
             await event.edit(f"`LU MAU NGUNCI APAAN SI GOBLOK, KAGA NGARTI GUA BABI!` `{input_str}`")
-            return
-
+        return
     lock_rights = ChatBannedRights(
         until_date=None,
         send_messages=msg,
@@ -158,11 +156,9 @@ async def rem_locks(event):
     else:
         if not input_str:
             await event.edit("`APA YANG HARUS GUA BUKA?\nBAJU OWNER KAH??`")
-            return
         else:
             await event.edit(f"`KUNCI YANG MAU LU BUKA, GA VALID, MENDING LU BUKA BAJU OWNER` `{input_str}`")
-            return
-
+        return
     unlock_rights = ChatBannedRights(
         until_date=None,
         send_messages=msg,

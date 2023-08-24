@@ -26,8 +26,7 @@ async def gengkapak(e):
         try:
             run += 1
             r1 = ts[run]
-            list1 = "<-----{}----->\nName: {}\nSeeders: {}\nSize: {}\nAge: {}\n<--Magnet Below-->\n{}\n\n\n".format(
-                run, r1["name"], r1["seeder"], r1["size"], r1["age"], r1["magnet"])
+            list1 = f'<-----{run}----->\nName: {r1["name"]}\nSeeders: {r1["seeder"]}\nSize: {r1["size"]}\nAge: {r1["age"]}\n<--Magnet Below-->\n{r1["magnet"]}\n\n\n'
             listdata += list1
         except BaseException:
             break
@@ -67,28 +66,26 @@ def dogbin(magnets):
 async def tor_search(event):
     if event.fwd_from:
         return
-    headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
-    }
-
     search_str = event.pattern_match.group(1)
 
     print(search_str)
-    await event.edit("Searching for " + search_str + ".....")
+    await event.edit(f"Searching for {search_str}.....")
+    headers = {
+        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/72.0.3626.121 Safari/537.36"
+    }
     if " " in search_str:
         search_str = search_str.replace(" ", "+")
         print(search_str)
         res = requests.get(
-            "https://www.torrentdownloads.me/search/?new=1&s_cat=0&search="
-            + search_str,
+            f"https://www.torrentdownloads.me/search/?new=1&s_cat=0&search={search_str}",
             headers,
         )
 
     else:
         res = requests.get(
-            "https://www.torrentdownloads.me/search/?search=" +
-            search_str,
-            headers)
+            f"https://www.torrentdownloads.me/search/?search={search_str}",
+            headers,
+        )
 
     source = bs(res.text, "lxml")
     urls = []
@@ -102,11 +99,7 @@ async def tor_search(event):
             title = title[20:]
             titles.append(title)
             urls.append("https://www.torrentdownloads.me" + div.p.a["href"])
-        except KeyError:
-            pass
-        except TypeError:
-            pass
-        except AttributeError:
+        except (KeyError, TypeError, AttributeError):
             pass
         if counter == 11:
             break
@@ -134,16 +127,10 @@ async def tor_search(event):
         search_str = search_str.replace("+", " ")
     except BaseException:
         pass
-    msg = "**Torrent Search Query**\n`{}`".format(
-        search_str) + "\n**Results**\n"
+    msg = f"**Torrent Search Query**\n`{search_str}`" + "\n**Results**\n"
     counter = 0
     while counter != len(titles):
-        msg = (
-            msg
-            + "⁍ [{}]".format(titles[counter])
-            + "({})".format(shorted_links[counter])
-            + "\n\n"
-        )
+        msg = f"{msg}⁍ [{titles[counter]}]" + f"({shorted_links[counter]})" + "\n\n"
         counter += 1
     await event.edit(msg, link_preview=False)
 

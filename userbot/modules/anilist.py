@@ -16,16 +16,16 @@ from userbot import bot
 def time_formatter(milliseconds: int) -> str:
     """Inputs time in milliseconds, to get beautified time,
     as string"""
-    seconds, milliseconds = divmod(int(milliseconds), 1000)
+    seconds, milliseconds = divmod(milliseconds, 1000)
     minutes, seconds = divmod(seconds, 60)
     hours, minutes = divmod(minutes, 60)
     days, hours = divmod(hours, 24)
     tmp = (
-        ((str(days) + " day(s), ") if days else "")
-        + ((str(hours) + " hour(s), ") if hours else "")
-        + ((str(minutes) + " minute(s), ") if minutes else "")
-        + ((str(seconds) + " second(s), ") if seconds else "")
-        + ((str(milliseconds) + " millisecond(s), ") if milliseconds else "")
+        (f"{str(days)} day(s), " if days else "")
+        + (f"{str(hours)} hour(s), " if hours else "")
+        + (f"{str(minutes)} minute(s), " if minutes else "")
+        + (f"{str(seconds)} second(s), " if seconds else "")
+        + (f"{str(milliseconds)} millisecond(s), " if milliseconds else "")
     )
     return tmp[:-2]
 
@@ -33,7 +33,7 @@ def time_formatter(milliseconds: int) -> str:
 def shorten(description, info="anilist.co"):
     msg = ""
     if len(description) > 700:
-        description = description[0:200] + "....."
+        description = f"{description[:200]}....."
         msg += f"\n**Description**:\n{description} [Read More]({info})"
     else:
         msg += f"\n**Description**: \n   {description}"
@@ -200,7 +200,7 @@ async def formatJSON(outData):
     msg += f"\n\n**Type** : {jsonData['format']}"
     msg += f"\n**Genres** : "
     for g in jsonData["genres"]:
-        msg += g + " "
+        msg += f"{g} "
     msg += f"\n**Status** : {jsonData['status']}"
     msg += f"\n**Episode** : {jsonData['episodes']}"
     msg += f"\n**Year** : {jsonData['startDate']['year']}"
@@ -222,21 +222,18 @@ async def anilist(event):
     if event.reply_to_msg_id:
         reply_to_id = event.reply_to_msg_id
     variables = {"query": search}
-    json = (
+    if json := (
         requests.post(
-            url,
-            json={
-                "query": character_query,
-                "variables": variables}) .json()["data"] .get(
-            "Character",
-            None))
-    if json:
+            url, json={"query": character_query, "variables": variables}
+        )
+        .json()["data"]
+        .get("Character", None)
+    ):
         msg = f"**{json.get('name').get('full')}**\n"
         description = f"{json['description']}"
         site_url = json.get("siteUrl")
         msg += shorten(description, site_url)
-        image = json.get("image", None)
-        if image:
+        if image := json.get("image", None):
             image = image.get("large")
             await event.delete()
             await bot.send_file(

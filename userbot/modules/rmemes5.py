@@ -391,10 +391,6 @@ async def _(event):
 
         return
 
-    animation_interval = 2
-
-    animation_ttl = range(0, 11)
-
     input_str = event.pattern_match.group(1)
 
     if input_str == "cinta":
@@ -412,7 +408,12 @@ async def _(event):
             "`Mengirim Cintaku.. 52%\n█████████████▒▒▒▒▒▒▒▒▒▒▒▒ `",
             "`Mengirim Cintaku.. 84%\n█████████████████████▒▒▒▒ `",
             "`Mengirim Cintaku.. 100%\n█████████CINTAKU███████████ `",
-            f"`Cintaku Sekarang Sepenuhnya Terkirim Padamu, Dan Sekarang Aku Sangat Mencintai Mu, I Love You 💞`"]
+            "`Cintaku Sekarang Sepenuhnya Terkirim Padamu, Dan Sekarang Aku Sangat Mencintai Mu, I Love You 💞`",
+        ]
+
+        animation_interval = 2
+
+        animation_ttl = range(0, 11)
 
         for i in animation_ttl:
 

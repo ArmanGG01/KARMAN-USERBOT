@@ -43,7 +43,7 @@ async def download(target_file):
             if not os.path.isdir(os.path.join(TEMP_DOWNLOAD_DIRECTORY, head)):
                 os.makedirs(os.path.join(TEMP_DOWNLOAD_DIRECTORY, head))
                 file_name = os.path.join(head, tail)
-        downloaded_file_name = TEMP_DOWNLOAD_DIRECTORY + "/" + file_name
+        downloaded_file_name = f"{TEMP_DOWNLOAD_DIRECTORY}/{file_name}"
         downloader = SmartDL(url, downloaded_file_name, progress_bar=False)
         downloader.start(blocking=False)
         c_time = time.time()
@@ -57,11 +57,12 @@ async def download(target_file):
             percentage = downloader.get_progress() * 100
             speed = downloader.get_speed()
             progress_str = "[{0}{1}] `{2}%`".format(
-                ''.join(["■" for i in range(
-                    math.floor(percentage / 10))]),
-                ''.join(["▨" for i in range(
-                    10 - math.floor(percentage / 10))]),
-                round(percentage, 2))
+                ''.join(["■" for _ in range(math.floor(percentage / 10))]),
+                ''.join(
+                    ["▨" for _ in range(10 - math.floor(percentage / 10))]
+                ),
+                round(percentage, 2),
+            )
             estimated_total_time = downloader.get_eta(human=True)
             try:
                 current_message = (
@@ -80,10 +81,11 @@ async def download(target_file):
             except Exception as e:
                 LOGS.info(str(e))
         if downloader.isSuccessful():
-            await target_file.edit("Downloaded to `{}` successfully !!".format(
-                downloaded_file_name))
+            await target_file.edit(
+                f"Downloaded to `{downloaded_file_name}` successfully !!"
+            )
         else:
-            await target_file.edit("Incorrect URL\n{}".format(url))
+            await target_file.edit(f"Incorrect URL\n{url}")
     elif target_file.reply_to_msg_id:
         try:
             c_time = time.time()
@@ -96,8 +98,9 @@ async def download(target_file):
         except Exception as e:  # pylint:disable=C0103,W0703
             await target_file.edit(str(e))
         else:
-            await target_file.edit("Downloaded to `{}` successfully !!".format(
-                downloaded_file_name))
+            await target_file.edit(
+                f"Downloaded to `{downloaded_file_name}` successfully !!"
+            )
     else:
         await target_file.edit(
             "Reply to a message to download to my local server.")
@@ -111,15 +114,13 @@ async def uploadir(udir_event):
         await udir_event.edit("Processing ...")
         lst_of_files = []
         for r, d, f in os.walk(input_str):
-            for file in f:
-                lst_of_files.append(os.path.join(r, file))
-            for file in d:
-                lst_of_files.append(os.path.join(r, file))
+            lst_of_files.extend(os.path.join(r, file) for file in f)
+            lst_of_files.extend(os.path.join(r, file) for file in d)
         LOGS.info(lst_of_files)
         uploaded = 0
         await udir_event.edit(
-            "Found {} files. Uploading will start soon. Please wait!".format(
-                len(lst_of_files)))
+            f"Found {len(lst_of_files)} files. Uploading will start soon. Please wait!"
+        )
         for single_file in lst_of_files:
             if os.path.exists(single_file):
                 # https://stackoverflow.com/a/678242/4723940
@@ -173,8 +174,7 @@ async def uploadir(udir_event):
                                      single_file)))
                 os.remove(single_file)
                 uploaded = uploaded + 1
-        await udir_event.edit(
-            "Uploaded {} files successfully !!".format(uploaded))
+        await udir_event.edit(f"Uploaded {uploaded} files successfully !!")
     else:
         await udir_event.edit("404: Directory Not Found")
 
@@ -212,10 +212,15 @@ def get_video_thumb(file, output=None, width=90):
             file,
             "-ss",
             str(
-                int((0, metadata.get("duration").seconds
-                     )[metadata.has("duration")] / 2)),
+                int(
+                    (0, metadata.get("duration").seconds)[
+                        metadata.has("duration")
+                    ]
+                    / 2
+                )
+            ),
             "-filter:v",
-            "scale={}:-1".format(width),
+            f"scale={width}:-1",
             "-vframes",
             "1",
             output,
@@ -224,9 +229,7 @@ def get_video_thumb(file, output=None, width=90):
         stdout=subprocess.PIPE,
         stderr=subprocess.DEVNULL,
     )
-    if not popen.returncode and os.path.lexists(file):
-        return output
-    return None
+    return output if not popen.returncode and os.path.lexists(file) else None
 
 
 def extract_w_h(file):
@@ -263,12 +266,12 @@ async def uploadas(uas_event):
     supports_streaming = False
     round_message = False
     spam_big_messages = False
-    if type_of_upload == "stream":
-        supports_streaming = True
-    if type_of_upload == "vn":
-        round_message = True
     if type_of_upload == "all":
         spam_big_messages = True
+    elif type_of_upload == "stream":
+        supports_streaming = True
+    elif type_of_upload == "vn":
+        round_message = True
     input_str = uas_event.pattern_match.group(2)
     thumb = None
     file_name = None
@@ -282,15 +285,9 @@ async def uploadas(uas_event):
         thumb = get_video_thumb(file_name, output=thumb_path)
     if os.path.exists(file_name):
         metadata = extractMetadata(createParser(file_name))
-        duration = 0
-        width = 0
-        height = 0
-        if metadata.has("duration"):
-            duration = metadata.get("duration").seconds
-        if metadata.has("width"):
-            width = metadata.get("width")
-        if metadata.has("height"):
-            height = metadata.get("height")
+        duration = metadata.get("duration").seconds if metadata.has("duration") else 0
+        width = metadata.get("width") if metadata.has("width") else 0
+        height = metadata.get("height") if metadata.has("height") else 0
         try:
             if supports_streaming:
                 c_time = time.time()

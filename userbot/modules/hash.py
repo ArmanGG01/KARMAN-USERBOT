@@ -17,9 +17,8 @@ from userbot.events import register
 async def gethash(hash_q):
     """ For .hash command, find the md5, sha1, sha256, sha512 of the string. """
     hashtxt_ = hash_q.pattern_match.group(1)
-    hashtxt = open("hashdis.txt", "w+")
-    hashtxt.write(hashtxt_)
-    hashtxt.close()
+    with open("hashdis.txt", "w+") as hashtxt:
+        hashtxt.write(hashtxt_)
     md5 = runapp(["md5sum", "hashdis.txt"], stdout=PIPE)
     md5 = md5.stdout.decode()
     sha1 = runapp(["sha1sum", "hashdis.txt"], stdout=PIPE)
@@ -43,9 +42,8 @@ async def gethash(hash_q):
         + "`"
     )
     if len(ans) > 4096:
-        hashfile = open("hashes.txt", "w+")
-        hashfile.write(ans)
-        hashfile.close()
+        with open("hashes.txt", "w+") as hashfile:
+            hashfile.write(ans)
         await hash_q.client.send_file(
             hash_q.chat_id,
             "hashes.txt",
@@ -63,14 +61,14 @@ async def endecrypt(query):
     if query.pattern_match.group(1) == "en":
         lething = str(pybase64.b64encode(
             bytes(query.pattern_match.group(2), "utf-8")))[2:]
-        await query.reply("Encoded: `" + lething[:-1] + "`")
+        await query.reply(f"Encoded: `{lething[:-1]}`")
     else:
         lething = str(
             pybase64.b64decode(
                 bytes(query.pattern_match.group(2), "utf-8"), validate=True
             )
         )[2:]
-        await query.reply("Decoded: `" + lething[:-1] + "`")
+        await query.reply(f"Decoded: `{lething[:-1]}`")
 
 
 CMD_HELP.update(
