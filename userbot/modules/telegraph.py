@@ -45,7 +45,7 @@ async def telegraphs(graph):
                     os.remove(downloaded_file_name)
                 else:
                     end = datetime.now()
-                    ms_two = (end - start).seconds
+                    (end - start).seconds
                     os.remove(downloaded_file_name)
                     await graph.edit(
                         f"Berhasil Mengunggah Ke [Telegraph](https://telegra.ph{media_urls[0]}).",
