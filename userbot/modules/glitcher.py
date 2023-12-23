@@ -13,7 +13,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 
-Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
+Glitched = f"{TEMP_DOWNLOAD_DIRECTORY}glitch.gif"
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -217,32 +217,25 @@ async def draw_meme_text(image_path, text):
 
 
 async def check_media(reply_message):
-    if reply_message and reply_message.media:
-        if reply_message.photo:
-            data = reply_message.photo
-        elif reply_message.document:
-            if (
-                DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
-                in reply_message.media.document.attributes
-            ):
-                return False
-            if (
-                reply_message.gif
-                or reply_message.video
-                or reply_message.audio
-                or reply_message.voice
-            ):
-                return False
-            data = reply_message.media.document
-        else:
+    if reply_message and reply_message.media and reply_message.photo:
+        data = reply_message.photo
+    elif reply_message and reply_message.media and reply_message.document:
+        if (
+            DocumentAttributeFilename(file_name="AnimatedSticker.tgs")
+            in reply_message.media.document.attributes
+        ):
             return False
+        if (
+            reply_message.gif
+            or reply_message.video
+            or reply_message.audio
+            or reply_message.voice
+        ):
+            return False
+        data = reply_message.media.document
     else:
         return False
-
-    if not data or data is None:
-        return False
-    else:
-        return data
+    return False if not data or data is None else data
 
 
 CMD_HELP.update(

@@ -111,7 +111,7 @@ async def repeat(rep):
 
     replyText = toBeRepeated + "\n"
 
-    for i in range(0, replyCount - 1):
+    for _ in range(0, replyCount - 1):
         replyText += toBeRepeated + "\n"
 
     await rep.edit(replyText)
@@ -173,12 +173,11 @@ async def okgoogle(img):
         name = "okgoogle.png"
         image.save(name, "PNG")
         image.close()
-        # https://stackoverflow.com/questions/23270175/google-reverse-image-search-using-post-request#28792943
-        searchUrl = 'https://www.google.com/searchbyimage/upload'
         multipart = {
             'encoded_image': (name, open(name, 'rb')),
             'image_content': ''
         }
+        searchUrl = 'https://www.google.com/searchbyimage/upload'
         response = requests.post(searchUrl,
                                  files=multipart,
                                  allow_redirects=False)
@@ -192,8 +191,7 @@ async def okgoogle(img):
             return
 
         os.remove(name)
-        match = await ParseSauce(fetchUrl +
-                                 "&preferences?hl=en&fg=1#languages")
+        match = await ParseSauce(f"{fetchUrl}&preferences?hl=en&fg=1#languages")
         guess = match['best_guess']
         imgspage = match['similar_images']
 
@@ -203,10 +201,7 @@ async def okgoogle(img):
             await img.edit("`Couldn't find anything for your uglyass.`")
             return
 
-        if img.pattern_match.group(1):
-            lim = img.pattern_match.group(1)
-        else:
-            lim = 3
+        lim = img.pattern_match.group(1) if img.pattern_match.group(1) else 3
         images = await scam(match, lim)
         yeet = []
         for i in images:
@@ -259,7 +254,7 @@ async def scam(results, lim):
 
     for imglink in oboi:
         counter += 1
-        if not counter >= int(lim):
+        if counter < int(lim):
             imglinks.append(imglink)
         else:
             break

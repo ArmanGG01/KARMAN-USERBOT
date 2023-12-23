@@ -72,12 +72,9 @@ if version_info[0] < 3 or version_info[1] < 8:
               "Multiple features depend on this. Bot quitting.")
     quit(1)
 
-# Check if the config was edited by using the already used variable.
-# Basically, its the 'virginity check' for the config file ;)
-CONFIG_CHECK = os.environ.get(
-    "___________PLOX_______REMOVE_____THIS_____LINE__________", None)
-
-if CONFIG_CHECK:
+if CONFIG_CHECK := os.environ.get(
+    "___________PLOX_______REMOVE_____THIS_____LINE__________", None
+):
     LOGS.info(
         "Please remove the line mentioned in the first hashtag from the config.env file"
     )
@@ -100,9 +97,7 @@ LOGSPAMMER = sb(os.environ.get("LOGSPAMMER", "False"))
 # Bleep Blop, this is a bot ;)
 PM_AUTO_BAN = sb(os.environ.get("PM_AUTO_BAN", "True"))
 
-# Send .chatid in any group with all your administration bots (added)
-G_BAN_LOGGER_GROUP = os.environ.get("G_BAN_LOGGER_GROUP", "")
-if G_BAN_LOGGER_GROUP:
+if G_BAN_LOGGER_GROUP := os.environ.get("G_BAN_LOGGER_GROUP", ""):
     G_BAN_LOGGER_GROUP = int(G_BAN_LOGGER_GROUP)
 
 # Heroku Credentials for updater.
@@ -320,8 +315,7 @@ TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY",
 # Google Photos
 G_PHOTOS_CLIENT_ID = os.environ.get("G_PHOTOS_CLIENT_ID", None)
 G_PHOTOS_CLIENT_SECRET = os.environ.get("G_PHOTOS_CLIENT_SECRET", None)
-G_PHOTOS_AUTH_TOKEN_ID = os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None)
-if G_PHOTOS_AUTH_TOKEN_ID:
+if G_PHOTOS_AUTH_TOKEN_ID := os.environ.get("G_PHOTOS_AUTH_TOKEN_ID", None):
     G_PHOTOS_AUTH_TOKEN_ID = int(G_PHOTOS_AUTH_TOKEN_ID)
 
 # Genius Lyrics  API
@@ -394,10 +388,7 @@ for binary, path in binaries.items():
     os.chmod(path, 0o755)
 
 # 'bot' variable
-if STRING_SESSION:
-    session = StringSession(str(STRING_SESSION))
-else:
-    session = "JsUserBot"
+session = StringSession(str(STRING_SESSION)) if STRING_SESSION else "JsUserBot"
 try:
     bot = TelegramClient(
         session=session,
@@ -506,7 +497,7 @@ except AttributeError:
     pass
 
 
-if not BOT_TOKEN is None:
+if BOT_TOKEN is not None:
     tgbot = TelegramClient(
         "TG_BOT_TOKEN",
         api_id=API_KEY,
@@ -527,8 +518,7 @@ def paginate_help(page_number, loaded_modules, prefix):
     helpable_modules = sorted(helpable_modules)
     modules = [
         custom.Button.inline(
-            "{} {} {}".format(f"{EMOJI_HELP}", x, f"{EMOJI_HELP}"),
-            data="ub_modul_{}".format(x),
+            f"{EMOJI_HELP} {x} {EMOJI_HELP}", data=f"ub_modul_{x}"
         )
         for x in helpable_modules
     ]
@@ -549,13 +539,13 @@ def paginate_help(page_number, loaded_modules, prefix):
         ] + [
             (
                 custom.Button.inline(
-                    "< ̤< ̤", data="{}_prev({})".format(prefix, modulo_page)
+                    "< ̤< ̤", data=f"{prefix}_prev({modulo_page})"
                 ),
                 custom.Button.inline(
-                    f"❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data="{}_close({})".format(prefix, modulo_page)
+                    "❌ 𝗖𝗟𝗢𝗦𝗘 ❌", data=f"{prefix}_close({modulo_page})"
                 ),
                 custom.Button.inline(
-                    "> ̤> ̤", data="{}_next({})".format(prefix, modulo_page)
+                    "> ̤> ̤", data=f"{prefix}_next({modulo_page})"
                 ),
             )
         ]
@@ -795,9 +785,7 @@ with bot:
                 reply_pop_up_alert = (
                     help_string
                     if help_string is not None
-                    else "{} No document has been written for module.".format(
-                        modul_name
-                    )
+                    else f"{modul_name} No document has been written for module."
                 )
             else:
                 reply_pop_up_alert = f"🚫!WARNING!🚫 Jangan Menggunakan Milik {DEFAULTUSER}."

@@ -943,14 +943,12 @@ async def slap(replied_user, event):
     """ Construct a funny slap sentence !! """
     user_id = replied_user.id
     first_name = replied_user.first_name
-    username = replied_user.username
-
-    if username:
-        slapped = "@{}".format(username)
+    if username := replied_user.username:
+        slapped = f"@{username}"
     else:
         slapped = f"[{first_name}](tg://user?id={user_id})"
     slap_str = event.pattern_match.group(1)
-    if slap_str == "en":
+    if slap_str == "en" or slap_str not in ["id", "jutsu"]:
         temp = choice(SLAP_TEMPLATES_EN)
         item = choice(ITEMS_EN)
         hit = choice(HIT_EN)
@@ -962,23 +960,13 @@ async def slap(replied_user, event):
         hit = choice(HIT_ID)
         throw = choice(THROW_ID)
         where = choice(WHERE_ID)
-    elif slap_str == "jutsu":
+    else:
         temp = choice(SLAP_TEMPLATES_Jutsu)
         item = choice(ITEMS_Jutsu)
         hit = choice(HIT_Jutsu)
         throw = choice(THROW_Jutsu)
         where = choice(WHERE_Jutsu)
-    else:
-        temp = choice(SLAP_TEMPLATES_EN)
-        item = choice(ITEMS_EN)
-        hit = choice(HIT_EN)
-        throw = choice(THROW_EN)
-        where = choice(WHERE_EN)
-
-    caption = "..." + temp.format(
-        victim=slapped, item=item, hits=hit, throws=throw, where=where)
-
-    return caption
+    return f"...{temp.format(victim=slapped, item=item, hits=hit, throws=throw, where=where)}"
 
 
 @register(outgoing=True, pattern=r"^\.boobs(?: |$)(.*)")
@@ -988,8 +976,7 @@ async def boobs(e):
     await e.edit("`Mengirim Gambar Boobs...`")
     nsfw = requests.get(
         'http://api.oboobs.ru/noise/1').json()[0]["Gambar Boobs"]
-    urllib.request.urlretrieve(
-        "http://media.oboobs.ru/{}".format(nsfw), "*.jpg")
+    urllib.request.urlretrieve(f"http://media.oboobs.ru/{nsfw}", "*.jpg")
     os.rename('*.jpg', 'boobs.jpg')
     await e.client.send_file(e.chat_id, "boobs.jpg")
     os.remove("boobs.jpg")
@@ -1003,8 +990,7 @@ async def butts(e):
     await e.edit("`Mengirim Gambar Pantat Indah...`")
     nsfw = requests.get(
         'http://api.obutts.ru/noise/1').json()[0]["Gambar Pantat"]
-    urllib.request.urlretrieve(
-        "http://media.obutts.ru/{}".format(nsfw), "*.jpg")
+    urllib.request.urlretrieve(f"http://media.obutts.ru/{nsfw}", "*.jpg")
     os.rename('*.jpg', 'butts.jpg')
     await e.client.send_file(e.chat_id, "butts.jpg")
     os.remove("butts.jpg")
@@ -1018,7 +1004,7 @@ async def decide(event):
     if decision != "decide":
         r = requests.get(f"https://yesno.wtf/api?force={decision}").json()
     else:
-        r = requests.get(f"https://yesno.wtf/api").json()
+        r = requests.get("https://yesno.wtf/api").json()
     await event.delete()
     await event.client.send_message(event.chat_id,
                                     str(r["answer"]).upper(),
@@ -1069,10 +1055,7 @@ async def copypasta(cp_e):
         elif owo.lower() == b_char:
             reply_text += "🅱️"
         else:
-            if bool(getrandbits(1)):
-                reply_text += owo.upper()
-            else:
-                reply_text += owo.lower()
+            reply_text += owo.upper() if bool(getrandbits(1)) else owo.lower()
     reply_text += choice(EMOJIS)
     await cp_e.edit(reply_text)
 
@@ -1080,7 +1063,7 @@ async def copypasta(cp_e):
 @register(outgoing=True, pattern=r"^\.vapor(?: |$)(.*)")
 async def vapor(vpr):
     """ Vaporize everything! """
-    reply_text = list()
+    reply_text = []
     textx = await vpr.get_reply_message()
     message = vpr.pattern_match.group(1)
     if message:
@@ -1123,7 +1106,7 @@ async def stretch(stret):
 @register(outgoing=True, pattern=r"^\.zal(?: |$)(.*)")
 async def zal(zgfy):
     """ Invoke the feeling of chaos. """
-    reply_text = list()
+    reply_text = []
     textx = await zgfy.get_reply_message()
     message = zgfy.pattern_match.group(1)
     if message:
@@ -1180,9 +1163,9 @@ async def faces(owo):
     reply_text = sub(r"(R|L)", "W", reply_text)
     reply_text = sub(r"n([aeiou])", r"ny\1", reply_text)
     reply_text = sub(r"N([aeiouAEIOU])", r"Ny\1", reply_text)
-    reply_text = sub(r"\!+", " " + choice(UWUS), reply_text)
+    reply_text = sub(r"\!+", f" {choice(UWUS)}", reply_text)
     reply_text = reply_text.replace("ove", "uv")
-    reply_text += " " + choice(UWUS)
+    reply_text += f" {choice(UWUS)}"
     await owo.edit(reply_text)
 
 
@@ -1219,16 +1202,16 @@ async def metoo(hahayes):
 @register(outgoing=True, pattern=r"^\.oem$")
 async def oem(e):
     t = "Oem"
-    for j in range(16):
-        t = t[:-1] + "em"
+    for _ in range(16):
+        t = f"{t[:-1]}em"
         await e.edit(t)
 
 
 @register(outgoing=True, pattern=r"^\.Oem$")
 async def Oem(e):
     t = "Oem"
-    for j in range(16):
-        t = t[:-1] + "em"
+    for _ in range(16):
+        t = f"{t[:-1]}em"
         await e.edit(t)
 
 
@@ -1246,7 +1229,7 @@ async def iqless(e):
 async def moon(event):
     deq = deque(list("🌗🌘🌑🌒🌓🌔🌕🌖"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1258,7 +1241,7 @@ async def moon(event):
 async def moon(event):
     deq = deque(list("🌼🌻🌺🌹🌸🌷"))
     try:
-        for x in range(35):
+        for _ in range(35):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1270,7 +1253,7 @@ async def moon(event):
 async def moon(event):
     deq = deque(list("🎑🌄🌅🌇🌆🌃🌌"))
     try:
-        for x in range(100):
+        for _ in range(100):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1282,7 +1265,7 @@ async def moon(event):
 async def moon(event):
     deq = deque(list("🍉🍓🍇🍎🍍🍐🍌"))
     try:
-        for x in range(35):
+        for _ in range(35):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1294,7 +1277,7 @@ async def moon(event):
 async def clock(event):
     deq = deque(list("🕙🕘🕗🕖🕕🕔🕓🕒🕑🕐🕛"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1306,7 +1289,7 @@ async def clock(event):
 async def rain(event):
     deq = deque(list("☀️🌤⛅️🌥☁️🌧⛈"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1318,7 +1301,7 @@ async def rain(event):
 async def love(event):
     deq = deque(list("❤️🧡💛💚💙💜🖤💕💞💓💗💖💘💝"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1330,7 +1313,7 @@ async def love(event):
 async def earth(event):
     deq = deque(list("🌏🌍🌎🌎🌍🌏🌍🌎"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1342,7 +1325,7 @@ async def earth(event):
 async def earth(event):
     deq = deque(list("🖤💜💙💚💛🧡❤️🤍"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1354,7 +1337,7 @@ async def earth(event):
 async def earth(event):
     deq = deque(list("🙈🙉🙈🙉🙈🙉🙈🙉"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1366,7 +1349,7 @@ async def earth(event):
 async def earth(event):
     deq = deque(list("🙂😁😄😃😂🤣😭🐵🙊🙉🙈"))
     try:
-        for x in range(32):
+        for _ in range(32):
             await sleep(0.1)
             await event.edit("".join(deq))
             deq.rotate(1)
@@ -1377,7 +1360,7 @@ async def earth(event):
 @register(outgoing=True, pattern=r"^\.mock(?: |$)(.*)")
 async def spongemocktext(mock):
     """ Do it and find the real fun. """
-    reply_text = list()
+    reply_text = []
     textx = await mock.get_reply_message()
     message = mock.pattern_match.group(1)
     if message:
@@ -1443,18 +1426,14 @@ async def bluetext(bt_e):
 @register(outgoing=True, pattern=r"^\.f (.*)")
 async def payf(event):
     paytext = event.pattern_match.group(1)
-    pay = "{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}\n{}".format(
-        paytext * 8, paytext * 8, paytext * 2, paytext * 2, paytext * 2,
-        paytext * 6, paytext * 6, paytext * 2, paytext * 2, paytext * 2,
-        paytext * 2, paytext * 2)
+    pay = f"{paytext * 8}\n{paytext * 8}\n{paytext * 2}\n{paytext * 2}\n{paytext * 2}\n{paytext * 6}\n{paytext * 6}\n{paytext * 2}\n{paytext * 2}\n{paytext * 2}\n{paytext * 2}\n{paytext * 2}"
     await event.edit(pay)
 
 
 @register(outgoing=True, pattern=r"^\.lfy (.*)")
 async def let_me_google_that_for_you(lmgtfy_q):
     textx = await lmgtfy_q.get_reply_message()
-    qry = lmgtfy_q.pattern_match.group(1)
-    if qry:
+    if qry := lmgtfy_q.pattern_match.group(1):
         query = str(qry)
     elif textx:
         query = textx
@@ -1533,8 +1512,8 @@ async def typewriter(typew):
     await typew.edit(typing_symbol)
     await sleep(sleep_time)
     for character in message:
-        old_text = old_text + "" + character
-        typing_text = old_text + "" + typing_symbol
+        old_text = f"{old_text}{character}"
+        typing_text = f"{old_text}{typing_symbol}"
         await typew.edit(typing_text)
         await sleep(sleep_time)
         await typew.edit(old_text)
@@ -1718,8 +1697,8 @@ async def faces(siwis):
 
     reply_text = sub(r"(a|i|u|e|o)", "i", message)
     reply_text = sub(r"(A|I|U|E|O)", "I", reply_text)
-    reply_text = sub(r"\!+", " " + choice(IWIS), reply_text)
-    reply_text += " " + choice(IWIS)
+    reply_text = sub(r"\!+", f" {choice(IWIS)}", reply_text)
+    reply_text += f" {choice(IWIS)}"
     await siwis.edit(reply_text)
 
 

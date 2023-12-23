@@ -12,7 +12,7 @@ DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 @register(outgoing=True, pattern="^.g(?: |$)(.*)")
 async def typewriter(typew):
     typew.pattern_match.group(1)
-    await typew.edit(f"**JAKA SEMBUNG BAWA BOTOL**")
+    await typew.edit("**JAKA SEMBUNG BAWA BOTOL**")
     sleep(3)
     await typew.edit("**MUKA LU KAYA KONTOL**")
 
@@ -76,7 +76,7 @@ async def typewriter(typew):
 @register(outgoing=True, pattern="^.istigfar(?: |$)(.*)")
 async def perkenalan(event):
     event.pattern_match.group(1)
-    await event.edit(f"`Heh Kamu Gaboleh Begitu...`")
+    await event.edit("`Heh Kamu Gaboleh Begitu...`")
     sleep(2)
     await event.edit("`اَسْتَغْفِرُاللهَ الْعَظِيْم`")
 

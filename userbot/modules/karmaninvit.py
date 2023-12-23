@@ -56,7 +56,7 @@ async def get_chatinfo(event):
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
-    if not sender.id == me.id:
+    if sender.id != me.id:
         man = await event.reply("`proses menambahkan beberapa kontol...`")
     else:
         man = await event.edit("`Awas Limit kau pepek!...`")

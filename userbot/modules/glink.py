@@ -17,14 +17,12 @@ async def remoteaccess(event):
 
         pass
 
-    msg = ""
     mssg = await event.get_reply_message()
     if event.reply_to_msg_id:
         await event.client.send_message(chat_id, mssg)
         await event.edit("`Pesan Di Di Teruskan Ke Grup Tujuan`")
-    for i in m[1:]:
-        msg += i + " "
-    if msg == "":
+    msg = "".join(f"{i} " for i in m[1:])
+    if not msg:
         return
     try:
         await event.client.send_message(chat_id, msg)

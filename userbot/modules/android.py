@@ -54,8 +54,7 @@ async def device_info(request):
             "certified-android-devices/master/by_device.json"
         ).text
     )
-    results = data.get(codename)
-    if results:
+    if results := data.get(codename):
         reply = f"**Search results for {codename}**:\n\n"
         for item in results:
             reply += (
@@ -92,12 +91,12 @@ async def codename_info(request):
     devices_lower = {k.lower(): v for k, v in data.items()
                      }  # Lower brand names in JSON
     devices = devices_lower.get(brand)
-    results = [
+    if results := [
         i
         for i in devices
-        if i["name"].lower() == device.lower() or i["model"].lower() == device.lower()
-    ]
-    if results:
+        if i["name"].lower() == device.lower()
+        or i["model"].lower() == device.lower()
+    ]:
         reply = f"**Search results for {brand} {device}**:\n\n"
         if len(results) > 8:
             results = results[:8]
@@ -157,9 +156,9 @@ async def download_api(dl):
     complete = False
     start = time.time()
     while not complete:
-        if os.path.isfile(file_path + ".crdownload"):
+        if os.path.isfile(f"{file_path}.crdownload"):
             try:
-                downloaded = os.stat(file_path + ".crdownload").st_size
+                downloaded = os.stat(f"{file_path}.crdownload").st_size
                 status = "Downloading"
             except OSError:  # Rare case
                 await asyncio.sleep(1)
@@ -176,8 +175,8 @@ async def download_api(dl):
         speed = round(downloaded / diff, 2)
         eta = round((file_size - downloaded) / speed)
         prog_str = "[{0}{1}] `{2}%`".format(
-            "".join("█" for i in range(math.floor(percentage / 10))),
-            "".join("░" for i in range(10 - math.floor(percentage / 10))),
+            "".join("█" for _ in range(math.floor(percentage / 10))),
+            "".join("░" for _ in range(10 - math.floor(percentage / 10))),
             round(percentage, 2),
         )
         current_message = (

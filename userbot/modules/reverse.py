@@ -73,7 +73,7 @@ async def okgoogle(img):
             return
 
         os.remove(name)
-        match = await ParseSauce(fetchUrl + "&preferences?hl=en&fg=1#languages")
+        match = await ParseSauce(f"{fetchUrl}&preferences?hl=en&fg=1#languages")
         guess = match["best_guess"]
         imgspage = match["similar_images"]
 
@@ -83,10 +83,7 @@ async def okgoogle(img):
             await img.edit("`Maaf Lord, Saya Tidak Bisa Menemukan Apapun`")
             return
 
-        if img.pattern_match.group(1):
-            lim = img.pattern_match.group(1)
-        else:
-            lim = 3
+        lim = img.pattern_match.group(1) if img.pattern_match.group(1) else 3
         images = await scam(match, lim)
         yeet = []
         for i in images:
@@ -140,7 +137,7 @@ async def scam(results, lim):
 
     for imglink in oboi:
         counter += 1
-        if not counter >= int(lim):
+        if counter < int(lim):
             imglinks.append(imglink)
         else:
             break

@@ -18,10 +18,6 @@ async def _(event):
 
         return
 
-    animation_interval = 0.1
-
-    animation_ttl = range(117)
-
     input_str = event.pattern_match.group(1)
 
     if input_str == "bulan":
@@ -60,7 +56,12 @@ async def _(event):
             "🌓",
             "🌔",
             "🌕",
-            f"🌖"]
+            "🌖",
+        ]
+
+        animation_interval = 0.1
+
+        animation_ttl = range(117)
 
         for i in animation_ttl:
 

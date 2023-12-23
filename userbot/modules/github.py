@@ -10,8 +10,7 @@ async def github(event):
     async with aiohttp.ClientSession() as session:
         async with session.get(URL) as request:
             if request.status == 404:
-                return await event.reply("`" + event.pattern_match.group(1) +
-                                         " not found`")
+                return await event.reply(f"`{event.pattern_match.group(1)} not found`")
 
             result = await request.json()
 

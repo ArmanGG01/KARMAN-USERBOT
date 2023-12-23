@@ -28,13 +28,13 @@ async def filter_incoming_handler(handler):
             for trigger in filters:
                 pattern = (
                     r"( |^|[^\w])" + escape(trigger.keyword) + r"( |$|[^\w])")
-                pro = search(pattern, name, flags=IGNORECASE)
-                if pro and trigger.f_mesg_id:
-                    msg_o = await handler.client.get_messages(
-                        entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id))
-                    await handler.reply(msg_o.message, file=msg_o.media)
-                elif pro and trigger.reply:
-                    await handler.reply(trigger.reply)
+                if pro := search(pattern, name, flags=IGNORECASE):
+                    if trigger.f_mesg_id:
+                        msg_o = await handler.client.get_messages(
+                            entity=BOTLOG_CHATID, ids=int(trigger.f_mesg_id))
+                        await handler.reply(msg_o.message, file=msg_o.media)
+                    elif trigger.reply:
+                        await handler.reply(trigger.reply)
     except AttributeError:
         pass
 
@@ -91,10 +91,9 @@ async def remove_a_filter(r_handler):
         return await r_handler.edit("`Berjalan Pada Mode Non-SQL!`")
     filt = r_handler.pattern_match.group(1)
     if not remove_filter(r_handler.chat_id, filt):
-        await r_handler.edit("`Filter` **{}** `Tidak Ada Disini`.".format(filt))
+        await r_handler.edit(f"`Filter` **{filt}** `Tidak Ada Disini`.")
     else:
-        await r_handler.edit(
-            "`Berhasil Menghapus Filter` **{}** `Disini`.".format(filt))
+        await r_handler.edit(f"`Berhasil Menghapus Filter` **{filt}** `Disini`.")
 
 
 @register(outgoing=True, pattern="^.clrallbot (.*)")
@@ -110,16 +109,18 @@ async def kick_marie_filter(event):
     filters = resp.text.split("-")[1:]
     for i in filters:
         if bot_type.lower() == "marie":
-            await event.reply("/stop %s" % (i.strip()))
+            await event.reply(f"/stop {i.strip()}")
         if bot_type.lower() == "rose":
             i = i.replace('`', '')
-            await event.reply("/stop %s" % (i.strip()))
+            await event.reply(f"/stop {i.strip()}")
         await sleep(0.3)
     await event.respond(
         "```Berhasil Menghapus Semua Filter Bot!```")
     if BOTLOG:
         await event.client.send_message(
-            BOTLOG_CHATID, "Saya Membersihkan Semua Filter Bot Di " + str(event.chat_id))
+            BOTLOG_CHATID,
+            f"Saya Membersihkan Semua Filter Bot Di {str(event.chat_id)}",
+        )
 
 
 @register(outgoing=True, pattern="^Fltrs$")
@@ -134,10 +135,7 @@ async def filters_active(event):
     for filt in filters:
         if transact == "`Tidak Ada Filter Apapun Disini.`":
             transact = "**,📌 Daftar Filter Yang Aktif Disini:**\n"
-            transact += " ➥ `{}`\n".format(filt.keyword)
-        else:
-            transact += " ➥ `{}`\n".format(filt.keyword)
-
+        transact += f" ➥ `{filt.keyword}`\n"
     await event.edit(transact)
 
 
